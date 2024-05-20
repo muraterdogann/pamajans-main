@@ -1,5 +1,5 @@
 import React from "react";
-import referans_data from "@/public/data/referans_data";
+import ref from "@/public/data/referans_data.json"
 import Image from "next/image";
 import Headline from "@/component/wallet-btn/headLine";
 export const metadata = {
@@ -10,6 +10,18 @@ export const metadata = {
   }
 }
 const Index = () => {
+  const list = [];
+
+  for (let i = 0; i < ref.length; i++) {
+    const srcf = ref[i].url;
+    const srcn = ref[i].name;
+    // list.push(<div className="col-ref-custom" key={i}><Image className="referanslar-resimler" width={465} height={120} quality={100} src={srcf} key={srcf} alt={srcn} /></div>);
+    if(i===3)
+      {
+        list.push(<div className="col-ref-custom mx-auto my-auto lg:w-[230px] w-[90px] " key={i}><Image className="referanslar-resimler" quality={100} width={230} height={80} src={srcf} key={srcf} alt={srcn}/></div>);
+      }else{
+    list.push(<div className="col-ref-custom" key={i}><Image className="referanslar-resimler" quality={100} width={465} height={120} src={srcf} key={srcf} alt={srcn}/></div>);
+  }}
   return (
     <>
       <section className="relative lg:pb-48 pb-24 w-full">
@@ -18,11 +30,7 @@ const Index = () => {
           classes="font-display text-jacarta-300 text-white bg-main rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] pt-32 pb-8 mb-12 text-center text-5xl dark:text-white"
         />
         <div className="grid mt-8 lg:grid-cols-5 grid-cols-3 lg:ml-8 ">
-          {referans_data.map((item, index) => (
-            <div key={index}>
-              <Image src={item} alt={`Referans ${index}`} width={400} height={400} />
-            </div>
-          ))}
+          {list}
         </div>
       </section>
     </>

@@ -6,22 +6,22 @@ const footerMenuList = [
     list: [
       {
         id: 1,
-        href: "#hakkimizda",
+        href: "hakkimizda",
         text: "Hakkımızda",
       },
       {
         id: 2,
-        href: "#iletisim",
+        href: "iletisim",
         text: "İletişim",
       },
       {
         id: 3,
-        href: "#ekibimiz",
+        href: "ekibimiz",
         text: "Ekibimiz",
       },
       {
         id: 6,
-        href: "#kvkk",
+        href: "kvkk",
         text: "KVKK",
       },
     ],
@@ -33,27 +33,27 @@ const footerMenuList = [
     list: [
       {
         id: 1,
-        href: "#google-ads",
+        href: "google-ads",
         text: "Google ADS",
       },
       {
         id: 2,
-        href: "#meta-ads",
+        href: "meta-ads",
         text: "META ADS",
       },
       {
         id: 3,
-        href: "#e-ticaret-web",
+        href: "e-ticaret-web",
         text: "E-Ticaret Website",
       },
       {
         id: 4,
-        href: "#kurumsal-web",
+        href: "kurumsal-web",
         text: "Kurumsal Website",
       },
       {
         id: 5,
-        href: "#e-ihracat-danismanlik",
+        href: "e-ihracat-danismanlik",
         text: "E-İhracat Danışmanlık",
       },
       
@@ -65,22 +65,22 @@ const footerMenuList = [
     list: [
       {
         id: 1,
-        href: "#pazaryeri-giris",
+        href: "pazaryeri-giris",
         text: "Pazaryeri Giriş",
       },
       {
         id: 2,
-        href: "#native-yazilim",
+        href: "native-yazilim",
         text: "Native Yazılım",
       },
       {
         id: 3,
-        href: "#e-ticaret-reklam",
+        href: "e-ticaret-reklam",
         text: "E-Ticaret ve Reklam",
       },
       {
         id: 4,
-        href: "#erp-crm",
+        href: "erp-crm",
         text: "ERP & CRM",
       },
       

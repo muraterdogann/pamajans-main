@@ -1,3 +1,4 @@
+"use server"
 import { reqUrl } from "@/config";
 
 export interface OgImage {

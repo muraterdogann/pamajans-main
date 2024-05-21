@@ -40,34 +40,29 @@ export interface Post {
 }
 
 export async function getPostData(slug: string): Promise<Post | null> {
+  console.log(slug);
   slug = slug.substring(slug.indexOf("/blog") + "/blog".length);
+  // Slug'dan "/blog/" kısmını ayır
+
   const res = await fetch(
     `${reqUrl}/posts?slug=${slug}&_fields=id,slug,title,content,yoast_head,yoast_head_json`
   );
   const posts: Post[] = await res.json();
+  console.log("posts", posts);
   if (!posts || posts.length === 0) {
     return null;
   }
+
   return posts[0];
 }
 
 export async function path(): Promise<{ params: { slug: string } }[]> {
   const res = await fetch(`${reqUrl}/posts?_fields=slug`);
   const posts: { slug: string }[] = await res.json();
+  console.log("path post ", posts);
   const paths = posts.map((post) => ({
     params: { slug: post.slug },
   }));
+
   return paths;
 }
-
-export const adjustSchemaForFrontend = (
-  schema: any,
-  oldDomain: string,
-  newDomain: string
-): any => {
-  if (!schema) return schema;
-  const schemaString = JSON.stringify(schema);
-  return JSON.parse(
-    schemaString.replace(new RegExp(oldDomain, "g"), newDomain)
-  );
-};

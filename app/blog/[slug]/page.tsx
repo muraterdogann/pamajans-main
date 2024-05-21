@@ -64,7 +64,7 @@ const PostPage: NextPage<TPageProps> = ({ params }) => {
   }, []); // Empty dependency array ensures this runs only once
 
   if (!postData) {
-    return <div>Yükleniyor...</div>;
+    return <div className="h-[150rem]">Yükleniyor...</div>;
   }
 
   const parsedContent = postData.content?.rendered
@@ -134,7 +134,7 @@ const PostPage: NextPage<TPageProps> = ({ params }) => {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: metadata.schema }} />
       </head>
 
-      <section className="relative w-full mb-16 bg-[f5f8fa]">
+      <section className="relative w-full mb-16 bg-[f5f8fa] h-auto ">
         {/* Banner */}
         <div className="font-display text-jacarta-300 rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
           <h2>{postData.title.rendered}</h2>

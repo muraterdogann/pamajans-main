@@ -108,7 +108,7 @@ export default function Header04() {
       {
         id: uuidv4(),
         name: "whatsapp-geri-bildirim ",
-        path: "hizmetlerimiz/whatsapp-geri-bildirim",
+        path: "/hizmetlerimiz/whatsapp-geri-bildirim",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"

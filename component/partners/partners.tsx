@@ -16,7 +16,7 @@ const Partners = () => {
     <div className="dark:bg-jacarta-900 ">
       <div className="container">
         <h2 className="mt-5 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-white">Partnerlerimiz</h2>
-        <div className="grid grid-cols-3 py-8 lg:grid-cols-7">
+        <div className="flex flex-wrap justify-center py-8 ">
           {partnerGroup.map((item) => (
             <a
               href={item.link}

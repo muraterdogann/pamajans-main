@@ -1,4 +1,14 @@
+export const metadata = {
+  title: 'KVKK | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı',
+  description: 'Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.',
+  icons: {
+      icon:'/public/images/pam-ajans-logo-siyah.svg',
+  }
+}
+
+
 const kvkk = () => {
+  
     return (
         <>
         <section className="relative pb-16 bg-[#f5f8fa]">

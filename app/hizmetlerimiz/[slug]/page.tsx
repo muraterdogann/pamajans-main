@@ -1,6 +1,6 @@
 import React from "react";
-import ServicePage from "./servicePage";
-import { getPostData, Post, adjustSchemaForFrontend } from "./action";
+import ServicePage from "../servicePage";
+import { getPostData, Post, adjustSchemaForFrontend } from "../action";
 
 
 interface Metadata {
@@ -102,7 +102,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 const Page = ({params}:{params: {slug:string}})=>{
   return (
-    <div>
+    <div className="h-[110rem]">
       <ServicePage params = {{slug:params.slug}}/>
     </div>
   )

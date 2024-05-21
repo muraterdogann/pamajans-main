@@ -1,41 +1,110 @@
-"use client"
-import React, { useEffect, useState } from "react";
-import { getPostData, Post } from "./action";
-import BlogContent from "@/component/slug-page/blogContent";
+import React from "react";
+import ServicePage from "./servicePage";
+import { getPostData, Post, adjustSchemaForFrontend } from "./action";
 
-type TPageProps = {
-  params: {
-    slug?: string;
+
+interface Metadata {
+  title: string;
+  description: string;
+  icons:any;
+  robots?: string;
+  authors?: { name: string }[];
+  viewport?: {
+    width: string;
+    initialScale: number;
   };
-};
+  openGraph?: {
+    locale: string;
+    type: "article";
+    title: string;
+    description: string;
+    url: string;
+    siteName: string;
+    images?: { url: string }[];
+  };
+  twitter?: {
+    card: "summary_large_image";
+    title: string;
+    description: string;
+  };
+  other?: {
+    "article:publisher": string;
+  };
+  alternates?: {
+    canonical: string;
+  };
+  additionalMetaTags?: { name: string; content: string }[]; // Added property
+  jsonLd?: any;
+}
 
-const ServicePage = ({ params }: TPageProps) => {
-  const [postData, setPostData] = useState<Post | null>(null);
 
-  useEffect(() => {
-    const fetchPostData = async () => {
-      if (params.slug && params.slug.length) {
-        const data = await getPostData(params.slug!);
-        setPostData(data);
-      } else {
-        window.location.href = "/not_found";
-      }
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const postData: Post | null = await getPostData(params.slug);
+
+  if (!postData) {
+    return {
+      title: "Page Not Found",
+      description: "The page you are looking for does not exist.",
+      icons: {
+        icon: '/images/pam-ajans-logo-siyah.svg',
+      },
     };
-    fetchPostData();
-  }, [params.slug]);
+  }
 
-  if (!postData) return null;
+  return {
+    title: postData.yoast_head_json?.title || postData.title.rendered,
+    description: postData.yoast_head_json?.description || "Varsayılan Açıklama",
+    icons: {
+      icon: '/images/pam-ajans-logo-siyah.svg',
+    },
+    robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    authors: [{ name: "pamajans" }],
+    viewport: {
+      width: "device-width",
+      initialScale: 1,
+    },
+    openGraph: {
+      locale: postData.yoast_head_json?.og_locale || "tr_TR",
+      type: (postData.yoast_head_json?.og_type || "article") as "article",
+      title: postData.yoast_head_json?.og_title || postData.title.rendered,
+      description: postData.yoast_head_json?.og_description || "Varsayılan Açıklama",
+      url: `https://pamajans.com/hizmetlerimiz/${postData.slug}`,
+      siteName: "pamajans",
+      images: postData.yoast_head_json?.og_image?.map((image) => ({
+        url: `https://dashboard.pushouse.com${image.url}`,
+      })),
+    },
+    twitter: {
+      card: (postData.yoast_head_json?.twitter_card || "summary_large_image") as "summary_large_image",
+      title: postData.yoast_head_json?.twitter_title || postData.title.rendered,
+      description: postData.yoast_head_json?.twitter_description || "Varsayılan Açıklama",
+    },
+    other: {
+      "article:publisher": "https://www.facebook.com/pamajans/",
+    },
+    alternates: {
+      canonical: `https://pamajans.com/hizmetlerimiz/${postData.slug}`,
+    },
+    additionalMetaTags: [
+      {
+        name: "article:publisher",
+        content: "https://www.facebook.com/pamajans/",
+      },
+    ],
+    jsonLd: adjustSchemaForFrontend(
+      postData.yoast_head_json?.schema,
+      "(dönüştürülecek url)",
+      "pamajans.com"
+    ),
+  };
+}
 
+
+const Page = ({params}:{params: {slug:string}})=>{
   return (
-    <>
-      <section className="relative w-full">
-        <div className="font-display text-jacarta-300 rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
-          <h2>{postData.title.rendered}</h2>
-        </div>
-        <BlogContent content={postData.content?.rendered || ""} />
-      </section>
-    </>
-  );
-};
-
-export default ServicePage;
+    <div>
+      <ServicePage params = {{slug:params.slug}}/>
+    </div>
+  )
+}
+export default Page;

@@ -1,5 +1,4 @@
-// action.ts
-"use server"
+"use server";
 import { reqUrl } from "@/config";
 
 export interface OgImage {
@@ -41,20 +40,24 @@ export interface Post {
 }
 
 export async function getPostData(slug: string): Promise<Post | null> {
-  console.log("getPostData", slug);
-
-  const url = `${reqUrl}/pages?slug=${slug}&_fields=id,slug,title,content,yoast_head,yoast_head_json`;
-
-  const res = await fetch(url);
-  console.log(res.status);
-
+  slug = slug.substring(slug.indexOf("/blog") + "/blog".length);
+  const res = await fetch(
+    `${reqUrl}/posts?slug=${slug}&_fields=id,slug,title,content,yoast_head,yoast_head_json`
+  );
   const posts: Post[] = await res.json();
-
   if (!posts || posts.length === 0) {
     return null;
   }
-
   return posts[0];
+}
+
+export async function path(): Promise<{ params: { slug: string } }[]> {
+  const res = await fetch(`${reqUrl}/posts?_fields=slug`);
+  const posts: { slug: string }[] = await res.json();
+  const paths = posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+  return paths;
 }
 
 export const adjustSchemaForFrontend = (

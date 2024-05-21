@@ -1,4 +1,5 @@
-"use server"
+// action.tsx
+"use server";
 import { reqUrl } from "@/config";
 
 export interface Post {

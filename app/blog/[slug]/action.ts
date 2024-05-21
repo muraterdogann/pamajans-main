@@ -41,14 +41,11 @@ export interface Post {
 
 export async function getPostData(slug: string): Promise<Post | null> {
   console.log(slug);
-  slug = slug.substring(slug.indexOf("/blog") + "/blog".length);
-  // Slug'dan "/blog/" kısmını ayır
-
+  const formattedSlug = slug.substring(slug.indexOf("/blog") + "/blog".length);
   const res = await fetch(
-    `${reqUrl}/posts?slug=${slug}&_fields=id,slug,title,content,yoast_head,yoast_head_json`
+    `${reqUrl}/posts?slug=${formattedSlug}&_fields=id,slug,title,content,yoast_head,yoast_head_json`
   );
   const posts: Post[] = await res.json();
-  console.log("posts", posts);
   if (!posts || posts.length === 0) {
     return null;
   }
@@ -59,7 +56,6 @@ export async function getPostData(slug: string): Promise<Post | null> {
 export async function path(): Promise<{ params: { slug: string } }[]> {
   const res = await fetch(`${reqUrl}/posts?_fields=slug`);
   const posts: { slug: string }[] = await res.json();
-  console.log("path post ", posts);
   const paths = posts.map((post) => ({
     params: { slug: post.slug },
   }));

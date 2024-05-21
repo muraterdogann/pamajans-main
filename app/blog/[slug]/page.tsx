@@ -1,9 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { NextPage } from "next";
-import Head from "next/head";
 import parse, { domToReact, DOMNode } from "html-react-parser";
-import { getPostData, Post, OgImage } from "./action"; // Adjust the import path as needed
+import { getPostData, Post, OgImage } from "./action"; 
 import {
   WPBlockHeading,
   WPBlockParagraph,
@@ -21,7 +20,7 @@ interface TPageProps {
 
 const replaceNodeWithComponent = (domNode: DOMNode) => {
   if (domNode.type === "tag" && domNode.name) {
-    let children = domToReact(domNode.children as unknown as DOMNode[], {
+    const children = domToReact(domNode.children as unknown as DOMNode[], {
       replace: replaceNodeWithComponent,
     });
     switch (domNode.name) {
@@ -55,13 +54,13 @@ const PostPage: NextPage<TPageProps> = ({ params }) => {
   const [postData, setPostData] = useState<Post | null>(null);
 
   useEffect(() => {
-    const slug = window.location.pathname; // Assuming the slug is in the window location
+    const slug = window.location.pathname;
     const fetchPostData = async () => {
       const data = await getPostData(slug);
       setPostData(data);
     };
     fetchPostData();
-  }, []); // Empty dependency array ensures this runs only once
+  }, []);
 
   if (!postData) {
     return <div className="h-[150rem]">Yükleniyor...</div>;
@@ -74,8 +73,8 @@ const PostPage: NextPage<TPageProps> = ({ params }) => {
   const metadata = {
     title: postData.yoast_head_json?.title || postData.title.rendered,
     description: postData.yoast_head_json?.description || "Varsayılan Açıklama",
-    icons:{
-      icon:'/images/pam-ajans-logo-siyah.svg',
+    icons: {
+      icon: '/images/pam-ajans-logo-siyah.svg',
     },
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     author: "pamajans",
@@ -140,7 +139,7 @@ const PostPage: NextPage<TPageProps> = ({ params }) => {
           <h2>{postData.title.rendered}</h2>
         </div>
 
-        <div className="container mt-16 mb-16 ">
+        <div className="container mt-16 mb-16">
           <div>{parsedContent}</div>
         </div>
       </section>

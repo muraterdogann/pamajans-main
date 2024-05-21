@@ -1,4 +1,4 @@
-"use client";  // Bu ifade sadece servicePage.tsx dosyasında gereklidir.
+"use client";  
 import React, { useEffect, useState } from "react";
 import { getPostData, Post } from "./action";
 import BlogContent from "@/component/slug-page/blogContent";

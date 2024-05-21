@@ -9,20 +9,39 @@ import { Viewport } from "next";
 interface LayoutProps {
   children: ReactNode;
 }
-
-
-export const viewport:Viewport={
-  
+export const viewport:Viewport = {
+  width: "device-width",
+  initialScale: 1,
 }
-
 
 export const metadata = {
-  title: 'Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı',
-  description: 'Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.',
+  title: "Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
+  description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
   icons: {
-      icon:'/public/images/pam-ajans-logo-siyah.svg',
-  }
-}
+    icon: '/images/pam-ajans-logo-siyah.svg',
+  },
+  charSet: "utf-8",
+  viewport: viewport,
+  robots: "index,follow",
+  openGraph: {
+    title: "Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
+    description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
+    url: "https://pamajans.com",
+    type: "website",
+    image: "/public/images/pam-ajans-logo-siyah.svg",
+    imageAlt: "Pam Ajans Başarı "
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
+    description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
+    image: "/public/images/pam-ajans-logo-siyah.svg"
+  },
+
+
+  
+};
+
 
 
 export default function Layout({ children }: LayoutProps) {

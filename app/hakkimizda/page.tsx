@@ -2,12 +2,35 @@ import React from "react";
 import Story from "@/component/about/story";
 import Partners from "@/component/partners/partners";
 import Faq from "@/component/faq/faq";
+import { Viewport } from "next";
+
+export const viewport:Viewport = {
+  width: "device-width",
+  initialScale: 1,
+}
 
 export const metadata = {
-  title: 'Hakkımızda | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı',
-  description: 'Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.',
+  title: "Hakkımızda | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
+  description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
   icons: {
     icon: '/images/pam-ajans-logo-siyah.svg',
+  },
+  charSet: "utf-8",
+  viewport: viewport,
+  robots: "index,follow",
+  openGraph: {
+    title: "Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
+    description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
+    url: "https://pamajans.com/hakkimizda",
+    type: "website",
+    image: "/public/images/pam-ajans-logo-siyah.svg",
+    imageAlt: "Pam Ajans Hakkımızda"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hakkımızda | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
+    description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
+    image: "/public/images/pam-ajans-logo-siyah.svg"
   },
 };
 

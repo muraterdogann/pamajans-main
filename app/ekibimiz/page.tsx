@@ -1,13 +1,37 @@
 
 import React from "react";
 import Team from "@/component/about/team";
-export const metadata = {
-  title: 'Ekibimiz | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı',
-  description: 'Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.',
-  icons: {
-      icon:'/images/pam-ajans-logo-siyah.svg',
-  }
+import { Viewport } from "next";
+
+export const viewport:Viewport = {
+  width: "device-width",
+  initialScale: 1,
 }
+
+export const metadata = {
+  title: "Ekibimiz | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
+  description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
+  icons: {
+    icon: '/images/pam-ajans-logo-siyah.svg',
+  },
+  charSet: "utf-8",
+  viewport: viewport,
+  robots: "index,follow",
+  openGraph: {
+    title: "Ekibimiz | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
+    description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
+    url: "https://pamajans.com/ekibimiz",
+    type: "website",
+    image: "/public/images/pam-ajans-logo-siyah.svg",
+    imageAlt: "Pam Ajans Ekibimiz"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ekibimiz | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
+    description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
+    image: "/public/images/pam-ajans-logo-siyah.svg"
+  },
+};
 const Index = () => {
   
 

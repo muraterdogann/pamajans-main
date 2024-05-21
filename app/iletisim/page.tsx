@@ -2,14 +2,37 @@ import React from "react";
 import Address from "@/component/contact/addresess";
 import Image from "next/image";
 import FormToggleButton from "@/component/contact-btn";
+import { Viewport } from "next";
+
+export const viewport:Viewport = {
+  width: "device-width",
+  initialScale: 1,
+}
 
 export const metadata = {
-  title: 'İletişim | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı',
-  description: 'Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.',
+  title: "İletişim | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
+  description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
   icons: {
-      icon:'/images/pam-ajans-logo-siyah.svg',
-  }
-}
+    icon: '/images/pam-ajans-logo-siyah.svg',
+  },
+  charSet: "utf-8",
+  viewport: viewport,
+  robots: "index,follow",
+  openGraph: {
+    title: "İletişim | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
+    description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
+    url: "https://pamajans.com/iletisim",
+    type: "website",
+    image: "/public/images/pam-ajans-logo-siyah.svg",
+    imageAlt: "Pam Ajans İletişim"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "İletişim | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
+    description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
+    image: "/public/images/pam-ajans-logo-siyah.svg"
+  },
+};
 
 const Contact = () => {
   const bgImage = "/images/page-title/knowledge_base_banner.jpg";

@@ -30,7 +30,15 @@ const replaceNodeWithComponent = (domNode: DOMNode) => {
       case "p":
         return <WPBlockParagraph>{children}</WPBlockParagraph>;
       case "figure":
-        return <WPBlockImage>{children}</WPBlockImage>;
+        return (
+          <WPBlockImage>
+            {React.Children.map(children, (child) =>
+              React.isValidElement(child) && child.type === "img"
+                ? React.cloneElement(child as React.ReactElement<any>, { loading: "eager" })
+                : child
+            )}
+          </WPBlockImage>
+        );
       case "ul":
         return <WPBlockList>{children}</WPBlockList>;
       case "li":

@@ -48,7 +48,7 @@ const Testimonial_carousel:React.FC = () => {
                 className="testimonial-item flex flex-wrap gap-5 rounded-2.5xl bg-white p-12 dark:bg-jacarta-700 lg:flex-nowrap   border dark:border-0 border-jacarta-100"
               >
                 <div className="-ml-14 -mt-4 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-[5px] border-white bg-accentPam dark:border-jacarta-700 md:mb-0 md:w-16">
-                  <img src="/images/testimonials/quote.png" alt="quote" />
+                  <Image src="/images/testimonials/quote.webp" width={22} height={19} alt="quote" />
                 </div>
 
                 <div className="mb-4 h-[280px] md:mb-0">

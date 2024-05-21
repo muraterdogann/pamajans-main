@@ -40,6 +40,7 @@ margin: 5% auto;
     height: auto;
     max-width: 100%;
     border-radius: 8px;
+    loading: eager;
   }
 `;
 

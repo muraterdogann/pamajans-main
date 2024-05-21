@@ -1,8 +1,9 @@
+
 "use client";
 import React, { useEffect, useState } from "react";
 import { NextPage } from "next";
 import parse, { domToReact, DOMNode } from "html-react-parser";
-import { getPostData, Post, OgImage } from "./action"; 
+import { getPostData, Post, OgImage } from "./action";
 import {
   WPBlockHeading,
   WPBlockParagraph,

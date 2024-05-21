@@ -1,5 +1,6 @@
 import { footerMenuList, socialIcons } from "@/public/data/footer_data";
 import Image from "next/image";
+import Link from "next/link";
 
 
 
@@ -47,17 +48,18 @@ const Footer: React.FC = () => {
             {/* Socials */}
             <div className="flex space-x-5">
               {socialIcons.map((item) => (
-                <a
+                <Link
                   key={item.id}
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group cursor-pointer"
+                  aria-label={item.label}
                 >
                   <svg className="icon group-hover:fill-accent fill-jacarta-300 h-5 w-5 dark:group-hover:fill-white">
                     <use xlinkHref={`/icons.svg#icon-${item.text}`} />
                   </svg>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

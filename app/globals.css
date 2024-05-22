@@ -447,9 +447,7 @@ html {
 
 	html {
 		-webkit-text-size-adjust: 100%;
-		font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif,
-			BlinkMacSystemFont, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
-			Noto Color Emoji;
+		font-family: CalSans-SemiBold, sans-serif;
 		line-height: 1.5;
 		-moz-tab-size: 4;
 		-o-tab-size: 4;

@@ -32,7 +32,7 @@ const Team: React.FC = () => {
           src={image}
           className="rounded-full mb-6 h-[10rem] w-[10rem] mx-auto lg:h-[14rem] lg:w-[14rem] object-cover grayscale hover:grayscale-0 transition duration-500 in-ease-out"
           alt={name}
-          loading="lazy"
+          loading="eager"
         />
         <h3 className="font-display text-jacarta-700 text-md dark:text-white">
           {name}

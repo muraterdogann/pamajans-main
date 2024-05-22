@@ -38,7 +38,7 @@ const Contact = () => {
     <div>
       <div className="font-display text-jacarta-300 rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8  mb-12 text-center text-5xl"><h2 >İletişim</h2></div>
    
-      <div className="pt-[5.5rem] lg:pt-12">
+      <div className="pt-[1rem] lg:pt-12">
         
           
         

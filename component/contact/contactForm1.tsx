@@ -185,10 +185,10 @@ function handleInputChange(inputName: string) {
           required
           name="agree-to-terms"
           onChange={(e) => setIsChecked(e.target.checked)}
-          className="checked:bg-accent dark:bg-jacarta-600 text-accent border-jacarta-200 focus:ring-accent/20 dark:border-jacarta-500 h-5 w-5 self-start rounded focus:ring-offset-0 cursor-pointer"
+          className="checked:bg-second dark:bg-jacarta-600 text-second border-jacarta-200 focus:ring-second/20 dark:border-jacarta-500 h-5 w-5 self-start rounded focus:ring-offset-0 cursor-pointer"
         />
         <label className="dark:text-jacarta-200 text-sm">
-          <Link href="/tarms" className="text-accent">
+          <Link href="/tarms" className="text-second">
             Hizmet Koşullarını
           </Link>{" "} Kabul Ediyorum
           
@@ -202,7 +202,7 @@ function handleInputChange(inputName: string) {
       )}
       <button
        type="submit"
-       className={`bg-accent shadow-accent-volume hover:bg-accent-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all ${
+       className={`bg-second shadow-second-volume drop-shadow-lg rounded-full py-3 px-8 text-center font-semibold text-white transition-all ${
          !isChecked && "cursor-not-allowed opacity-50"
        }`}
        id="contact-form-submit"

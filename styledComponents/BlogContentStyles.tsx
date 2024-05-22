@@ -36,7 +36,7 @@ letter-spacing: normal !important;
 export const WPBlockImage = styled.figure`
 margin: 5% auto;
 
-  img {
+  Image {
     height: auto;
     max-width: 100%;
     border-radius: 8px;

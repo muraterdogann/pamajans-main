@@ -11,6 +11,7 @@ import {
   WPBlockList,
   WPBlockListItem,
 } from "@/styledComponents/BlogContentStyles";
+import Image from "next/image";
 
 interface TPageProps {
   params: {

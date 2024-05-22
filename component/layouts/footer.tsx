@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
           <div className="col-span-1 md:col-span-4 md:flex md:flex-col md:justify-between">
             {/* Logo */}
             <div className="md:flex md:flex-col md:items-start md:mb-6">
-              <a href="/">
+              <Link href="/" aria-label="pamajans logo">
                 <Image
                   width={130}
                   height={28}
@@ -22,8 +22,8 @@ const Footer: React.FC = () => {
                   className="max-h-5 dark:hidden"
                   alt="Pam Dijital Reklam Ajansı"
                 />
-              </a>
-              <a href="/" className="mb-6">
+              </Link>
+              <Link href="/" className="mb-6" aria-label="pamajans logo">
                 <Image
                   width={130}
                   height={28}
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
                   className="hidden max-h-7 dark:block mb-6"
                   alt="Pam Dijital Reklam Ajansı"
                 />
-              </a>
+              </Link>
             </div>
             {/* Contact Info */}
             <div className="mb-12">

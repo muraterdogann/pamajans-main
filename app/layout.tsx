@@ -4,43 +4,11 @@ import Header04 from "@/component/layouts/header";
 import { ReactNode } from "react";
 import Script from "next/script";
 import "./globals.css"
-import { Viewport } from "next";
+
 
 interface LayoutProps {
   children: ReactNode;
 }
-export const viewport:Viewport = {
-  width: "device-width",
-  initialScale: 1,
-}
-
-export const metadata = {
-  title: "Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
-  description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
-  icons: {
-    icon: '/images/pam-ajans-logo-siyah.svg',
-  },
-  charSet: "utf-8",
-  viewport: viewport,
-  robots: "index,follow",
-  openGraph: {
-    title: "Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
-    description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
-    url: "https://pamajans.com",
-    type: "website",
-    image: "/public/images/pam-ajans-logo-siyah.svg",
-    imageAlt: "Pam Ajans Başarı "
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
-    description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
-    image: "/public/images/pam-ajans-logo-siyah.svg"
-  },
-
-
-  
-};
 
 
 
@@ -50,7 +18,27 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <html lang="tr">
       <head>
-     
+      <title>Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı</title> 
+      <link rel="icon" href="/images/pam-ajans-logo-siyah.svg"/>
+      <meta name="description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin."/>
+      <meta charSet="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="robots" content="index,follow"/>
+  
+      <meta property="og:title" content="Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı"/>
+      <meta property="og:description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin."/>
+      <meta property="og:url" content="https://pamajans.com/"/>
+      <meta property="og:type" content="website"/>
+      <meta property="og:image" content="/images/pam-ajans-logo-siyah.svg"/>
+      <meta property="og:image:alt" content="Pam Ajans"/>
+  
+      <meta name="twitter:card" content="summary_large_image"/>
+      <meta name="twitter:title" content="Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı"/>
+      <meta name="twitter:description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin."/>
+      <meta name="twitter:image" content="/images/pam-ajans-logo-siyah.svg"/>
+
+     {/*  Google analytics */}
+
       <Script id="google-analytics" strategy="afterInteractive" async dangerouslySetInnerHTML={{
           __html: `
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

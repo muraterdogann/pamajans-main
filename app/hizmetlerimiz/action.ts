@@ -45,7 +45,9 @@ export async function getPostData(slug: string): Promise<Post | null> {
 
   const url = `${reqUrl}/pages?slug=${slug}&_fields=id,slug,title,content,yoast_head,yoast_head_json`;
 
-  const res = await fetch(url);
+  const res = await fetch(url,{
+    next:{revalidate:100}
+  });
   console.log(res.status);
 
   const posts: Post[] = await res.json();
@@ -56,15 +58,3 @@ export async function getPostData(slug: string): Promise<Post | null> {
 
   return posts[0];
 }
-
-export const adjustSchemaForFrontend = (
-  schema: any,
-  oldDomain: string,
-  newDomain: string
-): any => {
-  if (!schema) return schema;
-  const schemaString = JSON.stringify(schema);
-  return JSON.parse(
-    schemaString.replace(new RegExp(oldDomain, "g"), newDomain)
-  );
-};

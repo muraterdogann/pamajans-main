@@ -1,43 +1,14 @@
 
 import Link from "next/link";
-import Head from "next/head";
+
 import React from "react";
 import Image from "next/image";
 import { fetchPosts  } from "./action";
-import { Viewport } from "next";
-
-export const viewport:Viewport ={
-  width:"device-width",
-  initialScale:1,
-}
-
-export const metadata = {
-  title: "Başarı Hikayeleri | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
-  description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
-  icons: {
-    icon: '/images/pam-ajans-logo-siyah.svg',
-  },
-  charSet: "utf-8",
-  viewport: viewport,
-  robots: "index,follow",
-  openGraph: {
-    title: "Başarı Hikayeleri | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
-    description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
-    url: "https://pamajans.com/basari-hikayeleri",
-    type: "website",
-    image: "/public/images/pam-ajans-logo-siyah.svg",
-    imageAlt: "PamAjans Başarı Hikayeleri"
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Başarı Hikayeleri | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
-    description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
-    image: "/public/images/pam-ajans-logo-siyah.svg"
-  },
 
 
-  
-};
+
+
+
 
 
 const Blog = async () => {
@@ -45,9 +16,10 @@ const Blog = async () => {
 
   return (
     <>
-      <Head>
-        <title>Pam Ajans Başarı Hikayelerir</title>
+      <head>
+        <title>Başarı Hikayeleri | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı</title>
         <meta name="description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin." />
+        <link rel="icon" href="/images/pam-ajans-logo-siyah.svg"/>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index,follow" />
@@ -57,13 +29,13 @@ const Blog = async () => {
         <meta property="og:url" content="https://pamajans.com/basari-hikayeleri" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/public/images/pam-ajans-logo-siyah.svg" />
-        <meta property="og:image:alt" content="PamAjans Başarı Hikayeleri" />
+        <meta property="og:image:alt" content="Pam Ajans Başarı Hikayeleri" />
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Başarı Hikayeleri | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı" />
         <meta name="twitter:description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin." />
         <meta name="twitter:image" content="/public/images/pam-ajans-logo-siyah.svg" />
-      </Head>
+      </head>
 
       <div className="font-display text-jacarta-300 rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
         <h2>Başarı Hikayeleri</h2>

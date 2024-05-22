@@ -7,7 +7,7 @@ const nextConfig = {
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "*", // Burada belirli bir domain de kullanabilirsiniz
+            value: "*", 
           },
           {
             key: "Access-Control-Allow-Methods",

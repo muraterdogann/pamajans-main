@@ -43,7 +43,9 @@ export async function getPostData(slug: string): Promise<Post | null> {
   console.log(slug);
   const formattedSlug = slug.substring(slug.indexOf("/blog") + "/blog".length);
   const res = await fetch(
-    `${reqUrl}/posts?slug=${formattedSlug}&_fields=id,slug,title,content,yoast_head,yoast_head_json`
+    `${reqUrl}/posts?slug=${formattedSlug}&_fields=id,slug,title,content,yoast_head,yoast_head_json`, {
+      next: {revalidate: 100}
+    }
   );
   const posts: Post[] = await res.json();
   if (!posts || posts.length === 0) {

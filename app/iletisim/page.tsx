@@ -2,42 +2,39 @@ import React from "react";
 import Address from "@/component/contact/addresess";
 import Image from "next/image";
 import FormToggleButton from "@/component/contact-btn";
-import { Viewport } from "next";
 
-export const viewport:Viewport = {
-  width: "device-width",
-  initialScale: 1,
-}
 
-export const metadata = {
-  title: "İletişim | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
-  description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
-  icons: {
-    icon: '/images/pam-ajans-logo-siyah.svg',
-  },
-  charSet: "utf-8",
-  viewport: viewport,
-  robots: "index,follow",
-  openGraph: {
-    title: "İletişim | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
-    description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
-    url: "https://pamajans.com/iletisim",
-    type: "website",
-    image: "/public/images/pam-ajans-logo-siyah.svg",
-    imageAlt: "Pam Ajans İletişim"
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "İletişim | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
-    description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
-    image: "/public/images/pam-ajans-logo-siyah.svg"
-  },
-};
+
 
 const Contact = () => {
-  const bgImage = "/images/page-title/knowledge_base_banner.jpg";
+  
 
   return (
+    <>
+    <head>
+  <title>İletişim | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı</title>
+  <meta name="description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin."/>
+  <meta charSet="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="index,follow"/>
+  
+
+  <meta property="og:title" content="Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı"/>
+  <meta property="og:description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin."/>
+  <meta property="og:url" content="https://pamajans.com/iletisim"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="/images/pam-ajans-logo-siyah.svg"/>
+  <meta property="og:image:alt" content="Pam Ajans İletişim"/>
+  
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="İletişim | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı"/>
+  <meta name="twitter:description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin."/>
+  <meta name="twitter:image" content="/images/pam-ajans-logo-siyah.svg"/>
+  
+
+  <link rel="icon" href="/images/pam-ajans-logo-siyah.svg" type="image/svg+xml"/>
+  </head>
     <div>
       <div className="font-display text-jacarta-300 rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8  mb-12 text-center text-5xl"><h2 >İletişim</h2></div>
    
@@ -122,6 +119,7 @@ const Contact = () => {
         {/* <!-- end contact --> */}
       </div>
     </div>
+    </>
   );
 };
 

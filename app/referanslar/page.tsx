@@ -2,37 +2,7 @@ import React from "react";
 import ref from "@/public/data/referans_data.json"
 import Image from "next/image";
 import Headline from "@/component/wallet-btn/headLine";
-import { Viewport } from "next";
 
-export const viewport:Viewport = {
-  width: "device-width",
-  initialScale: 1,
-}
-
-export const metadata = {
-  title: "Referanslar | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
-  description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
-  icons: {
-    icon: '/images/pam-ajans-logo-siyah.svg',
-  },
-  charSet: "utf-8",
-  viewport: viewport,
-  robots: "index,follow",
-  openGraph: {
-    title: "Referanslar | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
-    description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
-    url: "https://pamajans.com/referanslar",
-    type: "website",
-    image: "/public/images/pam-ajans-logo-siyah.svg",
-    imageAlt: "Pam Ajans Referanslar"
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Referanslar | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
-    description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
-    image: "/public/images/pam-ajans-logo-siyah.svg"
-  },
-};
 
 const Index = () => {
   const list = [];
@@ -49,6 +19,30 @@ const Index = () => {
   }}
   return (
     <>
+    <head>
+  <title>Referanslar | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı</title>
+  <meta name="description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin."/>
+  <meta charSet="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="index,follow"/>
+  
+
+  <meta property="og:title" content="Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı"/>
+  <meta property="og:description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin."/>
+  <meta property="og:url" content="https://pamajans.com/referanslar"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="/images/pam-ajans-logo-siyah.svg"/>
+  <meta property="og:image:alt" content="Pam Ajans Referanslar"/>
+  
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Referanslar | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı"/>
+  <meta name="twitter:description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin."/>
+  <meta name="twitter:image" content="/images/pam-ajans-logo-siyah.svg"/>
+  
+
+  <link rel="icon" href="/images/pam-ajans-logo-siyah.svg" type="image/svg+xml"/>
+  </head>
       <section className="relative lg:pb-48 pb-24 w-full">
         <Headline
           text="Referanslarımız"

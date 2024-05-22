@@ -1,40 +1,33 @@
-import { Viewport } from "next";
-
-export const viewport:Viewport = {
-  width: "device-width",
-  initialScale: 1,
-}
-
-export const metadata = {
-  title: "KVKK | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
-  description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
-  icons: {
-    icon: '/images/pam-ajans-logo-siyah.svg',
-  },
-  charSet: "utf-8",
-  viewport: viewport,
-  robots: "index,follow",
-  openGraph: {
-    title: "KVKK |Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
-    description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
-    url: "https://pamajans.com/kvkk",
-    type: "website",
-    image: "/public/images/pam-ajans-logo-siyah.svg",
-    imageAlt: "Pam Ajans KVKK"
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "KVKK | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı",
-    description: "Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin.",
-    image: "/public/images/pam-ajans-logo-siyah.svg"
-  },
-};
 
 
 const kvkk = () => {
   
     return (
         <>
+        <head>
+  <title>KVKK | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı</title>
+  <meta name="description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin."/>
+  <meta charSet="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="index,follow"/>
+  
+
+  <meta property="og:title" content="Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı"/>
+  <meta property="og:description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin."/>
+  <meta property="og:url" content="https://pamajans.com/kvkk"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="/images/pam-ajans-logo-siyah.svg"/>
+  <meta property="og:image:alt" content="Pam Ajans KVKK"/>
+  
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="KVKK | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı"/>
+  <meta name="twitter:description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin."/>
+  <meta name="twitter:image" content="/images/pam-ajans-logo-siyah.svg"/>
+  
+
+  <link rel="icon" href="/images/pam-ajans-logo-siyah.svg" type="image/svg+xml"/>
+  </head>
         <section className="relative pb-16 bg-[#f5f8fa]">
             <div className="bg-main text-white pt-16 pb-1">
             <h2 className="text-center mb-16 text-2xl font-bold mt-12">Kişisel Verilerin Korunması</h2>

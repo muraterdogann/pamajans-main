@@ -108,6 +108,12 @@ const socialIcons = [
     text: "instagram",
     label:"instagram"
   },
+  {
+    id: 5,
+    href: "https://www.tiktok.com/@pamajans",
+    text: "tiktok",
+    label:"tiktok"
+  }
   
 ];
 

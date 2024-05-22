@@ -10,8 +10,7 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-
-
+export const revalidate = 3600
 export default function Layout({ children }: LayoutProps) {
   const header = <Header04 />;
 

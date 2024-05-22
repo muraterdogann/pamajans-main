@@ -54,7 +54,7 @@ const Blog = async () => {
                           width={370}
                           src={post.featuredImageUrl || ""}
                           alt={post.title.rendered}
-                          className="transition-opacity duration-700 ease-in-out opacity-100 hover:scale-110  "
+                          className="transition-opacity duration-700 ease-in-out opacity-100 hover:scale-110 "
                         />
                       </div>
                     </Link>

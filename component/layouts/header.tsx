@@ -450,7 +450,7 @@ export default function Header04() {
 
         <div className="ml-auto flex justify-center lg:hidden">
           <button
-            className="js-mobile-toggle border-jacarta-100 hover:bg-accent dark:hover:bg-accent focus:bg-accent group ml-2 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-accentPam"
+            className="js-mobile-toggle border-jacarta-100 hover:bg-second focus:bg-second group ml-2 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-accentPam"
             aria-label="open mobile menu"
             onClick={() => setToggle(true)}
           >
@@ -520,7 +520,7 @@ export default function Header04() {
           <li className="js-nav-dropdown group relative">
             <button
               onClick={() => mobileCollapse(hakkimizda.id)}
-              className="dropdown-toggle text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full"
+              className="dropdown-toggle text-jacarta-700 font-display hover:text-second focus:text-second dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full"
             >
               <span
                 className=""
@@ -552,7 +552,7 @@ export default function Header04() {
                   >
 
                     <span
-                      className="font-display text-accent dark:text-accent text-sm dark:text-jacarta-700"
+                      className="font-display dark:text-accent text-sm dark:text-jacarta-700"
                     >
                       {page.name}
                     </span>
@@ -570,7 +570,7 @@ export default function Header04() {
           <li className="js-nav-dropdown nav-item dropdown group relative">
             <button
               onClick={() => mobileCollapse(hizmetlerimiz.id)}
-              className="dropdown-toggle text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full"
+              className="dropdown-toggle text-jacarta-700 font-display hover:text-second focus:text-second flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full"
             >
               <span
                 className=""
@@ -690,6 +690,20 @@ export default function Header04() {
               viewBox="0 0 448 512"
             >
               <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" />
+            </svg>
+          </a>
+          <a className="group" href="https://tr.linkedin.com/company/pam-dijital-reklam-ajans%C4%B1" target="_blank">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fab"
+              data-icon="linkedin"
+              className="group-hover:fill-accent fill-jacarta-300 h-5 w-5 dark:group-hover:fill-white"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 28 28"
+            >
+             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
             </svg>
           </a>
         </div>

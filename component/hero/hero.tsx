@@ -48,14 +48,21 @@ const Hero_6 = () => {
               <p className="mb-8 max-w-xl text-white text-center mx-auto text-sm lg:text-md dark:text-jacarta-200 normal-case">
               Veri ve analitik altyapımız, derinlemesine strateji bilgimiz, ileri teknoloji uygulamalarımız ve markalaşma uzmanlığımızla, işletmelere yüksek performanslı çözümler sunmaktayız. Biz, veriye dayalı stratejik yaklaşımımızla sektörde öne çıkan bir Dijital Performans Ajansıyız.
               </p>
-              <div className="flex space-x-4 mx-auto">
-                <Link href="/iletisim" className="rounded-full bg-second py-3 px-8 text-center font-semibold text-white transition-all hover:bg-white hover:text-second">
+              <div className="flex flex-wrap justify-center space-x-4 mx-auto">
+                <Link
+                  href="/iletisim"
+                  className="w-full sm:w-auto flex-1 flex justify-center items-center rounded-full bg-second py-3 px-8 text-center font-semibold text-white transition-all hover:bg-white hover:text-second"
+                >
                   İletişime Geç
                 </Link>
-                <Link href="/referanslar" className="rounded-full bg-second py-3 px-8 text-center font-semibold text-white transition-all hover:bg-white hover:text-second">
+                <Link
+                  href="/referanslar"
+                  className="w-full sm:w-auto flex-1 flex justify-center items-center rounded-full bg-second py-3 px-8 text-center font-semibold text-white transition-all hover:bg-white hover:text-second"
+                >
                   Referanslarımız
                 </Link>
               </div>
+
             </div>
           </div>
         </div>

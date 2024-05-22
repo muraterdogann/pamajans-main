@@ -103,7 +103,7 @@ const Team: React.FC = () => {
 
             <div className="place-self-center">
               <Headline
-                text="Digital Performances"
+                text="Dijital Perforamns"
                 classes="font-display text-jacarta-700 mb-12 text-center text-3xl dark:text-white mt-16"
               />
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-[1.875rem] lg:grid-cols-4">
@@ -114,7 +114,7 @@ const Team: React.FC = () => {
           <div className="grid item-center">
             <div className="place-self-center">
               <Headline
-                text="Graphic Design"
+                text="Grafik Tasarım"
                 classes="font-display text-jacarta-700 mb-12 text-center text-3xl dark:text-white mt-16"
               />
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-1 md:gap-[1.875rem] lg:grid-cols-1 place-center">
@@ -125,7 +125,7 @@ const Team: React.FC = () => {
           <div className="grid item-center">
             <div className="place-self-center">
               <Headline
-                text="Software"
+                text="Yazılım"
                 classes="font-display text-jacarta-700 mb-12 text-center text-3xl dark:text-white mt-16"
               />
               <div className="grid grid-cols-2 mb-16 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-[1.875rem] lg:grid-cols-3">
@@ -133,15 +133,35 @@ const Team: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="mt-16 flex justify-center ">
-            <Link
-              href="/iletisim"
-              className=" min-w-[150px] rounded-[10px] bg-second text-white py-3 px-8 text-center font-semibold transition-all hover:bg-white hover:text-second"
-            >
-              <span className="font-display text-md dark:text-white">
-                Join Us
-              </span>
-            </Link>
+          <div className="grid item-center">
+            <div className="place-self-center">
+              <Headline text="Bize Katıl" classes="font-display text-jacarta-700 mb-12 text-center text-3xl mt-16"
+              />
+              <div className="grid grid-cols-1 mb-16">
+              <div className="dark:bg-jacarta-700 text-center transition-shadow transform hover:scale-110 rounded-xl overflow-hidden"
+      >
+        <Image
+          width={192}
+          height={192}
+          src='/image/plus.svg'
+          className="rounded-full mb-6 h-[10rem] w-[10rem] mx-auto lg:h-[14rem] lg:w-[14rem] object-cover grayscale hover:grayscale-0 transition duration-500 in-ease-out"
+          alt="Bize Katıl"
+          loading="eager"
+        />
+        <h3 className="font-display text-jacarta-700 text-md dark:text-white">
+          Bize Katıl
+        </h3>
+        <span className="text-jacarta-400 text-2xs font-medium tracking-tight">
+          
+        </span>
+
+       
+      </div>
+
+              </div>
+
+            </div>
+
           </div>
         </div>
       </section>

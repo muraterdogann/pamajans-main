@@ -46,7 +46,7 @@ const Blog = async () => {
             <div className="grid grid-cols-1 gap-[1.875rem] sm:grid-cols-2 md:grid-cols-3">
               {posts.map((post) => (
                 <article key={post.id} className="relative">
-                  <div className="overflow-hidden rounded-2xl transition-shadow hover:shadow-lg">
+                  <div className="overflow-hidden rounded-2xl  transition-shadow hover:shadow-lg">
                     <Link href={`/blog/${post.slug}`}>
                       <div className="">
                         <Image
@@ -54,7 +54,7 @@ const Blog = async () => {
                           width={370}
                           src={post.featuredImageUrl || ""}
                           alt={post.title.rendered}
-                          className="transition-opacity duration-300 ease-in-out opacity-100 hover:scale-125 hover:duration-800 hover:ease-in-out"
+                          className="transition-opacity duration-700 ease-in-out opacity-100 hover:scale-110  "
                         />
                       </div>
                     </Link>

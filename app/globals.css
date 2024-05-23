@@ -7,7 +7,7 @@ html {
 
 @layer base {
 	* {
-		text-transform: capitalize;
+		text-transform: normal-case;
 	}
 	.light body {
 		background: #fff !important;

@@ -4,8 +4,14 @@ import Header04 from "@/component/layouts/header";
 import { ReactNode } from "react";
 import Script from "next/script";
 import "./globals.css"
+import {Poppins} from 'next/font/google'
 
-
+const poppins = Poppins ({
+  weight: ['100','200','300','400','500','600','700','800','900'],
+  subsets: ['latin'],
+  preload: true,
+  variable: '--font-poppins',
+})
 interface LayoutProps {
   children: ReactNode;
 }

@@ -447,7 +447,7 @@ html {
 
 	html {
 		-webkit-text-size-adjust: 100%;
-		font-family: CalSans-SemiBold, sans-serif;
+		font-family: Poppins, sans-serif;
 		line-height: 1.5;
 		-moz-tab-size: 4;
 		-o-tab-size: 4;
@@ -3162,7 +3162,7 @@ html {
 	}
 
 	.font-display {
-		font-family: CalSans-SemiBold, sans-serif;
+		font-family: Poppins, sans-serif;
 	}
 
 	.text-base {
@@ -3836,7 +3836,7 @@ html {
 	.modal-title {
 		--tw-text-opacity: 1;
 		color: rgba(19, 23, 64, var(--tw-text-opacity));
-		font-family: CalSans-SemiBold, sans-serif;
+		font-family: Poppins, sans-serif;
 		font-size: 1.5rem;
 		font-weight: 600;
 		line-height: normal;
@@ -4005,7 +4005,7 @@ html {
 	.article-content > h6 {
 		--tw-text-opacity: 1;
 		color: rgba(19, 23, 64, var(--tw-text-opacity));
-		font-family: CalSans-SemiBold, sans-serif;
+		font-family: Poppins, sans-serif;
 		margin-bottom: 1rem;
 		margin-top: 3rem !important;
 	}
@@ -5921,7 +5921,7 @@ body {
 }
 
 @font-face {
-	font-family: "CalSans-SemiBold";
+	font-family: "CalSans";
 	src: url("../fonts/CalSans-SemiBold.woff") format("woff"), url("../fonts/CalSans-SemiBold.otf") format("opentype");
 	font-weight: 600;
 	font-display: swap;

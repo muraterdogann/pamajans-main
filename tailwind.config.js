@@ -15,8 +15,8 @@ module.exports = {
       xl: "1202px",
     },
     fontFamily: {
-      display: ['"CalSans-SemiBold"', "sans-serif"],
-      body: ['"DM Sans"', "sans-serif"],
+      display: ['"Poppins"', "sans-serif"],
+      body: ['"Poppins"', "sans-serif"],
     },
     container: {
       center: true,

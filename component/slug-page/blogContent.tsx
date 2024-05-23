@@ -1,13 +1,13 @@
-import React from "react";
-import parse, { domToReact, DOMNode } from "html-react-parser";
+"use client";
+import parse, { DOMNode, domToReact } from "html-react-parser";
 import {
   BlogContentWrapper,
-  WPBlockHeading,
-  WPBlockParagraph,
-  WPBlockImage,
   WPBlockButton,
+  WPBlockHeading,
+  WPBlockImage,
   WPBlockList,
   WPBlockListItem,
+  WPBlockParagraph,
 } from "../../styledComponents/BlogContentStyles";
 
 const replaceNodeWithComponent = (domNode: DOMNode) => {

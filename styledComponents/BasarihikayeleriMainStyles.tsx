@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+"use client"
+import styled from "styled-components";
 
 export const TitleSection = styled.div`
   padding-top: 24px;
@@ -8,7 +9,7 @@ export const TitleSection = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-family: 'font-display';
+  font-family: "font-display";
   color: #37c8ae;
   margin-bottom: 6px;
   margin-top: 4rem;

@@ -447,7 +447,7 @@ html {
 
 	html {
 		-webkit-text-size-adjust: 100%;
-		font-family: Montserrat, sans-serif;
+		font-family: Montserrat;
 		line-height: 1.5;
 		-moz-tab-size: 4;
 		-o-tab-size: 4;
@@ -3158,11 +3158,11 @@ html {
 	}
 
 	.font-body {
-		font-family: DM Sans, sans-serif;
+		font-family: Montserrat ;
 	}
 
 	.font-display {
-		font-family: Montserrat, sans-serif;
+		font-family: Montserrat;
 	}
 
 	.text-base {
@@ -3836,7 +3836,7 @@ html {
 	.modal-title {
 		--tw-text-opacity: 1;
 		color: rgba(19, 23, 64, var(--tw-text-opacity));
-		font-family: Montserrat, sans-serif;
+		font-family: Montserrat;
 		font-size: 1.5rem;
 		font-weight: 600;
 		line-height: normal;
@@ -4005,7 +4005,7 @@ html {
 	.article-content > h6 {
 		--tw-text-opacity: 1;
 		color: rgba(19, 23, 64, var(--tw-text-opacity));
-		font-family: Montserrat, sans-serif;
+		font-family: Montserrat;
 		margin-bottom: 1rem;
 		margin-top: 3rem !important;
 	}

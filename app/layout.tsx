@@ -48,7 +48,7 @@ export default function Layout({ children }: LayoutProps) {
           `}}
         />
       </head>
-      <body>
+      <body suppressHydrationWarning={true}>
       {header}
       <main>{children}</main>
       <Footer />

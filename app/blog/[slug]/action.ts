@@ -1,4 +1,5 @@
 "use server";
+import axios from "axios";
 import { reqUrl } from "@/config";
 
 export interface OgImage {
@@ -42,25 +43,39 @@ export interface Post {
 export async function getPostData(slug: string): Promise<Post | null> {
   console.log(slug);
   const formattedSlug = slug.substring(slug.indexOf("/blog") + "/blog".length);
-  const res = await fetch(
-    `${reqUrl}/posts?slug=${formattedSlug}&_fields=id,slug,title,content,yoast_head,yoast_head_json`, {
-      next: {revalidate: 86400}
+  try {
+    const { data: posts } = await axios.get<Post[]>(`${reqUrl}/posts`, {
+      params: {
+        slug: formattedSlug,
+        _fields: "id,slug,title,content,yoast_head,yoast_head_json",
+      },
+      headers: {
+        'Cache-Control': 'max-age=86400'
+      }
+    });
+    if (!posts || posts.length === 0) {
+      return null;
     }
-  );
-  const posts: Post[] = await res.json();
-  if (!posts || posts.length === 0) {
+    return posts[0];
+  } catch (error) {
+    console.error("Error fetching post data:", error);
     return null;
   }
-
-  return posts[0];
 }
 
 export async function path(): Promise<{ params: { slug: string } }[]> {
-  const res = await fetch(`${reqUrl}/posts?_fields=slug`);
-  const posts: { slug: string }[] = await res.json();
-  const paths = posts.map((post) => ({
-    params: { slug: post.slug },
-  }));
-
-  return paths;
+  try {
+    const { data: posts } = await axios.get<{ slug: string }[]>(`${reqUrl}/posts`, {
+      params: {
+        _fields: "slug",
+      },
+    });
+    const paths = posts.map((post) => ({
+      params: { slug: post.slug },
+    }));
+    return paths;
+  } catch (error) {
+    console.error("Error fetching paths:", error);
+    return [];
+  }
 }

@@ -24,7 +24,16 @@ const ServicePage = ({ params }: TPageProps) => {
     fetchPostData();
   }, [params.slug]);
 
-  if (!postData) return null;
+  if (!postData)  return(
+    <section className="bg-[f5f8fa] h-[130rem]">
+   <div className="rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] bg-main pt-32 pb-[5rem]">
+  
+</div>
+<div className="container mt-16 mb-16">
+
+</div>
+</section>
+);
   
 const adjustSchemaForFrontend = (
   schema: any,

@@ -67,7 +67,16 @@ const PostPage: NextPage<TPageProps> = ({ params }) => {
   }, []);
 
   if (!postData) {
-    return <div className="h-[150rem]">Yükleniyor...</div>;
+    return(
+      <section className="bg-[f5f8fa] h-[130rem]">
+     <div className="rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] bg-main pt-32 pb-[5rem]">
+    
+  </div>
+  <div className="container mt-16 mb-16">
+
+  </div>
+  </section>
+  );
   }
 
   const parsedContent = postData.content?.rendered

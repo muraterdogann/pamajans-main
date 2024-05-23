@@ -63,19 +63,3 @@ export async function getPostData(slug: string): Promise<Post | null> {
   }
 }
 
-export async function path(): Promise<{ params: { slug: string } }[]> {
-  try {
-    const { data: posts } = await axios.get<{ slug: string }[]>(`${reqUrl}/posts`, {
-      params: {
-        _fields: "slug",
-      },
-    });
-    const paths = posts.map((post) => ({
-      params: { slug: post.slug },
-    }));
-    return paths;
-  } catch (error) {
-    console.error("Error fetching paths:", error);
-    return [];
-  }
-}

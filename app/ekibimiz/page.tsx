@@ -5,9 +5,6 @@ import Team from "@/component/about/team";
 
 const Index = () => {
   
-
- 
-
   return (
     <>
       <head>

@@ -103,7 +103,7 @@ const Team: React.FC = () => {
 
             <div className="place-self-center">
               <Headline
-                text="Dijital Perforamns"
+                text="Dijital Performans"
                 classes="font-display text-jacarta-700 mb-12 text-center text-3xl dark:text-white mt-16"
               />
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-[1.875rem] lg:grid-cols-4">
@@ -133,18 +133,19 @@ const Team: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="grid item-center">
+          {/* <div className="grid item-center">
             <div className="place-self-center">
               <Headline text="Bize Katıl" classes="font-display text-jacarta-700 mb-12 text-center text-3xl mt-16"
               />
               <div className="grid grid-cols-1 mb-16">
-              <div className="dark:bg-jacarta-700 text-center transition-shadow transform hover:scale-110 rounded-xl overflow-hidden"
+                <Link href="/iletisim">
+              <div className="dark:bg-jacarta-700 border text-center transition-shadow transform hover:scale-110 rounded-xl overflow-hidden"
       >
         <Image
-          width={192}
-          height={192}
-          src='/image/plus.svg'
-          className="rounded-full mb-6 h-[10rem] w-[10rem] mx-auto lg:h-[14rem] lg:w-[14rem] object-cover grayscale hover:grayscale-0 transition duration-500 in-ease-out"
+          width={65}
+          height={65}
+          src='/images/plus.svg'
+          className="rounded-full mb-6 h-[10rem] w-[10rem] mx-auto lg:h-[10rem] lg:w-[10rem] object-cover grayscale hover:grayscale-0 transition duration-500 in-ease-out"
           alt="Bize Katıl"
           loading="eager"
         />
@@ -157,12 +158,12 @@ const Team: React.FC = () => {
 
        
       </div>
-
+</Link>
               </div>
 
             </div>
 
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

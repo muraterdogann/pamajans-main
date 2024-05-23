@@ -1,6 +1,4 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import { NextPage } from "next";
+
 import parse, { domToReact, DOMNode } from "html-react-parser";
 import { getPostData, Post, OgImage } from "./action"; 
 import {
@@ -11,6 +9,7 @@ import {
   WPBlockList,
   WPBlockListItem,
 } from "@/styledComponents/BlogContentStyles";
+import { redirect } from "next/navigation";
 
 interface TPageProps {
   params: {
@@ -47,24 +46,20 @@ const replaceNodeWithComponent = (domNode: DOMNode) => {
   }
   return null;
 };
-
+ 
 const adjustSchemaForFrontend = (schema: any, oldDomain: string, newDomain: string): any => {
   if (!schema) return schema;
   const schemaString = JSON.stringify(schema);
   return JSON.parse(schemaString.replace(new RegExp(oldDomain, "g"), newDomain));
 };
+ 
+ const PostPage= async ({ params }: TPageProps) => {
+  console.log(params.slug)
+  const postData = await getPostData(params.slug!)
+console.log(postData)
+  if (!postData) redirect("/not_found");
 
-const PostPage: NextPage<TPageProps> = ({ params }) => {
-  const [postData, setPostData] = useState<Post | null>(null);
-
-  useEffect(() => {
-    const slug = window.location.pathname;
-    const fetchPostData = async () => {
-      const data = await getPostData(slug);
-      setPostData(data);
-    };
-    fetchPostData();
-  }, []);
+ 
 
   if (!postData) {
     return(
@@ -118,7 +113,7 @@ const PostPage: NextPage<TPageProps> = ({ params }) => {
         </div>
 
         <div className="container mt-16 mb-16">
-          <div>{parsedContent}</div>
+          <div className="normal-case">{parsedContent}</div>
         </div>
       </section>
     </>

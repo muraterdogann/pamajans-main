@@ -51,7 +51,7 @@ export async function getPostData(slug: string): Promise<Post | null> {
   console.log(res.status);
 
   const posts: Post[] = await res.json();
-
+console.log("it's",posts)
   if (!posts || posts.length === 0) {
     return null;
   }

@@ -15,8 +15,8 @@ module.exports = {
       xl: "1202px",
     },
     fontFamily: {
-      display: ['"Poppins"', "sans-serif"],
-      body: ['"Poppins"', "sans-serif"],
+      display: ['"Montserrat"', "sans-serif"],
+      body: ['"Montserrat"', "sans-serif"],
     },
     container: {
       center: true,

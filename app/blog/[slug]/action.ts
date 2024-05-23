@@ -1,5 +1,5 @@
 "use server";
-import axios from "axios";
+
 import { reqUrl } from "@/config";
 
 export interface OgImage {
@@ -42,24 +42,24 @@ export interface Post {
 
 export async function getPostData(slug: string): Promise<Post | null> {
   console.log(slug);
-  const formattedSlug = slug.substring(slug.indexOf("/blog") + "/blog".length);
-  try {
-    const { data: posts } = await axios.get<Post[]>(`${reqUrl}/posts`, {
-      params: {
-        slug: formattedSlug,
-        _fields: "id,slug,title,content,yoast_head,yoast_head_json",
-      },
-      headers: {
-        'Cache-Control': 'max-age=86400'
-      }
-    });
-    if (!posts || posts.length === 0) {
-      return null;
-    }
-    return posts[0];
-  } catch (error) {
-    console.error("Error fetching post data:", error);
+
+  
+  const url = `${reqUrl}/posts?slug=${slug}&_fields=id,slug,title,content,yoast_head,yoast_head_json`;
+
+  const res = await fetch(url,{
+    next:{revalidate: 86400}
+  });
+  console.log(res.status);
+
+  const posts: Post[] = await res.json();
+console.log("it's",posts)
+  if (!posts || posts.length === 0) {
     return null;
   }
+
+  return posts[0];
 }
+
+ 
+
 

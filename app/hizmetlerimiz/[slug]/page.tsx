@@ -9,8 +9,9 @@ type TPageProps = {
 };
 
 const Page = async ({ params }: TPageProps) => {
+  console.log(params)
   const postData = await getPostData(params.slug!);
-
+console.log(postData)
   if (!postData) redirect("/not_found");
 
   const adjustSchemaForFrontend = (

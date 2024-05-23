@@ -46,7 +46,7 @@ const Index = () => {
       <section className="relative lg:pb-48 pb-24 w-full">
         <Headline
           text="Referanslarımız"
-          classes="font-display text-jacarta-300 text-white bg-main rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] pt-32 pb-8 mb-12 text-center text-5xl dark:text-white"
+          classes="font-display drop-shadow-[black_2px_2px_6px] text-jacarta-300 text-white bg-main rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] pt-32 pb-8 mb-12 text-center text-5xl dark:text-white"
         />
         <div className="grid mt-8 lg:grid-cols-5 grid-cols-3 lg:ml-8 ">
           {list}

@@ -3,9 +3,6 @@ import Address from "@/component/contact/addresess";
 import Image from "next/image";
 import FormToggleButton from "@/component/contact-btn";
 
-
-
-
 const Contact = () => {
   
 
@@ -36,13 +33,9 @@ const Contact = () => {
   <link rel="icon" href="/images/pam-ajans-logo-siyah.svg" type="image/svg+xml"/>
   </head>
     <div>
-      <div className="font-display text-jacarta-300 rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8  mb-12 text-center text-5xl"><h2 >İletişim</h2></div>
-   
+      <div className="font-display drop-shadow-[black_2px_2px_6px] text-jacarta-300 rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8  mb-12 text-center text-5xl">
+        <h2 >İletişim</h2></div>
       <div className="pt-[1rem] lg:pt-12">
-        
-          
-        
-
         <section className="dark:bg-jacarta-800 relative py-8 ">
          
           <div className="container">

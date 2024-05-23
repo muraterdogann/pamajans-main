@@ -1,6 +1,6 @@
 
 import parse, { domToReact, DOMNode } from "html-react-parser";
-import { getPostData, Post, OgImage } from "./action"; 
+import { getPostData, OgImage } from "./action"; 
 import {
   WPBlockHeading,
   WPBlockParagraph,
@@ -59,21 +59,6 @@ const adjustSchemaForFrontend = (schema: any, oldDomain: string, newDomain: stri
 console.log(postData)
   if (!postData) redirect("/not_found");
 
- 
-
-  if (!postData) {
-    return(
-      <section className="bg-[f5f8fa] h-[130rem]">
-     <div className="rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] bg-main pt-32 pb-[5rem]">
-    
-  </div>
-  <div className="container mt-16 mb-16">
-
-  </div>
-  </section>
-  );
-  }
-
   const parsedContent = postData.content?.rendered
     ? parse(postData.content.rendered, { replace: replaceNodeWithComponent })
     : null;
@@ -108,7 +93,7 @@ console.log(postData)
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(adjustSchemaForFrontend(postData.yoast_head_json?.schema, 'dashboard.pushouse.com', 'pamajans.com')) }} />
 
       <section className="relative w-full mb-16 bg-[f5f8fa] h-auto">
-        <div className="font-display text-jacarta-300 rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
+        <div className="font-display drop-shadow-[black_2px_2px_6px] text-jacarta-300 rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
           <h2>{postData.title.rendered}</h2>
         </div>
 

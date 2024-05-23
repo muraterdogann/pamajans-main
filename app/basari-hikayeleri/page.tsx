@@ -37,7 +37,7 @@ const Blog = async () => {
         <meta name="twitter:image" content="/public/images/pam-ajans-logo-siyah.svg" />
       </head>
 
-      <div className="font-display text-jacarta-300 rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
+      <div className="font-display drop-shadow-[black_2px_2px_6px] text-jacarta-300 rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
         <h2>Başarı Hikayeleri</h2>
       </div>
       <section className="relative pt-[5.5rem] lg:pt-24 mb-[8rem]">

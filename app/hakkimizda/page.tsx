@@ -35,11 +35,11 @@ const About = () => {
   <link rel="icon" href="/images/pam-ajans-logo-siyah.svg" type="image/svg+xml"/>
   </head>
 
-      <div className="font-display text-jacarta-300 rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
+      <div className="absolute w-full font-display drop-shadow-[black_2px_2px_6px] text-jacarta-300 rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
         <h2>Hakkımızda</h2>
       </div>
 
-      <section className="relative pt-24 bg-[#f5f8fa]">
+      <section className="pt-56 bg-[#f5f8fa]">
         <div className="container mx-auto max-w-2xl py-16 text-center">
           <h1 className="font-display text-jacarta-700 text-[#37c8ae] mb-8 text-4xl font-medium">
             Pam Dijital Reklam Ajansı

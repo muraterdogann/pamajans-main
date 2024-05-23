@@ -31,7 +31,7 @@ const Index = () => {
 
   <link rel="icon" href="/images/pam-ajans-logo-siyah.svg" type="image/svg+xml"/>
   </head>
-      <div className="font-display text-jacarta-300 rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
+      <div className="font-display text-jacarta-300 drop-shadow-[black_2px_2px_6px] rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
         <h2>Ekibimizle Tanışın</h2>
       </div>
       <section className="relative lg:pt-16 lg:pb-24 pb-24">

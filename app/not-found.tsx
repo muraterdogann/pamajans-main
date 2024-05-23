@@ -3,11 +3,11 @@ import Link from "next/link";
 import React from "react";
 
 
-const Error_page = () => {
+const NotFoundPage = () => {
   return (
-    <div>
-      
-      <div className="pt-[5.5rem] lg:pt-24">
+ 
+      <>
+      <div className="bg-main pt-[5.5rem] lg:pt-24 pb-24">
         {/* <!-- 404 --> */}
         <section className="dark:bg-jacarta-800 relative py-16 md:py-24">
           <picture className="pointer-events-none absolute inset-0 -z-10 dark:hidden">
@@ -29,26 +29,25 @@ const Error_page = () => {
                   alt="gradient"
                 />
               </span>
-              <h3 className="text-jacarta-700 font-display mb-6 text-4xl dark:text-white md:text-6xl">
-                Page Not Found!
+              <h3 className="text-white font-display mb-6 text-4xl md:text-6xl">
+                Sayfa Bulunamadı!
               </h3>
-              <p className="dark:text-jacarta-300 mb-12 text-lg leading-normal">
-                Oops! The page you are looking for does not exist. It might have
-                been moved or deleted.
+              <p className="text-white mb-12 text-lg leading-normal">
+                Aradığınız Sayfa Taşınmış veya Silinmiş Olabilir.
               </p>
               <Link
                 href="/"
-                className="bg-accent shadow-accent-volume hover:bg-accent-dark inline-block rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+                className="bg-second shadow-second-volume hover:bg-second-dark inline-block rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
               >
-                Navigate Back Home
+                Anasayfa Geri Dön
               </Link>
             </div>
           </div>
         </section>
         {/* <!-- end 404 --> */}
       </div>
-    </div>
+    </>
   );
 };
 
-export default Error_page;
+export default NotFoundPage;

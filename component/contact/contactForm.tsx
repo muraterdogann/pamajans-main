@@ -25,6 +25,9 @@ const ContactForm: React.FC = () => {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>, type: string) {
     event.preventDefault();
+    if(adPrice ==="0 - 40.000₺"){
+      
+    }
     const formData = new FormData(event.target as HTMLFormElement);
     formData.append('type', type);
     

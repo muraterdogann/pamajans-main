@@ -104,10 +104,10 @@ const Testimonial_carousel:React.FC = () => {
                       <path d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z" />
                     </svg>
                   </div>
-                  <p className="testimonial-desc text-md leading-normal text-jacarta-700 dark:text-white">
+                  <p className="testimonial-desc text-md leading-normal text-jacarta-700 normal-case ">
                     {desc}
                   </p>
-                  <span className="testimonial-name mt-6 block font-display text-sm font-medium text-jacarta-700 dark:text-white">
+                  <span className="testimonial-name mt-6 block font-display text-sm font-medium text-jacarta-700 ">
                     {name}
                   </span>
                   <span className="testimonial-title text-2xs font-medium tracking-tight text-jacarta-400">

@@ -10,7 +10,7 @@ const WalletFeature = () => {
             Hizmetlerimizi Keşfedin
           </h2>
           <p className="text-lg dark:text-jacarta-300 normal-case">
-            İşletmenizin ihtiyaç duyduğu dijital hizmetlerde, profesyonel ekibimizle yanınızdayız. E-ticaret, E-ihracat, reklam yönetimi, web site kurulumu ve entegrasyon hizmetlerimizle işinizi büyütün ve rekabette öne çıkın.
+            İşletmenizin ihtiyaç duyduğu dijital hizmetlerde, profesyonel ekibimizle yanınızdayız. E-ticaret, e-ihracat, reklam yönetimi, web site kurulumu ve entegrasyon hizmetlerimizle işinizi büyütün ve rekabette öne çıkın.
           </p>
         </div>
 

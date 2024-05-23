@@ -24,8 +24,11 @@ const Testimonial:React.FC<TestimonialType> = ({ bg_jacerta }) => {
           <h2 className="mb-6 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-white">
             Mutlu Müşterilerimiz
           </h2>
-          <p className="text-lg dark:text-jacarta-300 normal-case">
-          Başarı öykülerimizle dolu bir yolculuk - siz de bu hikayelerin bir parçası olun.
+          <p className="text-lg  normal-case">
+          Başarı öykülerimizle dolu bir yolculuk.
+          </p>
+          <p className="text-md mt-2 text-jacarta-500 normal-case">
+          Siz de bu hikayelerin bir parçası olun.
           </p>
         </div>
 

@@ -26,7 +26,7 @@ const Faq = () => {
               <h2 className="mb-6 font-display text-3xl font-medium text-jacarta-700 dark:text-white text-second">
                 Sıkça Sorulan Sorular
               </h2>
-              <p className="mb-12 text-lg dark:text-jacarta-300 text-white">
+              <p className="mb-12 text-lg dark:text-jacarta-300 text-white normal-case">
               Tüm merak ettikleriniz burada: Pam Ajansta sorularınıza hızlı ve doğru yanıtları alırsınız, aradığınız cevabı bulamazsanız bizimle iletişime geçmekten çekinmeyin!
               </p>
 

@@ -53,7 +53,7 @@ export default function Header04() {
   /* -------------------------------------------------------------------------- */
   const hakkimizda:Service = {
     id: 1,
-    name: "Hakkimizda",
+    name: "Hakkımızda",
     pages: [
       {
         id: uuidv4(),
@@ -616,8 +616,8 @@ export default function Header04() {
             </ul>
           </li>
           {/* page */}
-          <li className="group relative">
-            <Link href="/referanslar">
+          <li className="group relative " onClick={() => setToggle(false)}>
+            <Link href="/referanslar" >
               <span className="text-jacarta-700 font-display hover:text-accentPam focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full cursor-pointer">
                 <span
                 >
@@ -628,7 +628,7 @@ export default function Header04() {
           </li>
 
           {/* resource */}
-          <li className="group relative">
+          <li className="group relative " onClick={() => setToggle(false)}>
             <Link href="/basari-hikayeleri">
               <span className="text-jacarta-700 font-display hover:text-accentPam focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full cursor-pointer">
                 <span

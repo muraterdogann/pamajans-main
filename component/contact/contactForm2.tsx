@@ -81,7 +81,7 @@ const ContactForm2:React.FC = () => {
           </label>
           <input
             name="namesurname "
-            className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
+            className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
             id="namesurname"
             value={namesurname}
               onChange={(e) => {setNamesurname(e.target.value);handleInputChange("namesurname")}}
@@ -100,7 +100,7 @@ const ContactForm2:React.FC = () => {
           </label>
           <input
             name="email"
-            className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
+            className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
             id="email"
             value={email}
             onChange={(e) => {setEmail(e.target.value);handleInputChange("email")}}
@@ -119,7 +119,7 @@ const ContactForm2:React.FC = () => {
           </label>
           <input
             name="phone"
-            className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
+            className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
             id="phone"
             value={phone}
             onChange={(e) => {setPhone(e.target.value);handleInputChange("phone")}}
@@ -138,7 +138,7 @@ const ContactForm2:React.FC = () => {
         id="careerposition"
         value={careerposition}
         onChange={(e) => {setCareerposition(e.target.value);handleInputChange("careerposition")}}
-        className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
+        className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
     
      >
        <option value="" >Lütfen bir seçim yapınız. </option>
@@ -164,7 +164,7 @@ const ContactForm2:React.FC = () => {
         id="title"
         value={title}
         onChange={(e) => {setTitle(e.target.value);handleInputChange("title")}}
-        className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
+        className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
     
      >
       
@@ -193,7 +193,7 @@ const ContactForm2:React.FC = () => {
         </label>
         <textarea
           id="message"
-          className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
+          className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
          
           name="message"
           value={message}

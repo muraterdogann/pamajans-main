@@ -136,13 +136,7 @@ html {
 	}
 
 	/* DM Sans Bold Italic */
-	@font-face {
-		font-family: "DM Sans";
-		src: url("../fonts/DM_Sans/DMSans-BoldItalic.ttf") format("truetype");
-		font-weight: 700;
-		font-display: swap;
-		font-style: italic;
-	}
+	
 
 	/* clears the ‘X’ from Internet Explorer */
 	input[type="search"]::-ms-clear {
@@ -5919,50 +5913,20 @@ body {
 .swiper-slide-shadow-right {
 	opacity: 0 !important;
 }
-
 @font-face {
-	font-family: "CalSans";
-	src: url("../fonts/CalSans-SemiBold.woff") format("woff"), url("../fonts/CalSans-SemiBold.otf") format("opentype");
-	font-weight: 600;
-	font-display: swap;
+	font-family: 'Montserrat';
 	font-style: normal;
-}
-
-/* DM Sans Regular */
-@font-face {
-	font-family: "DM Sans";
-	src: url("../fonts/DM_Sans/DMSans-Regular.ttf") format("truetype");
-	font-weight: 400;
-	font-display: swap;
-	font-style: normal;
-}
-
-/* DM Sans Italic */
-@font-face {
-	font-family: "DM Sans";
-	src: url("../fonts/DM_Sans/DMSans-Italic.ttf") format("truetype");
-	font-weight: 400;
-	font-display: swap;
+	font-weight: 100 900;
+	src: url('/fonts/Montserrat/Montserrat-VariableFont-wght.ttf') format('truetype');
+  }
+  
+  @font-face {
+	font-family: 'Montserrat';
 	font-style: italic;
-}
-
-/* DM Sans Medium */
-@font-face {
-	font-family: "DM Sans";
-	src: url("../fonts/DM_Sans/DMSans-Medium.ttf") format("truetype");
-	font-weight: 500;
-	font-display: swap;
-	font-style: normal;
-}
-
-/* DM Sans Bold */
-@font-face {
-	font-family: "DM Sans";
-	src: url("../fonts/DM_Sans/DMSans-Bold.ttf") format("truetype");
-	font-weight: 700;
-	font-display: swap;
-	font-style: normal;
-}
+	font-weight: 100 900;
+	src: url('/fonts/Montserrat/Montserrat-Italic-VariableFont-wght.ttf') format('truetype');
+  }
+  
 
 .nav-link--style-3:after {
 	content: var(--tw-content);

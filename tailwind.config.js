@@ -15,8 +15,8 @@ module.exports = {
       xl: "1202px",
     },
     fontFamily: {
-      display: ['"Montserrat"'],
-      body: ['"Montserrat"'],
+      display: ['Montserrat','sans-serif'],
+      body: ['Montserrat','sans-serif'],
     },
     container: {
       center: true,

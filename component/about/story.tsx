@@ -40,7 +40,7 @@ const Story = () => {
 
             {/* <!-- Info --> */}
             <div className="py-15 lg:w-[45%] lg:pl-16">
-              <h2 className="text-jacarta-700 font-display mb-8 text-2xl dark:text-white">
+              <h2 className="text-jacarta-700 font-display mt-12 sm:mt-0 mb-8 text-2xl dark:text-white">
                 Pam Ajans Kimdir?
                 <br />{" "}
               </h2>

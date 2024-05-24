@@ -13,7 +13,7 @@ const Partners = () => {
   ];
 
   return (
-    <div className="dark:bg-jacarta-900 ">
+    <div className="dark:bg-jacarta-900 bg-[#] ">
       <div className="container">
         <h2 className="mt-5 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-white">Partnerlerimiz</h2>
         <div className="flex flex-wrap justify-center py-8 ">

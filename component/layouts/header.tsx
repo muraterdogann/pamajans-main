@@ -53,7 +53,7 @@ export default function Header04() {
   /* -------------------------------------------------------------------------- */
   const hakkimizda:Service = {
     id: 1,
-    name: "hakkimizda",
+    name: "Hakkimizda",
     pages: [
       {
         id: uuidv4(),
@@ -75,7 +75,7 @@ export default function Header04() {
 
   const hizmetlerimiz = {
     id: 3,
-    name: "hizmetlerimiz",
+    name: "Hizmetlerimiz",
     pages: [
       {
         id: uuidv4(),
@@ -107,7 +107,7 @@ export default function Header04() {
       },
       {
         id: uuidv4(),
-        name: "whatsapp-geri-bildirim ",
+        name: "Whatsapp Geri Bildirim ",
         path: "/hizmetlerimiz/whatsapp-geri-bildirim",
         icon: (
           <svg
@@ -319,7 +319,7 @@ export default function Header04() {
             <ul className="flex flex-col justify-center lg:flex-row">
               {/* hakkimizda */}
               <li className="js-nav-dropdown group relative">
-                <button className="dropdown-toggle text-white font-display hover:text-accentPam focus:text-accentPam dark:hover:text-accentPam dark:focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full">
+                <button className="dropdown-toggle text-white font-display hover:text-accentPam focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full">
                   <span
     
                    
@@ -477,12 +477,13 @@ export default function Header04() {
         }`}
     >
       <div className="t-0 dark:bg-jacarta-800 fixed left-0 z-10 flex w-full items-center justify-between bg-white p-6 lg:hidden">
+        <Link href="/">
         <div className="dark:hidden">
           <Image
             src={Logo}
             height={28}
             width={130}
-            alt="Xhibiter | NFT Marketplace"
+            alt="Pam Ajans Logo"
             className="max-h-7 h-auto "
           />
         </div>
@@ -492,10 +493,10 @@ export default function Header04() {
             src={WhiteLogo}
             height={28}
             width={130}
-            alt="Xhibiter | NFT Marketplace"
+            alt="Pam Ajans Logo"
           />
         </div>
-
+        </Link>
         <button
           className="js-mobile-close border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent ml-2 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
           onClick={() => setToggle(false)}

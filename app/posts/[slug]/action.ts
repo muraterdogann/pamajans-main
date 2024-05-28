@@ -1,5 +1,5 @@
-// action.ts
-"use server"
+"use server";
+
 import { reqUrl } from "@/config";
 
 export interface OgImage {
@@ -41,9 +41,10 @@ export interface Post {
 }
 
 export async function getPostData(slug: string): Promise<Post | null> {
-  console.log("getPostData", slug);
+  
 
-  const url = `${reqUrl}/pages?slug=${slug}&_fields=id,slug,title,content,yoast_head,yoast_head_json`;
+  
+  const url = `${reqUrl}/posts?slug=${slug}&_fields=id,slug,title,content,yoast_head,yoast_head_json&categories=4`;
 console.log(url)
   const res = await fetch(url,{
     next:{revalidate: 86400}
@@ -58,3 +59,7 @@ console.log("it's",posts)
 
   return posts[0];
 }
+
+ 
+
+

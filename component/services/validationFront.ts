@@ -10,7 +10,7 @@ const commonFields = {
 export const contactForm2Schema = z.object({
   ...commonFields,
   title: z.enum(["Reklam Uzmanı","Grafik Tasarımcı","Front-end Devoloper","Back-end Devoloper","Full-stack Devoloper"],{message:"Lütfen bir seçim yapınız."}),
-  phone: z.string().max(20,{message:"Lütfen geçerli bir telefon numarası giriniz."}).min(1,{message:"Lütfen telefon numaranızı giriniz."}),
+  phone: z.string().max(10,{message:"Lütfen geçerli bir telefon numarası giriniz."}).min(1,{message:"Lütfen telefon numaranızı giriniz."}),
   careerposition: z.enum(["Zorunlu Staj","Gönüllü Staj","Junior","Intermediate","Senior"],{message:"Lütfen bir seçim yapınız."}),
 });
 

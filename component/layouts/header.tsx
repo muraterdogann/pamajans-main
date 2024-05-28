@@ -434,6 +434,16 @@ export default function Header04() {
                   </span>
                 </Link>
               </li>
+              <li className="group relative">
+                <Link href="/blog">
+                  <span className="text-white font-display hover:text-accentPam focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full cursor-pointer dark:hover:text-accentPam dark:focus:text-accentPam">
+                    <span
+                    >
+                      Blog
+                    </span>
+                  </span>
+                </Link>
+              </li>
             </ul>
           </nav>
           {/* End menu for desktop */}
@@ -634,6 +644,16 @@ export default function Header04() {
                 <span
                 >
                   Başarı Hikayeleri
+                </span>
+              </span>
+            </Link>
+          </li>
+          <li className="group relative " onClick={() => setToggle(false)}>
+            <Link href="/blog">
+              <span className="text-jacarta-700 font-display hover:text-accentPam focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full cursor-pointer">
+                <span
+                >
+                  Blog
                 </span>
               </span>
             </Link>

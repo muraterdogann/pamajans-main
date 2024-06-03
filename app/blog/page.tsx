@@ -41,37 +41,40 @@ const Blog = async () => {
         <h2>Blog</h2>
       </div>
       <section className="relative pt-[5.5rem] lg:pt-24 mb-[8rem]">
-        <div className="py-16 md:py-12">
-          <div className="container">
-            <div className="grid grid-cols-1 gap-[1.875rem] sm:grid-cols-2 md:grid-cols-3">
-              {posts.map((post) => (
-                <article key={post.id} className="relative">
-                  <div className="overflow-hidden rounded-2xl  transition-shadow hover:shadow-lg">
-                    <Link href={`/blog/${post.slug}`}>
-                      <div className="">
-                        <Image
-                          height={600}
-                          width={370}
-                          src={post.featuredImageUrl || ""}
-                          alt={post.title.rendered}
-                          className="transition-opacity duration-700 ease-in-out opacity-100 hover:scale-110 "
-                        />
-                      </div>
-                    </Link>
-                    <div className="absolute inset-x-0 bottom-0 h-[8rem] pb-2 bg-black rounded-b-lg bg-opacity-50 text-white p-4 opacity-100 hover:opacity-0 transition-opacity duration-300 ease-in-out backdrop-filter backdrop-blur-lg">
-                      <h2 className="font-display text-xl mb-2">
-                        
-                          {post.title.rendered}
-                        
-                      </h2>
-                    </div>
+  <div className="py-16 md:py-12">
+    <div className="container">
+      <div className="grid grid-cols-1 gap-[1.875rem] sm:grid-cols-2 md:grid-cols-3">
+        {posts.map((post) => (
+          <article key={post.id} className="relative">
+            <div className="overflow-hidden rounded-xl transition-shadow hover:shadow-lg">
+              <Link href={`/blog/${post.slug}`}>
+                <div className="relative group">
+                  <Image
+                    height={600}
+                    width={370}
+                    src={post.featuredImageUrl || ""}
+                    alt={post.title.rendered}
+                    className="transition-transform duration-700 ease-in-out transform group-hover:scale-110"
+                  />
+                  <div className="relative bottom-0 left-0 right-0 h-44 bg-transparent backdrop-blur-md transition-all duration-500 ease-in-out group-hover:h-9 p-4 ">
+                    <h2 className="font-display text-xl mb-2 text-black">
+                      {post.title.rendered}
+                    </h2>
+                    <span className="text-black text-sm text-center absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2 group-hover:hidden">PAM AJANS 29/05/2024</span>
                   </div>
-                </article>
-              ))}
+                  <div className="absolute bottom-0 left-0 right-0 w-3/5 place-self-center border-b-2 border-[#B8C0C6] group-hover:hidden"></div>
+                  
+                </div>
+              </Link>
             </div>
-          </div>
-        </div>
-      </section>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+
     </>
   );
 };

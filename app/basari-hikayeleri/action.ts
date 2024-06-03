@@ -17,9 +17,9 @@ export const fetchPosts = async (): Promise<Post[]> => {
   try {
     const res = await fetch(`${reqUrl}/posts?_fields=id,slug,title,content,featured_media&per_page=40&categories=4`,
       {next: {revalidate:86400}}
-    );
+    );console.log(res)
     const fetchedPosts: Post[] = await res.json();
-
+    console.log(fetchedPosts)
     const processedPosts = await Promise.all(fetchedPosts.map(async (post) => {
       if (post.featured_media) {
         const mediaRes = await fetch(`${reqUrl}/media/${post.featured_media}`, {

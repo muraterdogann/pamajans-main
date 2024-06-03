@@ -99,7 +99,7 @@ const Contact = () => {
             
               
            
-            <div className=" mt-20 flex flex-wrap justify-center m-10">
+            <div className=" mt-20 flex flex-wrap justify-center m-10mpkpmpmp">
             <Address />
              
             </div>

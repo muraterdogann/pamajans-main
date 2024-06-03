@@ -2,7 +2,6 @@
 "use server";
 import { reqUrl } from "@/config";
 
-import { Revalidate } from "next/dist/server/lib/revalidate";
 
 export interface Post {
   featured_media: number | null;
@@ -15,7 +14,7 @@ export interface Post {
 
 export const fetchPosts = async (): Promise<Post[]> => {
   try {
-    const res = await fetch(`${reqUrl}/posts?_fields=id,slug,title,content,featured_media&per_page=40`,
+    const res = await fetch(`${reqUrl}/posts?_fields=id,slug,title,content,featured_media&per_page=40&categories=7`,
       {next: {revalidate:86400}}
     );
     const fetchedPosts: Post[] = await res.json();

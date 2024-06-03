@@ -44,7 +44,7 @@ export async function getPostData(slug: string): Promise<Post | null> {
   
 
   
-  const url = `${reqUrl}/posts?slug=${slug}&_fields=id,slug,title,content,yoast_head,yoast_head_json`;
+  const url = `${reqUrl}/posts?slug=${slug}&_fields=id,slug,title,content,yoast_head,yoast_head_json&categories=7`;
 console.log(url)
   const res = await fetch(url,{
     next:{revalidate: 86400}

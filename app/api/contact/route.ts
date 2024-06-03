@@ -1,5 +1,5 @@
-import { NextResponse, NextRequest } from 'next/server';
 import { generateMailOptions } from '@/component/services/switch-case';
+import { NextResponse, NextRequest } from 'next/server';
 import { rateLimit } from '@/app/api/ratelimit/rateLimit';
 import { createTransporter } from '@/component/services/transporter';
 import { Transporter } from 'nodemailer';

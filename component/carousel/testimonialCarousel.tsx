@@ -51,7 +51,7 @@ const Testimonial_carousel:React.FC = () => {
                   <Image src="/images/testimonials/quote.webp" width={22} height={19} alt="quote" />
                 </div>
 
-                <div className="mb-4 h-[280px] md:mb-0">
+                <div className="mb-4 h-[400px] sm:h-[280px] md:mb-0">
                   <div className="-ml-1 mb-3 flex">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

@@ -45,7 +45,7 @@ const ContactForm: React.FC = () => {
       });
 
       const responseMessage = await submitContactForm(formData, type);
-
+     
       router.push("/iletisim?gonderildi")
       console.log(responseMessage);
 
@@ -228,7 +228,7 @@ const ContactForm: React.FC = () => {
       )}
       <button
         type="submit"
-          className={`bg-second shadow-second-volume drop-shadow-lg rounded-full py-3 px-8 text-center font-semibold text-white transition-all ${
+          className={`esra bg-second shadow-second-volume drop-shadow-lg rounded-full py-3 px-8 text-center font-semibold text-white transition-all ${
             !isChecked && "cursor-not-allowed opacity-50"
           }`}
           id="contact-form-submit"

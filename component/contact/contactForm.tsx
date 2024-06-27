@@ -217,7 +217,7 @@ const ContactForm: React.FC = () => {
         
       </div>
       {formStatus === "success" && (
-        <div className="text-green font-bold mb-4 normal-case select-none" >Bizimle iletişime geçtiğiniz için teşekkür ederiz</div>
+        <div className="text-green font-bold mb-4 normal-case select-none esra" >Bizimle iletişime geçtiğiniz için teşekkür ederiz</div>
       )}
       {formStatus === "error" && (
         <div className="text-red font-bold mb-4 normal-case select-none" >Lütfen daha sonra tekrar deneyiniz</div>

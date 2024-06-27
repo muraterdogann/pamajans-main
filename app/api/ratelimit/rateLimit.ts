@@ -1,6 +1,6 @@
 import kv from './kv';
 
-const requestPeriod = 5; // Belirli bir süre içinde izin verilen maksimum istek sayısı
+const requestPeriod = 32; // Belirli bir süre içinde izin verilen maksimum istek sayısı
 const limitPeriod = 600000; // 10 dakika = 600000 milisaniye
 
 export async function rateLimit(request: any): Promise<boolean> {

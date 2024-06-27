@@ -3,6 +3,7 @@ import Link from "next/link";
 import { submitContactForm } from "../services/contactService";
 import { contactFormSchema } from "../services/validationFront";
 import { ZodError } from "zod";
+import {useRouter} from "next/navigation";
 
 const ContactForm: React.FC = () => {
   const [namesurname, setNamesurname] = useState<string>("");
@@ -22,7 +23,7 @@ const ContactForm: React.FC = () => {
     
   });
   const [isChecked, setIsChecked] = useState(false);
-
+  const router = useRouter();
   async function handleSubmit(event: FormEvent<HTMLFormElement>, type: string) {
     event.preventDefault();
     if(adPrice ==="0 - 40.000₺"){
@@ -45,8 +46,7 @@ const ContactForm: React.FC = () => {
 
       const responseMessage = await submitContactForm(formData, type);
 
-      const x = document.getElementById('contact-form');
-      x?.setAttribute("class","esra");
+      router.push("/iletisim?gonderildi")
       console.log(responseMessage);
 
       setFormStatus("success");
@@ -220,7 +220,8 @@ const ContactForm: React.FC = () => {
         
       </div>
       {formStatus === "success" && (
-        <div className="text-green font-bold mb-4 normal-case select-none esra" >Bizimle iletişime geçtiğiniz için teşekkür ederiz</div>
+        <div className="text-green font-bold mb-4 normal-case select-none esra" >Bizimle iletişime geçtiğiniz için teşekkür ederiz
+        </div>
       )}
       {formStatus === "error" && (
         <div className="text-red font-bold mb-4 normal-case select-none" >Lütfen daha sonra tekrar deneyiniz</div>

@@ -44,6 +44,9 @@ const ContactForm: React.FC = () => {
       });
 
       const responseMessage = await submitContactForm(formData, type);
+
+      const x = document.getElementById('contact-form');
+      x?.setAttribute("class","esra");
       console.log(responseMessage);
 
       setFormStatus("success");

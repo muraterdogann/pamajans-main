@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { team_data } from "@/public/data/team_data";
-import Headline from "../wallet-btn/headLine";
+import Headline from "../headline/headLine";
 import Image from "next/image";
 import Head from "next/head";
 

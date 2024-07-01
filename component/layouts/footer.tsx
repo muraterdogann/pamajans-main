@@ -35,13 +35,13 @@ const Footer: React.FC = () => {
             </div>
             {/* Contact Info */}
             <div className="mb-12">
-              <p className="dark:text-jacarta-300 text-sm mb-1">
+              <p className=" text-sm mb-1">
                 Mustafa Kemal Mah., 2131. Sk. No: 28/2, 06510 Çankaya/Ankara
               </p>
-              <p className="dark:text-jacarta-300 text-sm mb-1">
+              <p className=" text-sm mb-1">
                 Telefon: PAM (0850 305 77 26) (Hafta içi 10:00 - 18:00)
               </p>
-              <p className="dark:text-jacarta-300 text-sm mb-1">
+              <p className=" text-sm mb-1">
                 <a href="mailto:info@pamajans.com" className="normal-case">Mail: info@pamajans.com</a>
               </p>
             </div>
@@ -70,12 +70,12 @@ const Footer: React.FC = () => {
                   <h3 className="font-display text-jacarta-700 mb-6 text-sm dark:text-white">
                     {single.title}
                   </h3>
-                  <ul className="dark:text-jacarta-300 space-y-1">
+                  <ul className=" space-y-1">
                     {single.list.map((item) => (
                       <li key={item.id}>
                         <a
                           href={item.href}
-                          className="hover:text-accent dark:text-jacarta-300 text-sm mb-1"
+                          className="hover:text-accent  text-sm mb-1"
                         >
                           {item.text}
                         </a>

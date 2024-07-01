@@ -1,10 +1,11 @@
+import Head from "next/head";
 
 
 const kvkk = () => {
   
     return (
         <>
-        <head>
+        <Head>
   <title>KVKK | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı</title>
   <meta name="description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin."/>
   <meta charSet="utf-8"/>
@@ -27,7 +28,7 @@ const kvkk = () => {
   
 
   <link rel="icon" href="/images/pam-ajans-logo-siyah.svg" type="image/svg+xml"/>
-  </head>
+  </Head>
         <section className="relative pb-16 bg-[#f5f8fa]">
             <div className="bg-main drop-shadow-[black_2px_2px_6px] text-white pt-16 pb-1">
             <h2 className="text-center mb-16 text-2xl font-bold mt-12">Kişisel Verilerin Korunması</h2>

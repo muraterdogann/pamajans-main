@@ -66,7 +66,7 @@ const SingleWalletFeature = () => {
             <h3 className="mb-4 font-display text-lg text-jacarta-700 dark:text-white h-[49.78px]">
               {item.title}
             </h3>
-            <p className="dark:text-jacarta-300 normal-case h-[120px]">{item.text}</p>
+            <p className=" normal-case h-[120px]">{item.text}</p>
           </div>
         </Link>
       ))}

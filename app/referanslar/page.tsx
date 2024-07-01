@@ -1,7 +1,8 @@
 import React from "react";
 import ref from "@/public/data/referans_data.json"
 import Image from "next/image";
-import Headline from "@/component/wallet-btn/headLine";
+import Headline from "@/component/headline/headLine";
+import Head from "next/head";
 
 
 const Index = () => {
@@ -19,7 +20,7 @@ const Index = () => {
   }}
   return (
     <>
-    <head>
+    <Head>
   <title>Referanslar | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı</title>
   <meta name="description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin."/>
   <meta charSet="utf-8"/>
@@ -42,11 +43,11 @@ const Index = () => {
   
 
   <link rel="icon" href="/images/pam-ajans-logo-siyah.svg" type="image/svg+xml"/>
-  </head>
+  </Head>
       <section className="relative lg:pb-48 pb-24 w-full">
         <Headline
           text="Referanslarımız"
-          classes="font-display drop-shadow-[black_2px_2px_6px] text-jacarta-300 text-white bg-main rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] pt-32 pb-8 mb-12 text-center text-5xl dark:text-white"
+          classes="font-display drop-shadow-[black_2px_2px_6px] text-white bg-main rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] pt-32 pb-8 mb-12 text-center text-5xl dark:text-white"
         />
         <div className="grid mt-8 lg:grid-cols-5 grid-cols-3 lg:ml-8 ">
           {list}

@@ -4,11 +4,7 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { fetchPosts  } from "./action";
-
-
-
-
-
+import Head from "next/head";
 
 
 const Blog = async () => {
@@ -16,7 +12,7 @@ const Blog = async () => {
 
   return (
     <>
-      <head>
+      <Head>
         <title>Başarı Hikayeleri | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı</title>
         <meta name="description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin." />
         <link rel="icon" href="/images/pam-ajans-logo-siyah.svg"/>
@@ -35,9 +31,9 @@ const Blog = async () => {
         <meta name="twitter:title" content="Başarı Hikayeleri | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı" />
         <meta name="twitter:description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin." />
         <meta name="twitter:image" content="/public/images/pam-ajans-logo-siyah.svg" />
-      </head>
+      </Head>
 
-      <div className="font-display drop-shadow-[black_2px_2px_6px] text-jacarta-300 rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
+      <div className="font-display drop-shadow-[black_2px_2px_6px] rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
         <h2>Başarı Hikayeleri</h2>
       </div>
       <section className="relative pt-[5.5rem] lg:pt-24 mb-[8rem]">

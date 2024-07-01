@@ -2,6 +2,7 @@ import React from "react";
 import Story from "@/component/about/story";
 import Partners from "@/component/partners/partners";
 import Faq from "@/component/faq/faq";
+import Head from "next/head";
 
 
 
@@ -10,7 +11,7 @@ import Faq from "@/component/faq/faq";
 const About = () => {
   return (
     <>
-    <head>
+    <Head>
   <title>Hakkımızda | Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı</title>
   <meta name="description" content="Dijital reklam ajansı olarak markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ve danışmanlık ajansı olarak, dijital dünyada başarınız için yanınızdayız. Sektördeki en iyi hizmeti almak için Pam Ajans ile iletişime geçin."/>
   <meta charSet="utf-8"/>
@@ -33,9 +34,9 @@ const About = () => {
   
 
   <link rel="icon" href="/images/pam-ajans-logo-siyah.svg" type="image/svg+xml"/>
-  </head>
+  </Head>
 
-      <div className="absolute w-full font-display drop-shadow-[black_2px_2px_6px] text-jacarta-300 rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
+      <div className="absolute w-full font-display drop-shadow-[black_2px_2px_6px] rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl ">
         <h2>Hakkımızda</h2>
       </div>
 

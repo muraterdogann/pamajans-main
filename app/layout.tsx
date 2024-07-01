@@ -3,17 +3,21 @@ import Footer from "@/component/layouts/footer";
 import Header04 from "@/component/layouts/header";
 import { ReactNode } from "react";
 import Script from "next/script";
+import {Montserrat} from "next/font/google"
 import "./globals.css"
 interface LayoutProps {
   children: ReactNode;
 }
+
+const montserrat = Montserrat({
+   subsets: ['latin'],weight:['100','200','300','400','500','600','700','800','900']})
 
 export const revalidate = 86400
 export default function Layout({ children }: LayoutProps) {
   const header = <Header04 />;
 
   return (
-    <html lang="tr">
+    <html lang="tr" className={montserrat.className}>
       <head>
       <title>Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı</title> 
       <link rel="icon" href="/images/pam-ajans-logo-siyah.svg"/>
@@ -48,7 +52,7 @@ export default function Layout({ children }: LayoutProps) {
 
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/>
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
+      {/* <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/> */}
       </head>
       <body suppressHydrationWarning={true}>
       {header}

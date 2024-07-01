@@ -10,6 +10,7 @@ import {
   WPBlockListItem,
 } from "@/styledComponents/BlogContentStyles";
 import { redirect } from "next/navigation";
+import Head from "next/head";
 
 interface TPageProps {
   params: {
@@ -65,6 +66,7 @@ console.log(postData)
 
   return (
     <>
+    <Head>
       <title>{postData.yoast_head_json?.title || postData.title.rendered}</title>
       <meta name="description" content={postData.yoast_head_json?.description || 'Varsayılan Açıklama'} />
       <link rel="icon" href="/images/pam-ajans-logo-siyah.webp" type="image/webp" />
@@ -91,9 +93,9 @@ console.log(postData)
       <meta name="twitter:description" content={postData.yoast_head_json?.twitter_description || 'Varsayılan Açıklama'} />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(adjustSchemaForFrontend(postData.yoast_head_json?.schema, 'dashboard.pushouse.com', 'pamajans.com')) }} />
-
+      </Head>
       <section className="relative w-full mb-16 bg-[f5f8fa] h-auto">
-        <div className="font-display drop-shadow-[black_2px_2px_6px] text-jacarta-300 rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
+        <div className="font-display drop-shadow-[black_2px_2px_6px] rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
           <h2>{postData.title.rendered}</h2>
         </div>
 

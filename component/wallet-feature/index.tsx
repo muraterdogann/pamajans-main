@@ -9,7 +9,7 @@ const WalletFeature = () => {
           <h2 className="mb-6 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-white">
             Hizmetlerimizi Keşfedin
           </h2>
-          <p className="text-lg dark:text-jacarta-300 normal-case">
+          <p className="text-lg  normal-case">
             İşletmenizin ihtiyaç duyduğu dijital hizmetlerde, profesyonel ekibimizle yanınızdayız. E-ticaret, e-ihracat, reklam yönetimi, web site kurulumu ve entegrasyon hizmetlerimizle işinizi büyütün ve rekabette öne çıkın.
           </p>
         </div>
@@ -18,7 +18,7 @@ const WalletFeature = () => {
           <SingleWalletFeature />
         </div>
 
-        <p className="mt-4 text-center text-lg dark:text-jacarta-300">
+        <p className="mt-4 text-center text-lg ">
           Hizmetlerimiz ile ilgileniyorsan.{" "}
           <Link href="/iletisim" className="text-accent">
             Hemen İletişime Geç

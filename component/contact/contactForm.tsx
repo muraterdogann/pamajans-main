@@ -116,7 +116,7 @@ const ContactForm: React.FC = () => {
             onChange={(e) => {setEmail(e.target.value);handleInputChange("email")}}
             type="email"
             
-            className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
+            className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600  w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
           />
           {errors.email && <span className="text-red text-xs">{errors.email}</span>}
         </div>
@@ -134,7 +134,7 @@ const ContactForm: React.FC = () => {
             onChange={(e) => {setWebsite(e.target.value);handleInputChange("website")}}
             type="text"
             
-            className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
+            className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600  w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
           />
           {errors.website && <span className="text-red text-xs">{errors.website}</span>}
         </div>
@@ -152,7 +152,7 @@ const ContactForm: React.FC = () => {
             onChange={(e) => {setSocialMedia(e.target.value);handleInputChange("socialMedia")}}
             type="text"
             
-            className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
+            className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600  w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
           />
           {errors.socialMedia && <span className="text-red text-xs">{errors.socialMedia}</span>}
         </div>
@@ -169,7 +169,7 @@ const ContactForm: React.FC = () => {
             value={adPrice}
             onChange={(e) => {setAdPrice(e.target.value);handleInputChange("adPrice")}}
             
-            className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
+            className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600  w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
           >
             <option value="">Lütfen bir miktar seçiniz</option>
             <option value="0 - 40.000₺">0 - 40.000₺</option>
@@ -197,7 +197,7 @@ const ContactForm: React.FC = () => {
           name="message"
           rows={5}
           
-          className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
+          className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600  w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
         ></textarea>
         {errors.message && <span className="text-red text-xs">{errors.message}</span>}
       </div>

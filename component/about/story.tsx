@@ -45,7 +45,7 @@ const Story = () => {
                 <br />{" "}
               </h2>
 
-              <p className="dark:text-jacarta-300 mb-8 text-md leading-normal normal-case">
+              <p className=" mb-8 text-md leading-normal normal-case">
                 2016’dan bugüne edindiğimiz yurt içi ve yurt dışı tecrübelerimiz ile markanızın tüm ihtiyaçlarını karşılıyoruz. Sizin için dijital dünyanın zorlu yollarındaki tüm çukurları kapatıyor, yolculuğunuza eşlik ediyoruz.
 
                 E-ticaret stratejilerimizi geliştirmek için dünyadaki tüm gelişme ve trendleri yakından takip ediyoruz. Markanıza özel stratejileri oluşturuyor yüksek başarı için gereken çalışmayı gerçekleştiriyoruz. Uzun yıllardır dijital dünya ile içli dışlıyız. Markalarımızın a’dan z’ye tüm süreçlerini yönetiyor ve marka bilinirliğini arttırıyoruz. İşimizi severek yapıyor, bu mutluluğumuzu hem markanıza hem de size yansıtıyoruz.
@@ -66,7 +66,7 @@ const Story = () => {
                     <span className="font-display text-jacarta-700 block text-xl dark:text-white">
                       86%
                     </span>
-                    <span className="dark:text-jacarta-300 text-jacarta-700">
+                    <span className=" text-jacarta-700">
                       Profil Ziyareti
                     </span>
                   </div>
@@ -86,7 +86,7 @@ const Story = () => {
                     <span className="font-display text-jacarta-700 block text-xl dark:text-white">
                       27%
                     </span>
-                    <span className="dark:text-jacarta-300 text-jacarta-700">
+                    <span className=" text-jacarta-700">
                       Abone Sayısı
                     </span>
                   </div>
@@ -106,7 +106,7 @@ const Story = () => {
                     <span className="font-display text-jacarta-700 block text-xl dark:text-white">
                       19%
                     </span>
-                    <span className="dark:text-jacarta-300 text-jacarta-700">
+                    <span className=" text-jacarta-700">
                       Takipçi Sayısı
                     </span>
                   </div>

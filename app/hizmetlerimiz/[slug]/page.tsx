@@ -1,6 +1,7 @@
 import BlogContent from "@/component/slug-page/blogContent";
 import { redirect } from "next/navigation";
 import { getPostData, OgImage } from "../action";
+import Head from "next/head";
 
 type TPageProps = {
   params: {
@@ -29,7 +30,7 @@ console.log(postData)
   return (
     <>
       {" "}
-      <head>
+      <Head>
         <title>
           {postData.yoast_head_json?.title || postData.title.rendered}
         </title>
@@ -131,9 +132,9 @@ console.log(postData)
             ),
           }}
         />
-      </head>
+      </Head>
       <section className="relative w-full">
-        <div className="font-display drop-shadow-[black_2px_2px_6px] text-jacarta-300 rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
+        <div className="font-display drop-shadow-[black_2px_2px_6px] rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
           <h2 className="capitalize" >{postData.title.rendered}</h2>
         </div>
         <BlogContent content={postData.content?.rendered || ""} />

@@ -14,7 +14,7 @@ const TrustedPartner = () => {
             <h2 className="mb-6 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-white text-second">
               Başarıya Ulaşmak İçin Doğru Adres
             </h2>
-            <p className="text-sm lg:text-md dark:text-jacarta-300 font-semibold text-base normal-case ">
+            <p className="text-sm lg:text-md  font-semibold text-base normal-case ">
               {"7 yıllık deneyim, 300'den fazla memnun müşteri. Dijital reklamda sizi zirveye taşımaya hazırız. Satışlarınızı en az üç katına çıkarmak için bizimle iletişime geçin. Potansiyelinizi keşfedin."}
             </p>
           </div>

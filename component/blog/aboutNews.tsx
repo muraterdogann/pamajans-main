@@ -1,4 +1,4 @@
-import Headline from "../wallet-btn/headLine";
+import Headline from "../headline/headLine";
 import Image from "next/image";
 import News_item from "./newsItem";
 import { news_data } from "@/public/data/news_data";

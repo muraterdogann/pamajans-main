@@ -20,7 +20,7 @@ const Cta = () => {
 								<h2 className="mb-4 font-display text-2xl text-jacarta-700 dark:text-white sm:text-3xl">
 									Mutlu markalarımızın arasına katıl
 								</h2>
-								<p className="mb-8 text-lg dark:text-jacarta-300">
+								<p className="mb-8 text-lg ">
 								Markanın potansiyelini ortaya çıkaralım ve büyüme hedeflerine ulaşmanı sağlayacak stratejiler sunalım. İletişime geç, başarının kapılarını birlikte açalım.
 								</p>
 								<Link href="/iletisim" className="inline-block rounded-[10px] bg-second text-white py-3 px-8 text-center font-semibold text-white transition-all hover:bg-main">

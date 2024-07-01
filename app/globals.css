@@ -5913,11 +5913,11 @@ body {
 .swiper-slide-shadow-right {
 	opacity: 0 !important;
 }
-@font-face {
+/* @font-face {
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 100 900;
-	src: url('/fonts/Montserrat/Montserrat-VariableFont-wght.ttf') format('truetype');
+	src: local("Montserrat"), url('/fonts/Montserrat/Montserrat-VariableFont-wght.ttf') format('truetype');
   }
   
   @font-face {
@@ -5926,7 +5926,7 @@ body {
 	font-weight: 100 900;
 	src: url('/fonts/Montserrat/Montserrat-Italic-VariableFont-wght.ttf') format('truetype');
   }
-  
+   */
 
 .nav-link--style-3:after {
 	content: var(--tw-content);

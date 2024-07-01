@@ -19,7 +19,7 @@ const Testimonial:React.FC<TestimonialType> = ({ bg_jacerta }) => {
           : "testimonial-section bg-[#f5f8fa] py-24"
       }
     >
-      <div className="container relative overflow-hidden xl:left-[calc((100vw-1202px)/4)] xl:max-w-[calc(1202px+((100vw-1202px)/2))] xl:pr-[calc((100vw-1176px)/2)]">
+      <div className="container relative overflow-hidden">
         <div className="mx-auto mb-12 max-w-sm text-center">
           <h2 className="mb-6 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-white">
             Mutlu Müşterilerimiz

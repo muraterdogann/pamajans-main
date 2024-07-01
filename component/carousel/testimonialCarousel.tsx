@@ -45,9 +45,9 @@ const Testimonial_carousel:React.FC = () => {
           return (
             <SwiperSlide className="text-white" key={id}>
               <div
-                className="testimonial-item flex flex-wrap gap-5 rounded-2.5xl bg-white p-12 dark:bg-jacarta-700 lg:flex-nowrap   border dark:border-0 border-jacarta-100"
+                className="testimonial-item flex flex-wrap gap-5 rounded-2.5xl bg-white p-12 dark:bg-jacarta-700 lg:flex-nowrap  border border-jacarta-100"
               >
-                <div className="-ml-14 -mt-4 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-[5px] border-white bg-accentPam dark:border-jacarta-700 md:mb-0 md:w-16">
+                <div className="-ml-14 -mt-4 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-[5px] border-white bg-accentPam md:mb-0 md:w-16">
                   <Image src="/images/testimonials/quote.webp" width={22} height={19} alt="quote" />
                 </div>
 

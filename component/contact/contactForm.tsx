@@ -1,14 +1,25 @@
 "use client"
 import Link from "next/link";
 import React, { FormEvent, useState } from "react";
-import axios from 'axios';
-import { ZodError } from "zod";
-import { contactFormSchema } from "../services/validationFront";
+import { ZodError, z } from "zod";
 import { useRouter } from "next/navigation";
+
+// Define the schema with Turkish phone number validation
+const extendedContactFormSchema = z.object({
+  namesurname: z.string().min(1, { message: "Ad Soyad gerekli" }),
+  email: z.string().email({ message: "Geçerli bir email adresi girin" }),
+  phone: z
+    .string()
+    .regex(/^0\d{10}$/, { message: "Geçerli bir telefon numarası girin" }),
+  socialMedia: z.string().optional(),
+  adPrice: z.string().min(1, { message: "Bütçe gerekli" }),
+  message: z.string().min(100, { message: "Mesajınız en az 100 harf içermeli, lütfen daha fazla detay verin." }),
+});
 
 const ContactForm: React.FC = () => {
   const [namesurname, setNamesurname] = useState<string>("");
   const [email, setEmail] = useState<string>("");
+  const [phone, setPhone] = useState<string>("0"); // Initialize phone state with "0"
   const [website, setWebsite] = useState<string>("");
   const [socialMedia, setSocialMedia] = useState<string>("");
   const [adPrice, setAdPrice] = useState<string>("");
@@ -17,6 +28,7 @@ const ContactForm: React.FC = () => {
   const [errors, setErrors] = useState<Record<string, string | null>>({
     namesurname: null,
     email: null,
+    phone: null,
     adPrice: null,
     socialMedia: null,
     website: null,
@@ -31,9 +43,10 @@ const ContactForm: React.FC = () => {
     formData.append('type', type);
   
     try {
-      const validatedData = contactFormSchema.parse({
+      const validatedData = extendedContactFormSchema.parse({
         namesurname,
         email,
+        phone,
         website,
         adPrice,
         socialMedia,
@@ -49,6 +62,7 @@ const ContactForm: React.FC = () => {
           email: email,
           attributes: {
             NAMESURNAME: namesurname,
+            PHONE: phone,
             WEBSITE: website,
             SOCIALMEDIA: socialMedia,
             BUDGET: adPrice,
@@ -72,6 +86,7 @@ const ContactForm: React.FC = () => {
       setMessage("");
       setAdPrice("");
       setNamesurname("");
+      setPhone("0"); // Reset phone field to "0"
       setWebsite("");
       setSocialMedia("");
       router.push("/iletisim?gonderildi");
@@ -80,7 +95,7 @@ const ContactForm: React.FC = () => {
       setFormStatus("error");
       if (err instanceof ZodError) {
         const newErrors: Record<string, string | null> = {};
-        err.errors.forEach(error => {
+        (err as ZodError).errors.forEach((error: any) => {
           newErrors[error.path[0]] = error.message;
         });
         setErrors(newErrors);
@@ -115,7 +130,7 @@ const ContactForm: React.FC = () => {
           </div>
           <div className="mb-6">
             <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white" htmlFor="email">
-              Email<span className="text-red">*</span>
+              E-posta<span className="text-red">*</span>
             </label>
             <input
               name="email"
@@ -128,8 +143,24 @@ const ContactForm: React.FC = () => {
             {errors.email && <span className="text-red text-xs">{errors.email}</span>}
           </div>
           <div className="mb-6">
+            <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white" htmlFor="phone">
+              Telefon - 05xx xxx xx xx<span className="text-red">*</span>
+            </label>
+            <input
+              name="phone"
+              id="phone"
+              value={phone}
+              onChange={(e) => { setPhone(e.target.value); handleInputChange("phone") }}
+              type="text"
+              maxLength={11} // Set max length to 11
+              pattern="^0\d{10}$" // Add pattern for validation
+              className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600  w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
+            />
+            {errors.phone && <span className="text-red text-xs">{errors.phone}</span>}
+          </div>
+          <div className="mb-6">
             <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white" htmlFor="website">
-              Web Siteniz<span className="text-red">*</span>
+              Web Siteniz
             </label>
             <input
               name="website"
@@ -143,7 +174,7 @@ const ContactForm: React.FC = () => {
           </div>
           <div className="mb-6">
             <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white" htmlFor="socialMedia">
-              Sosyal Medya Adınız<span className="text-red">*</span>
+              Sosyal Medya Hesabınız
             </label>
             <input
               name="socialMedia"

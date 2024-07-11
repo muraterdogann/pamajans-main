@@ -2,15 +2,26 @@
 import Link from "next/link";
 import React, { FormEvent, useState } from "react";
 import axios from 'axios';
-import { ZodError } from "zod";
-import { contactForm1Schema } from "../services/validationFront";
+import { ZodError, z } from "zod";
+import { useRouter } from "next/navigation";
+
+const contactForm1Schema = z.object({
+  namesurname: z.string().min(1, { message: "Ad Soyad gerekli" }),
+  email: z.string().email({ message: "Geçerli bir email adresi girin" }),
+  phone: z
+    .string()
+    .regex(/^0\d{10}$/, { message: "Geçerli bir telefon numarası girin" }),
+  businesname: z.string().min(1, { message: "Şirket Adı gerekli" }),
+  position: z.string().min(1, { message: "Pozisyon gerekli" }),
+  message: z.string().min(100, { message: "Mesaj en az 100 harf içermeli" }),
+});
+
 
 const ContactForm: React.FC = () => {
-
   const [namesurname, setNamesurname] = useState("");
   const [email, setEmail] = useState("");
   const [businesname, setBusinesname] = useState("");
-  const [phone, setPhone] = useState("");
+  const [phone, setPhone] = useState("0"); // Initialize phone state with "0"
   const [position, setPosition] = useState("");
   const [message, setMessage] = useState("");
   const [formStatus, setFormStatus] = useState<"success" | "error" | "">("");
@@ -23,10 +34,11 @@ const ContactForm: React.FC = () => {
     message: null,
   });
   const [isChecked, setIsChecked] = useState(false);
-  
+  const router = useRouter();
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>, type: string) {
     event.preventDefault();
-  
+
     try {
       const validatedData = contactForm1Schema.parse({
         namesurname,
@@ -36,12 +48,12 @@ const ContactForm: React.FC = () => {
         businesname,
         message,
       });
-  
+
       // Ad ve soyad ayrımı yapma
       const nameParts = namesurname.split(' ');
       const firstName = nameParts[0] || '';
       const lastName = nameParts.slice(1).join(' ') || '';
-  
+
       const response = await fetch('/api/submitContactForm', {
         method: 'POST',
         headers: {
@@ -49,24 +61,24 @@ const ContactForm: React.FC = () => {
         },
         body: JSON.stringify({
           email: email,
-          attributes: { 
-            NAMESURNAME: namesurname, 
-            BUSINESNAME: businesname, 
-            PHONE: phone, 
-            POSITION: position, 
-            MESSAGE: message 
+          attributes: {
+            NAMESURNAME: namesurname,
+            BUSINESNAME: businesname,
+            PHONE: phone,
+            POSITION: position,
+            MESSAGE: message
           },
           listIds: [4],
           updateEnabled: false,
         }),
       });
-  
+
       if (!response.ok) {
         const errorData = await response.json();
         console.error('Error response data:', errorData);
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-  
+
       const data = await response.json();
       console.log(data.message);
       setFormStatus("success");
@@ -74,7 +86,7 @@ const ContactForm: React.FC = () => {
       setMessage("");
       setBusinesname("");
       setNamesurname("");
-      setPhone("");
+      setPhone("0"); // Reset phone field to "0"
       setPosition("");
     } catch (err) {
       console.error(err);
@@ -88,7 +100,7 @@ const ContactForm: React.FC = () => {
       }
     }
   }
-  
+
 
   const type = 'business';
   function handleInputChange(inputName: string) {
@@ -114,10 +126,10 @@ const ContactForm: React.FC = () => {
           />
           {errors.namesurname && <span className="text-red text-xs">{errors.namesurname}</span>}
         </div>
-        
+
         <div className="mb-6 ">
           <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white">
-            Email<span className="text-red">*</span>
+            E-posta<span className="text-red">*</span>
           </label>
           <input
             name="email"
@@ -129,7 +141,7 @@ const ContactForm: React.FC = () => {
           />
           {errors.email && <span className="text-red text-xs">{errors.email}</span>}
         </div>
-        
+
         <div className="mb-6 ">
           <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white">
             Şirket Adı<span className="text-red">*</span>
@@ -144,7 +156,7 @@ const ContactForm: React.FC = () => {
           />
           {errors.businesname && <span className="text-red text-xs">{errors.businesname}</span>}
         </div>
-        
+
         <div className="mb-6 ">
           <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white">
             Telefon <span className="text-red">*</span>
@@ -156,10 +168,12 @@ const ContactForm: React.FC = () => {
             value={phone}
             onChange={(e) => { setPhone(e.target.value); handleInputChange("phone") }}
             type="tel"
+            maxLength={11} // Set max length to 11
+            pattern="^0\d{10}$" // Add pattern for validation
           />
           {errors.phone && <span className="text-red text-xs">{errors.phone}</span>}
         </div>
-        
+
         <div className="mb-6 ">
           <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white">
             Şirketteki Pozisyonunuz <span className="text-red">*</span>
@@ -174,7 +188,7 @@ const ContactForm: React.FC = () => {
           />
           {errors.position && <span className="text-red text-xs">{errors.position}</span>}
         </div>
-        
+
       </div>
 
       <div className="mb-4">
@@ -188,6 +202,7 @@ const ContactForm: React.FC = () => {
           value={message}
           onChange={(e) => { setMessage(e.target.value); handleInputChange("message") }}
           rows={5}
+          minLength={100}
         ></textarea>
         {errors.message && <span className="text-red text-xs">{errors.message}</span>}
       </div>
@@ -205,7 +220,7 @@ const ContactForm: React.FC = () => {
           <Link href="/tarms" className="text-second">
             Hizmet Koşullarını
           </Link>{" "} Kabul Ediyorum
-          
+
         </label>
       </div>
       {formStatus === "success" && (
@@ -215,12 +230,11 @@ const ContactForm: React.FC = () => {
         <div className="text-red font-bold mb-4 normal-case select-none" >Lütfen daha sonra tekrar deneyiniz</div>
       )}
       <button
-       type="submit"
-       className={`bg-second shadow-second-volume drop-shadow-lg rounded-full py-3 px-8 text-center font-semibold text-white transition-all ${
-         !isChecked && "cursor-not-allowed opacity-50"
-       }`}
-       id="contact-form-submit"
-       disabled={!isChecked}
+        type="submit"
+        className={`bg-second shadow-second-volume drop-shadow-lg rounded-full py-3 px-8 text-center font-semibold text-white transition-all ${!isChecked && "cursor-not-allowed opacity-50"
+          }`}
+        id="contact-form-submit"
+        disabled={!isChecked}
       >
         Submit
       </button>

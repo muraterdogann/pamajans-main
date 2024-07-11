@@ -1,13 +1,23 @@
 import Link from "next/link";
 import React, { useState, FormEvent } from "react";
-import { contactForm2Schema } from "../services/validationFront";
-import { ZodError } from "zod";
+import { ZodError, z } from "zod";
+
+const contactForm2Schema = z.object({
+  namesurname: z.string().min(1, { message: "Ad Soyad gerekli" }),
+  email: z.string().email({ message: "Geçerli bir email adresi girin" }),
+  phone: z
+    .string()
+    .regex(/^0\d{10}$/, { message: "Geçerli bir telefon numarası girin" }),
+  title: z.string().min(1, { message: "Ünvan gerekli" }),
+  careerposition: z.string().min(1, { message: "Pozisyon gerekli" }),
+  message: z.string().min(100, { message: "Mesaj en az 100 harf içermeli" }),
+});
 
 const ContactForm2: React.FC = () => {
   const [namesurname, setNamesurname] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [title, setTitle] = useState<string>("");
-  const [phone, setPhone] = useState<string>("");
+  const [phone, setPhone] = useState<string>("0"); // Initialize phone with "0"
   const [careerposition, setCareerposition] = useState<string>("");
   const [message, setMessage] = useState<string>("");
   const [formStatus, setFormStatus] = useState<"success" | "error" | "">("");
@@ -21,10 +31,10 @@ const ContactForm2: React.FC = () => {
   });
   const [isChecked, setIsChecked] = useState(false);
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>, type: string) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>, type?: string) {
     event.preventDefault();
     const formData = new FormData(event.target as HTMLFormElement);
-    formData.append('type', type);
+    formData.append('type', type || "");
 
     try {
       const validatedData = contactForm2Schema.parse({
@@ -68,7 +78,7 @@ const ContactForm2: React.FC = () => {
       setMessage("");
       setTitle("");
       setNamesurname("");
-      setPhone("");
+      setPhone("0"); // Reset phone to "0"
       setCareerposition("");
     } catch (err) {
       console.error(err);
@@ -118,7 +128,7 @@ const ContactForm2: React.FC = () => {
             id="email"
             value={email}
             onChange={(e) => { setEmail(e.target.value); handleInputChange("email") }}
-            type="text"
+            type="email"
           />
           {errors.email && <span className="text-red text-xs">{errors.email}</span>}
         </div>
@@ -133,6 +143,8 @@ const ContactForm2: React.FC = () => {
             value={phone}
             onChange={(e) => { setPhone(e.target.value); handleInputChange("phone") }}
             type="text"
+            maxLength={11} // Set max length to 11
+            pattern="^0\d{10}$" // Add pattern for validation
           />
           {errors.phone && <span className="text-red text-xs">{errors.phone}</span>}
         </div>
@@ -140,7 +152,7 @@ const ContactForm2: React.FC = () => {
           <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white" htmlFor="adPrice">
             Pozisyon<span className="text-red">*</span>
           </label>
-          <select 
+          <select
             name="careerposition"
             id="careerposition"
             value={careerposition}
@@ -160,7 +172,7 @@ const ContactForm2: React.FC = () => {
           <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white" htmlFor="title">
             Ünvan<span className="text-red">*</span>
           </label>
-          <select 
+          <select
             name="title"
             id="title"
             value={title}
@@ -188,6 +200,7 @@ const ContactForm2: React.FC = () => {
           value={message}
           onChange={(e) => { setMessage(e.target.value); handleInputChange("message") }}
           rows={5}
+          minLength={100} // Add minLength attribute for client-side validation
         ></textarea>
         {errors.message && <span className="text-red text-xs">{errors.message}</span>}
       </div>
@@ -214,9 +227,8 @@ const ContactForm2: React.FC = () => {
       )}
       <button
         type="submit"
-        className={`bg-second shadow-second-volume drop-shadow-lg rounded-full py-3 px-8 text-center font-semibold text-white transition-all ${
-          !isChecked && "cursor-not-allowed opacity-50"
-        }`}
+        className={`bg-second shadow-second-volume drop-shadow-lg rounded-full py-3 px-8 text-center font-semibold text-white transition-all ${!isChecked && "cursor-not-allowed opacity-50"
+          }`}
         id="contact-form-submit"
         disabled={!isChecked}
       >

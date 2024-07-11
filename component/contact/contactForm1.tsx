@@ -1,11 +1,11 @@
 "use client"
 import Link from "next/link";
-import React, { FormEvent,useState } from "react";
-import { submitContactForm } from "../services/contactService";
+import React, { FormEvent, useState } from "react";
+import axios from 'axios';
 import { ZodError } from "zod";
 import { contactForm1Schema } from "../services/validationFront";
 
-const ContactForm:React.FC = () => {
+const ContactForm: React.FC = () => {
 
   const [namesurname, setNamesurname] = useState("");
   const [email, setEmail] = useState("");
@@ -23,11 +23,9 @@ const ContactForm:React.FC = () => {
     message: null,
   });
   const [isChecked, setIsChecked] = useState(false);
-
+  
   async function handleSubmit(event: FormEvent<HTMLFormElement>, type: string) {
     event.preventDefault();
-    const formData = new FormData(event.target as HTMLFormElement);
-    formData.append('type', type);
   
     try {
       const validatedData = contactForm1Schema.parse({
@@ -38,47 +36,72 @@ const ContactForm:React.FC = () => {
         businesname,
         message,
       });
-
-      const responseMessage = await submitContactForm(formData, type);
-      console.log(responseMessage);
+  
+      // Ad ve soyad ayrımı yapma
+      const nameParts = namesurname.split(' ');
+      const firstName = nameParts[0] || '';
+      const lastName = nameParts.slice(1).join(' ') || '';
+  
+      const response = await fetch('/api/submitContactForm', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          attributes: { 
+            NAMESURNAME: namesurname, 
+            BUSINESNAME: businesname, 
+            PHONE: phone, 
+            POSITION: position, 
+            MESSAGE: message 
+          },
+          listIds: [4],
+          updateEnabled: false,
+        }),
+      });
+  
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error('Error response data:', errorData);
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+  
+      const data = await response.json();
+      console.log(data.message);
       setFormStatus("success");
-    setEmail("");
-    setMessage("");
-    setBusinesname("");
-    setNamesurname("");
-    setPhone("");
-    setPosition("");
-  } catch (err) {
+      setEmail("");
+      setMessage("");
+      setBusinesname("");
+      setNamesurname("");
+      setPhone("");
+      setPosition("");
+    } catch (err) {
       console.error(err);
       setFormStatus("error");
       if (err instanceof ZodError) {
-        // Zod hatası varsa
         const newErrors: Record<string, string | null> = {};
         err.errors.forEach(error => {
-          // Her bir hatayı ilgili input alanına göre atanacak hale getir
           newErrors[error.path[0]] = error.message;
         });
         setErrors(newErrors);
       }
     }
-}
+  }
+  
 
-   
-
-
-const type = 'business';
-function handleInputChange(inputName: string) {
-  const newErrors = { ...errors };
-  newErrors[inputName] = null;
-  setErrors(newErrors);
-}
-
+  const type = 'business';
+  function handleInputChange(inputName: string) {
+    const newErrors = { ...errors };
+    newErrors[inputName] = null;
+    setErrors(newErrors);
+  }
 
   return (
     <form id="contact-form" onSubmit={(event) => handleSubmit(event, type)}>
-    <div className="block">
+      <div className="block">
         <div className="mb-6 ">
-        <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white">
+          <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white">
             Ad Soyad<span className="text-red">*</span>
           </label>
           <input
@@ -86,15 +109,12 @@ function handleInputChange(inputName: string) {
             className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600  w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
             id="namesurname"
             value={namesurname}
-            onChange={(e) => {setNamesurname(e.target.value);handleInputChange("namesurname")}}
+            onChange={(e) => { setNamesurname(e.target.value); handleInputChange("namesurname") }}
             type="text"
-            
           />
-           {errors.namesurname && <span className="text-red text-xs">{errors.namesurname}</span>}
+          {errors.namesurname && <span className="text-red text-xs">{errors.namesurname}</span>}
         </div>
         
-        
-
         <div className="mb-6 ">
           <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white">
             Email<span className="text-red">*</span>
@@ -104,13 +124,12 @@ function handleInputChange(inputName: string) {
             className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600  w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
             id="email"
             value={email}
-            onChange={(e) => {setEmail(e.target.value);handleInputChange("email")}}
+            onChange={(e) => { setEmail(e.target.value); handleInputChange("email") }}
             type="email"
-            
           />
-           {errors.email && <span className="text-red text-xs">{errors.email}</span>}
+          {errors.email && <span className="text-red text-xs">{errors.email}</span>}
         </div>
-      
+        
         <div className="mb-6 ">
           <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white">
             Şirket Adı<span className="text-red">*</span>
@@ -120,11 +139,10 @@ function handleInputChange(inputName: string) {
             className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600  w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
             id="businesname"
             value={businesname}
-            onChange={(e) => {setBusinesname(e.target.value);handleInputChange("businesname")}}
+            onChange={(e) => { setBusinesname(e.target.value); handleInputChange("businesname") }}
             type="text"
-            
           />
-           {errors.businesname && <span className="text-red text-xs">{errors.businesname}</span>}
+          {errors.businesname && <span className="text-red text-xs">{errors.businesname}</span>}
         </div>
         
         <div className="mb-6 ">
@@ -136,12 +154,12 @@ function handleInputChange(inputName: string) {
             className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600  w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
             id="phone"
             value={phone}
-            onChange={(e) => {setPhone(e.target.value);handleInputChange("phone")}}
+            onChange={(e) => { setPhone(e.target.value); handleInputChange("phone") }}
             type="tel"
-            
           />
-           {errors.phone && <span className="text-red text-xs">{errors.phone}</span>}
+          {errors.phone && <span className="text-red text-xs">{errors.phone}</span>}
         </div>
+        
         <div className="mb-6 ">
           <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white">
             Şirketteki Pozisyonunuz <span className="text-red">*</span>
@@ -151,14 +169,11 @@ function handleInputChange(inputName: string) {
             className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600  w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
             id="position"
             value={position}
-            onChange={(e) => {setPosition(e.target.value);handleInputChange("position")}}
+            onChange={(e) => { setPosition(e.target.value); handleInputChange("position") }}
             type="text"
-            
           />
-           {errors.position && <span className="text-red text-xs">{errors.position}</span>}
+          {errors.position && <span className="text-red text-xs">{errors.position}</span>}
         </div>
-        
-        
         
       </div>
 
@@ -169,13 +184,12 @@ function handleInputChange(inputName: string) {
         <textarea
           id="message"
           className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
-          
           name="message"
           value={message}
-          onChange={(e) => {setMessage(e.target.value);handleInputChange("message")}}
+          onChange={(e) => { setMessage(e.target.value); handleInputChange("message") }}
           rows={5}
         ></textarea>
-         {errors.message && <span className="text-red text-xs">{errors.message}</span>}
+        {errors.message && <span className="text-red text-xs">{errors.message}</span>}
       </div>
 
       <div className="mb-6 flex items-center space-x-2">

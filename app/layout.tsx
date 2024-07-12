@@ -2,24 +2,26 @@ import Footer from "@/component/layouts/footer";
 import Header04 from "@/component/layouts/header";
 import { ReactNode } from "react";
 import Script from "next/script";
-import { Montserrat } from "next/font/google"
+import { Poppins } from "next/font/google";
 import "./globals.css"
 
 interface LayoutProps {
   children: ReactNode;
 }
 
-const montserrat = Montserrat({
-  subsets: ['latin'], weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
-})
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  display: 'swap'
+});
 
-export const revalidate = 86400
+export const revalidate = 86400;
 
 export default function Layout({ children }: LayoutProps) {
   const header = <Header04 />;
 
   return (
-    <html lang="tr" className={montserrat.className}>
+    <html lang="tr" className={poppins.className}>
       <head>
         <title>Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı</title>
         <link rel="icon" href="/images/pam-ajans-logo-siyah.svg" />

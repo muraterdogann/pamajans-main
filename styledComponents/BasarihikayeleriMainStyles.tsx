@@ -9,7 +9,6 @@ export const TitleSection = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-family: "font-display";
   color: #37c8ae;
   margin-bottom: 6px;
   margin-top: 4rem;

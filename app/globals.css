@@ -6,6 +6,10 @@ html {
 	scroll-behavior: smooth;
 }
 
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
 @layer base {
 	* {
 		text-transform: normal-case;
@@ -32,10 +36,6 @@ html {
 
 	#filters-price.show .show+.dropdown-menu {
 		display: block !important;
-	}
-
-	body {
-		font-family: 'Montserrat', sans-serif;
 	}
 
 	.dropdown-menu-end {
@@ -505,7 +505,6 @@ html {
 	kbd,
 	pre,
 	samp {
-		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
 		font-size: 1em;
 	}
 
@@ -541,7 +540,6 @@ html {
 	select,
 	textarea {
 		color: inherit;
-		font-family: inherit;
 		font-size: 100%;
 		font-weight: inherit;
 		line-height: inherit;
@@ -6038,4 +6036,3 @@ body {
 .p-shadow {
 	box-shadow: 0 4px 18px 0 rgba(47, 43, 61, .1);
 }
-

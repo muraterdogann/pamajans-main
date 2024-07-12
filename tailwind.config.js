@@ -16,8 +16,8 @@ module.exports = withMT({
       xl: "1202px",
     },
     fontFamily: {
-      display: ['Montserrat', 'sans-serif'],
-      body: ['Montserrat', 'sans-serif'],
+      display: ['Poppins', 'sans-serif'],
+      body: ['Poppins', 'sans-serif'],
     },
     container: {
       center: true,

@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 
 const withMT = require("@material-tailwind/react/utils/withMT");
-module.exports = {
+
+module.exports = withMT({
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./component/**/*.{js,ts,jsx,tsx}",
@@ -15,8 +16,8 @@ module.exports = {
       xl: "1202px",
     },
     fontFamily: {
-      display: ['Montserrat','sans-serif'],
-      body: ['Montserrat','sans-serif'],
+      display: ['Montserrat', 'sans-serif'],
+      body: ['Montserrat', 'sans-serif'],
     },
     container: {
       center: true,
@@ -34,10 +35,6 @@ module.exports = {
       "accent-lighter": "#B9A0FF",
       "light-base": "#F5F8FA",
       accentPam: "#37c8ae",
-      "accent-dark": "#37c8ae",
-      "accent-light": "#37c8ae",
-      "accent-lighter": "#37c8ae",
-      "light-base": "#37c8ae",
       green: "#10b981",
       orange: "#FEB240",
       red: "#EF4444",
@@ -88,13 +85,11 @@ module.exports = {
       none: "0",
       sm: "0.125rem",
       DEFAULT: "0.25rem",
-      DEFAULT: "4px",
       md: "0.375rem",
       lg: "0.5rem",
       full: "9999px",
       large: "12px",
     },
-
     extend: {
       borderRadius: {
         "2lg": "0.625rem",
@@ -125,8 +120,5 @@ module.exports = {
     },
     namedGroups: ["dropdown"],
   },
-  // variants: {
-  // 	display: ['children', 'children-not'],
-  // },
   plugins: [],
-};
+});

@@ -23,11 +23,11 @@ const Faq = () => {
         <div className="container">
           <div className="justify-between lg:flex lg:space-x-20 relative z-10">
             <div className="lg:w-[45%] z-10">
-              <h2 className="mb-6 font-display text-3xl font-medium text-jacarta-700 dark:text-white text-second">
+              <h2 className="mb-6 text-3xl text-jacarta-700 dark:text-white text-second">
                 Sıkça Sorulan Sorular
               </h2>
-              <p className="mb-12 text-lg text-white normal-case">
-              Tüm merak ettikleriniz burada: Pam Ajansta sorularınıza hızlı ve doğru yanıtları alırsınız, aradığınız cevabı bulamazsanız bizimle iletişime geçmekten çekinmeyin!
+              <p className="mb-12 text-md text-white normal-case">
+              Tüm merak ettikleriniz burada: Pam Ajans'ta sorularınıza hızlı ve doğru yanıtları alırsınız, aradığınız cevabı bulamazsanız bizimle iletişime geçmekten çekinmeyin!
               </p>
 
               <FaqAccordion />
@@ -53,8 +53,8 @@ const Faq = () => {
                     <span className="mb-2 block text-base text-white">
                       Aylık
                     </span>
-                    <span className="mb-2 block font-display text-2xl text-white">
-                      3 Milyon+
+                    <span className="mb-2 block text-2xl text-white">
+                      15 Milyon+
                     </span>
                     <span className="block text-base text-white">
                      Bütçe Yönetimi
@@ -94,7 +94,7 @@ const Faq = () => {
                     <span className="mb-2 block text-base text-white">
                       Doğru Ekip İle
                     </span>
-                    <span className="mb-2 block font-display text-2xl text-white">
+                    <span className="mb-2 block text-2xl text-white">
                       5x daha fazla
                     </span>
                     <span className="block text-base text-white">

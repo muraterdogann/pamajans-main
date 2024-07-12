@@ -91,29 +91,16 @@ const footerMenuList = [
 const socialIcons = [
   {
     id: 1,
-    href: "https://www.facebook.com/pamajans/?locale=tr_TR",
-    text: "facebook",
-    label:"facebook"
-  },
-  {
-    id: 2,
     href: "https://tr.linkedin.com/company/pam-dijital-reklam-ajans%C4%B1",
     text: "linkedin",
     label:"linkedin"
   },
-  
   {
-    id: 4,
-    href: "https://www.facebook.com/pamajans/?locale=tr_TR",
+    id: 2,
+    href: "https://www.instagram.com/pamajans/",
     text: "instagram",
     label:"instagram"
   },
-  {
-    id: 5,
-    href: "https://www.tiktok.com/@pamajans",
-    text: "tiktok",
-    label:"tiktok"
-  }
   
 ];
 

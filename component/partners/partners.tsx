@@ -5,7 +5,7 @@ const Partners = () => {
   const partnerGroup = [
     { id: 1, link: "https://www.google.com/partners/agency?id=7902512873", logo: "google-partner-pamajans" },
     { id: 2, link: "https://business.meta.com/", logo: "meta-partner-pamajans" },
-    { id: 3, link: "https://shopify.com", logo: "shopify-partner-pamajans" },
+    { id: 3, link: "https://shopify.pxf.io/752JXy", logo: "shopify-partner-pamajans" },
     { id: 4, link: "https://www.ticimax.com/demotalep.aspx?r=NQWUG85NE276", logo: "ticimax-partner-pamajans" },
     { id: 5, link: "https://www.ideasoft.com.tr/?sc=21063271", logo: "ideasoft-partner-pamajans" },
     { id: 6, link: "https://www.paytr.com/uye-isyeri-olun/867f68562acf2e09e1ebb473251bb590ac3a3238b66b499308f17e6706e0b1c5", logo: "paytr-partner-pamajans" },
@@ -23,6 +23,7 @@ const Partners = () => {
               target="_blank"
               rel="noopener noreferrer"
               key={item.id}
+              className="mx-4"
             >
               <Image
                 src={`/images/partners/${item.logo}.png`}
@@ -30,7 +31,7 @@ const Partners = () => {
                 width={130}
                 height={70}
                 className="object-contain"
-                loading="lazy" // Lazy loading eklenmiş
+                loading="lazy"
               />
             </a>
           ))}

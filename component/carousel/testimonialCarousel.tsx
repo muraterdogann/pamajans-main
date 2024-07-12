@@ -24,7 +24,7 @@ const Testimonial_carousel:React.FC = () => {
         slidesPerView="auto"
         loop={true}
         autoplay={{
-        delay: 2000,
+        delay: 4000,
         }}
         breakpoints={{
           240: {

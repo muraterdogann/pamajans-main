@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex flex-col items-center justify-between space-y-2 py-8 md:flex-row md:space-y-0">
           <span className="dark:text-jacarta-400 text-center text-sm mt-16 lg:mt-1">
-            <span>© Pam Dijital Reklam Ajansı</span>
+            <span>© Pam Dijital Reklam Ajansı Tic. Ltd. Şti.</span>
           </span>
         </div>
       </div>

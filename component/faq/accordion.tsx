@@ -49,7 +49,7 @@ const FaqAccordion:React.FC = () => {
      onPointerLeaveCapture={() => {/* Your handler function */}}
 >
         <AccordionHeader
-          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left font-display text-jacarta-700"
+          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left text-jacarta-700"
           onClick={() => handleOpen(1)}
           placeholder="Your placeholder value"
           onPointerEnterCapture={() => {/* Your handler function */}}
@@ -57,8 +57,8 @@ const FaqAccordion:React.FC = () => {
         >
          Neden Pam Ajans ile Çalışmalıyım?
         </AccordionHeader>
-        <AccordionBody className="accordion-body border-t border-jacarta-100 normal-case bg-white p-4 text-base h-full">
-        Pam Ajans olarak 2016'dan beri sektörde sürekli gelişerek tecrübe ve bilgi birikimi edindik. Yurt içi ve yurt dışında elde ettiğimiz deneyimlerle, karşılaşabileceğiniz tüm sorunların çözümlerini sunabilecek bir ekibe sahibiz. Stratejilerimizi performansa dayalı olarak oluşturarak, sizlere en iyi hizmeti sunmak için çalışıyoruz. Deneyin ve farkı görün.
+        <AccordionBody className="accordion-body border-t border-jacarta-100 normal-case bg-white p-4 text-sm h-full">
+        Pam Ajans, 2016 yılından bu yana dijital pazarlama sektöründe lider konumda olup, yenilikçi yaklaşımları ve performansa dayalı stratejileriyle müşterilerine en iyi hizmeti sunmaktadır. Yurt içi ve yurt dışında kazandığımız deneyim ve bilgi birikimi sayesinde, markanızı en hızlı büyüten ve sektöründe ilkleri hayata geçiren bir ajans olarak fark yaratıyoruz. Profesyonel ekibimizle karşılaşabileceğiniz tüm sorunlara etkin çözümler sunarak, işinizi bir adım öne taşıyoruz. Pam Ajans'ı seçin ve farkı deneyimleyin.
         </AccordionBody>
       </Accordion>
       <Accordion
@@ -70,7 +70,7 @@ const FaqAccordion:React.FC = () => {
         onPointerLeaveCapture={() => {/* Your handler function */}}
       >
         <AccordionHeader
-          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left font-display text-jacarta-700 text-md"
+          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left text-jacarta-700 text-md"
           onClick={() => handleOpen(2)}
           placeholder="Your placeholder value"
         onPointerEnterCapture={() => {/* Your handler function */}}
@@ -78,8 +78,8 @@ const FaqAccordion:React.FC = () => {
         >
           Çalışma Yönteminiz Nasıl?
         </AccordionHeader>
-        <AccordionBody className="accordion-body normal-case border-t border-jacarta-100 bg-white p-4 h-full text-base">
-        Markanız için en uygun ekibimizi, ortak bir WhatsApp grubunda sizinle bir araya getiriyoruz. Bu sayede, her an destek alabileceğiniz bir ortam sağlıyoruz.
+        <AccordionBody className="accordion-body normal-case border-t border-jacarta-100 bg-white p-4 h-full text-sm">
+        Markanız için en uygun ekip üyelerimizi belirleyerek, sizinle ortak bir WhatsApp grubunda bir araya getiriyoruz. Bu sayede, anlık iletişim kurarak her an destek alabileceğiniz dinamik bir çalışma ortamı oluşturuyoruz. Sürekli iletişim halinde kalarak, ihtiyaçlarınıza hızlı ve etkili çözümler üretiyoruz.
         </AccordionBody>
       </Accordion>
       <Accordion
@@ -91,7 +91,7 @@ const FaqAccordion:React.FC = () => {
         onPointerLeaveCapture={() => {/* Your handler function */}}
       >
         <AccordionHeader
-          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left font-display text-jacarta-700 text-md"
+          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left text-jacarta-700 text-md"
           onClick={() => handleOpen(3)}
           placeholder="Your placeholder value"
             onPointerEnterCapture={() => {/* Your handler function */}}
@@ -99,29 +99,8 @@ const FaqAccordion:React.FC = () => {
         >
           Reklam Bütçesi Ne Kadar Olmalı?
         </AccordionHeader>
-        <AccordionBody className="accordion-body border-t border-jacarta-100 bg-white p-4 h-full text-base">
-        Reklam bütçenizi, mevcut rekabet ortamında markanızın konumuna göre belirlemelisiniz. Markanızın bilgilerini bizimle paylaşarak, uygun bütçeyi birlikte belirleyebiliriz.
-        </AccordionBody>
-      </Accordion>
-      <Accordion
-        className="mb-5 overflow-hidden rounded-lg border border-jacarta-100 "
-        open={open === 4}
-        icon={<Icon id={4} open={open} />}
-        placeholder="Your placeholder value"
-        onPointerEnterCapture={() => {/* Your handler function */}}
-        onPointerLeaveCapture={() => {/* Your handler function */}}
-      >
-        <AccordionHeader
-          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left font-display text-jacarta-700 text-md"
-          onClick={() => handleOpen(4)}
-          placeholder="Your placeholder value"
-        onPointerEnterCapture={() => {/* Your handler function */}}
-        onPointerLeaveCapture={() => {/* Your handler function */}}
-        >
-          Referanslarınız Gerçek mi?
-        </AccordionHeader>
-        <AccordionBody className="accordion-body normal-case border-t border-jacarta-100 bg-white p-4 h-full text-base">
-        Evet, web sitemizde yer alan tüm referanslar gerçektir. Şu anda ya da geçmişte hizmet sunduğumuz iş ortaklarımızdır.
+        <AccordionBody className="accordion-body border-t border-jacarta-100 bg-white p-4 h-full text-sm">
+        Reklam bütçenizi belirlerken, markanızın mevcut durumu ve rekabet ortamını göz önünde bulundurmalısınız. Bizimle paylaştığınız bilgiler doğrultusunda, size en uygun bütçeyi birlikte belirleyebiliriz. Bu sayede, maksimum geri dönüş sağlayacak stratejiler oluşturabiliriz.
         </AccordionBody>
       </Accordion>
       <Accordion
@@ -133,7 +112,7 @@ const FaqAccordion:React.FC = () => {
         onPointerLeaveCapture={() => {/* Your handler function */}}     
       >
         <AccordionHeader
-          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left font-display text-jacarta-700 text-md"
+          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left text-jacarta-700 text-md"
           onClick={() => handleOpen(5)}
           placeholder="Your placeholder value"
   onPointerEnterCapture={() => {/* Your handler function */}}
@@ -141,8 +120,8 @@ const FaqAccordion:React.FC = () => {
         >
           ROAS, ROI ve Ciro Garantisi Sunuyor Musunuz?
         </AccordionHeader>
-        <AccordionBody className="accordion-body normal-case border-t border-jacarta-100 bg-white p-4 h-full text-base">
-        Her markanın performansı farklı olduğu için, ön çalışma yapmadan ve markanın mevcut durumunu analiz etmeden ROAS, ROI ya da ciro garantisi veremeyiz. Garanti sunabilmek için önce markanızın iç dinamiklerini detaylı bir şekilde incelememiz gerekmektedir.
+        <AccordionBody className="accordion-body normal-case border-t border-jacarta-100 bg-white p-4 h-full text-sm">
+        Her markanın performansı ve dinamikleri farklıdır. Bu nedenle, ön çalışma yapmadan ROAS, ROI veya ciro garantisi vermemiz mümkün değildir. Markanızın mevcut durumunu ve hedeflerini detaylı bir şekilde analiz ettikten sonra, daha kesin tahminler ve stratejiler sunabiliriz. Başarı garantisi verebilmek için markanızın iç dinamiklerini yakından incelememiz gerekmektedir.
         </AccordionBody>
       </Accordion>
       <Accordion
@@ -154,7 +133,7 @@ const FaqAccordion:React.FC = () => {
   onPointerLeaveCapture={() => {/* Your handler function */}}
       >
         <AccordionHeader
-          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left font-display text-jacarta-700 text-md"
+          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left text-jacarta-700 text-md"
           onClick={() => handleOpen(6)}
           placeholder="Your placeholder value"
   onPointerEnterCapture={() => {/* Your handler function */}}
@@ -162,8 +141,8 @@ const FaqAccordion:React.FC = () => {
         >
           Hangi Hizmetleri Sunuyorsunuz?
         </AccordionHeader>
-        <AccordionBody className="accordion-body normal-case border-t border-jacarta-100 bg-white p-4 h-full text-base">
-        Dijital marka performansı alanında akla gelen tüm hizmetleri sunuyoruz. Dijital reklam yönetimi, web site kurulumu ve tasarımı, web site yönetimi, entegrasyon çözümleri, e-ihracat çözümleri ve daha pek çok konuda, markanıza tek merkezden destek sağlıyoruz.
+        <AccordionBody className="accordion-body normal-case border-t border-jacarta-100 bg-white p-4 h-full text-sm">
+        Pam Ajans olarak, dijital marka performansı alanında kapsamlı hizmetler sunmaktayız. Dijital reklam yönetimi, web sitesi kurulumu ve tasarımı, web sitesi yönetimi, entegrasyon çözümleri, e-ihracat çözümleri ve daha pek çok konuda, markanızın tüm dijital ihtiyaçlarını tek merkezden karşılıyoruz. Her aşamada profesyonel destek sağlayarak, markanızı dijital dünyada daha görünür ve başarılı kılıyoruz.
         </AccordionBody>
       </Accordion>
       <Accordion
@@ -175,7 +154,7 @@ const FaqAccordion:React.FC = () => {
   onPointerLeaveCapture={() => {/* Your handler function */}}
       >
         <AccordionHeader
-          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left font-display text-jacarta-700 text-md"
+          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left text-jacarta-700 text-md"
           onClick={() => handleOpen(7)}
           placeholder="Your placeholder value"
   onPointerEnterCapture={() => {/* Your handler function */}}
@@ -183,8 +162,8 @@ const FaqAccordion:React.FC = () => {
         >
           Hizmet Ücretleriniz Ne Kadar?
         </AccordionHeader>
-        <AccordionBody className="accordion-body normal-case border-t border-jacarta-100 bg-white p-4 h-full text-base">
-        Hizmet ücretlerimiz, projeden projeye ve almak istediğiniz hizmete göre değişiklik göstermektedir. Daha detaylı bilgi için bizimle iletişime geçebilirsiniz.
+        <AccordionBody className="accordion-body normal-case border-t border-jacarta-100 bg-white p-4 h-full text-sm">
+        Hizmet ücretlerimiz, projenizin kapsamına ve almak istediğiniz hizmetlere göre değişiklik göstermektedir. Daha detaylı bilgi ve size özel fiyat teklifi almak için bizimle iletişime geçebilirsiniz.
         </AccordionBody>
       </Accordion>
       <Accordion
@@ -196,7 +175,7 @@ const FaqAccordion:React.FC = () => {
   onPointerLeaveCapture={() => {/* Your handler function */}}
       >
         <AccordionHeader
-          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left font-display text-jacarta-700 text-md"
+          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left text-jacarta-700 text-md"
           onClick={() => handleOpen(8)}
           placeholder="Your placeholder value"
   onPointerEnterCapture={() => {/* Your handler function */}}
@@ -204,8 +183,8 @@ const FaqAccordion:React.FC = () => {
         >
           Nerede Bulunuyorsunuz?
         </AccordionHeader>
-        <AccordionBody className="accordion-body border-t border-jacarta-100 bg-white p-4 h-full text-base">
-        Pam Ajans ekibi olarak Ankara/Çukurambar'dan hizmet vermekteyiz. Türkiye'nin her noktasına aktif olarak hizmet sunabilmekteyiz.
+        <AccordionBody className="accordion-body border-t border-jacarta-100 bg-white p-4 h-full text-sm">
+        Pam Ajans olarak, Ankara/Çankaya'da yer almaktayız ve Türkiye'nin her noktasına aktif olarak hizmet sunmaktayız. İhtiyaç duyduğunuz her an bizimle iletişime geçebilirsiniz.
         </AccordionBody>
       </Accordion>
       <Accordion
@@ -217,7 +196,7 @@ const FaqAccordion:React.FC = () => {
   onPointerLeaveCapture={() => {/* Your handler function */}}
       >
         <AccordionHeader
-          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left font-display text-jacarta-700 text-md"
+          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left text-jacarta-700 text-md"
           onClick={() => handleOpen(9)}
           placeholder="Your placeholder value"
   onPointerEnterCapture={() => {/* Your handler function */}}
@@ -225,8 +204,8 @@ const FaqAccordion:React.FC = () => {
         >
           Ofisime veya İşyerime Gelebilir Misiniz?
         </AccordionHeader>
-        <AccordionBody className="accordion-body normal-case border-t border-jacarta-100 bg-white p-4 h-full text-base">
-        Pam Ajans olarak, ne yazık ki ofisinize veya işyerinize gelme imkanımız bulunmamaktadır. Ancak dilediğiniz zaman bizi ziyaret edebilirsiniz.
+        <AccordionBody className="accordion-body normal-case border-t border-jacarta-100 bg-white p-4 h-full text-sm">
+        Pam Ajans olarak, şu an için ofisinize veya işyerinize gelme imkanımız bulunmamaktadır. Ancak, sizi ofisimizde ağırlamaktan memnuniyet duyarız.
         </AccordionBody>
       </Accordion>
       <Accordion
@@ -238,7 +217,7 @@ const FaqAccordion:React.FC = () => {
   onPointerLeaveCapture={() => {/* Your handler function */}}
       >
         <AccordionHeader
-          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left font-display text-jacarta-700  text-md"
+          className="accordion-button relative flex w-full items-center justify-between bg-white px-4 py-3 text-left text-jacarta-700  text-md"
           onClick={() => handleOpen(10)}
           placeholder="Your placeholder value"
   onPointerEnterCapture={() => {/* Your handler function */}}
@@ -246,8 +225,8 @@ const FaqAccordion:React.FC = () => {
         >
           Ne Kadar Sürede İstediğim Ciroya Ulaşırım?
         </AccordionHeader>
-        <AccordionBody className="accordion-body normal-case border-t border-jacarta-100 bg-white p-4  h-full text-base">
-        İstediğiniz ciroya ulaşmanız, sadece bizim elimizde olan bir durum değildir. Başarılı olmak için ürün seçimi, fiyatlandırma politikası, ekibiniz ve temel altyapınızın sağlamlığı önemlidir. Biz sizlere yol göstererek ve marka performansınızı arttıracak çalışmalar gerçekleştirerek size destek oluyoruz. Başarıya ulaşma süreci, markanızın genel durumuna ve sektörünüzdeki rekabete bağlı olarak değişiklik gösterebilir.
+        <AccordionBody className="accordion-body normal-case border-t border-jacarta-100 bg-white p-4  h-full text-sm">
+        İstediğiniz ciroya ulaşmanız, sadece bizim sağladığımız hizmetlerle sınırlı değildir. Başarılı olmanız için ürün seçimi, fiyatlandırma stratejisi, ekibinizin performansı ve altyapınızın sağlamlığı gibi birçok faktör önemlidir. Biz, yol gösterici olarak ve marka performansınızı artıracak stratejiler geliştirerek size destek oluyoruz. Başarıya ulaşma süreci, markanızın mevcut durumu ve sektörünüzdeki rekabet koşullarına bağlı olarak değişiklik gösterebilir.
         </AccordionBody>
       </Accordion>
     </div>

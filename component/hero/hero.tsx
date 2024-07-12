@@ -39,15 +39,15 @@ const Hero_6 = () => {
                   height="20"
                 />
                 <span className="text-white text-xs font-bold uppercase tracking-wide dark:text-jacarta-100">
-                  Son 7 Yılda Rekorlar Kıran
+                  Son 8 Yılda Rekorlar Kıran
                 </span>
               </div>
-              <h2 className="text-second mb-6 text-center font-display text-3xl text-jacarta-700 dark:text-white lg:text-left lg:text-6xl">
+              <h1 className="text-second mb-6 text-center font-display text-3xl text-jacarta-700 dark:text-white lg:text-left lg:text-6xl">
                 {heroContent.meta}
+              </h1>
+              <h2 className="mb-8 max-w-xl text-white text-center mx-auto text-sm dark:text-jacarta-200 normal-case">
+              Veri ve analitik altyapımız, derinlemesine strateji bilgimiz, ileri teknoloji uygulamalarımız ve markalaşma uzmanlığımızla, işletmelere yüksek performanslı çözümler sunmaktayız. Biz, veriye dayalı stratejik yaklaşımımızla sektörde öne çıkan, markaları en hızlı büyüten bir Dijital Performans Ajansıyız.
               </h2>
-              <p className="mb-8 max-w-xl text-white text-center mx-auto text-sm lg:text-md dark:text-jacarta-200 normal-case">
-              Veri ve analitik altyapımız, derinlemesine strateji bilgimiz, ileri teknoloji uygulamalarımız ve markalaşma uzmanlığımızla, işletmelere yüksek performanslı çözümler sunmaktayız. Biz, veriye dayalı stratejik yaklaşımımızla sektörde öne çıkan bir Dijital Performans Ajansıyız.
-              </p>
               <div className="flex flex-wrap justify-center space-x-4 mx-auto">
                 <Link
                   href="/iletisim"

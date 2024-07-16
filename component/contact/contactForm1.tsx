@@ -1,9 +1,6 @@
-"use client"
+import React, { useState, FormEvent, useEffect } from "react";
 import Link from "next/link";
-import React, { FormEvent, useState } from "react";
-import axios from 'axios';
 import { ZodError, z } from "zod";
-import { useRouter } from "next/navigation";
 
 const contactForm1Schema = z.object({
   namesurname: z.string().min(1, { message: "Ad Soyad gerekli" }),
@@ -16,14 +13,13 @@ const contactForm1Schema = z.object({
   message: z.string().min(100, { message: "Mesaj en az 100 harf içermeli" }),
 });
 
-
-const ContactForm: React.FC = () => {
-  const [namesurname, setNamesurname] = useState("");
-  const [email, setEmail] = useState("");
-  const [businesname, setBusinesname] = useState("");
-  const [phone, setPhone] = useState("0"); // Initialize phone state with "0"
-  const [position, setPosition] = useState("");
-  const [message, setMessage] = useState("");
+const ContactForm1: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ sharedData, onSharedDataChange }) => {
+  const [namesurname, setNamesurname] = useState(sharedData.namesurname || "");
+  const [email, setEmail] = useState(sharedData.email || "");
+  const [businesname, setBusinesname] = useState<string>("");
+  const [phone, setPhone] = useState<string>(sharedData.phone || ""); // Initialize phone state with "0"
+  const [position, setPosition] = useState<string>("");
+  const [message, setMessage] = useState(sharedData.message || "");
   const [formStatus, setFormStatus] = useState<"success" | "error" | "">("");
   const [errors, setErrors] = useState<Record<string, string | null>>({
     namesurname: null,
@@ -34,7 +30,12 @@ const ContactForm: React.FC = () => {
     message: null,
   });
   const [isChecked, setIsChecked] = useState(false);
-  const router = useRouter();
+
+  useEffect(() => {
+    setNamesurname(sharedData.namesurname || "");
+    setEmail(sharedData.email || "");
+    setMessage(sharedData.message || "");
+  }, [sharedData]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>, type: string) {
     event.preventDefault();
@@ -49,12 +50,7 @@ const ContactForm: React.FC = () => {
         message,
       });
 
-      // Ad ve soyad ayrımı yapma
-      const nameParts = namesurname.split(' ');
-      const firstName = nameParts[0] || '';
-      const lastName = nameParts.slice(1).join(' ') || '';
-
-      const response = await fetch('/api/submitContactForm', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -101,12 +97,18 @@ const ContactForm: React.FC = () => {
     }
   }
 
-
   const type = 'business';
-  function handleInputChange(inputName: string) {
+  function handleInputChange(inputName: string, value: string) {
     const newErrors = { ...errors };
     newErrors[inputName] = null;
     setErrors(newErrors);
+
+    if (inputName === 'namesurname') setNamesurname(value);
+    if (inputName === 'email') setEmail(value);
+    if (inputName === 'message') setMessage(value);
+    if (inputName === 'phone') setPhone(value);
+
+    onSharedDataChange({ [inputName]: value });
   }
 
   return (
@@ -121,7 +123,7 @@ const ContactForm: React.FC = () => {
             className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600  w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
             id="namesurname"
             value={namesurname}
-            onChange={(e) => { setNamesurname(e.target.value); handleInputChange("namesurname") }}
+            onChange={(e) => handleInputChange("namesurname", e.target.value)}
             type="text"
           />
           {errors.namesurname && <span className="text-red text-xs">{errors.namesurname}</span>}
@@ -136,7 +138,7 @@ const ContactForm: React.FC = () => {
             className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600  w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
             id="email"
             value={email}
-            onChange={(e) => { setEmail(e.target.value); handleInputChange("email") }}
+            onChange={(e) => handleInputChange("email", e.target.value)}
             type="email"
           />
           {errors.email && <span className="text-red text-xs">{errors.email}</span>}
@@ -151,7 +153,7 @@ const ContactForm: React.FC = () => {
             className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600  w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
             id="businesname"
             value={businesname}
-            onChange={(e) => { setBusinesname(e.target.value); handleInputChange("businesname") }}
+            onChange={(e) => { setBusinesname(e.target.value); handleInputChange("businesname", e.target.value) }}
             type="text"
           />
           {errors.businesname && <span className="text-red text-xs">{errors.businesname}</span>}
@@ -166,7 +168,7 @@ const ContactForm: React.FC = () => {
             className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600  w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
             id="phone"
             value={phone}
-            onChange={(e) => { setPhone(e.target.value); handleInputChange("phone") }}
+            onChange={(e) => { setPhone(e.target.value); handleInputChange("phone", e.target.value) }}
             type="tel"
             maxLength={11} // Set max length to 11
             pattern="^0\d{10}$" // Add pattern for validation
@@ -183,7 +185,7 @@ const ContactForm: React.FC = () => {
             className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600  w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
             id="position"
             value={position}
-            onChange={(e) => { setPosition(e.target.value); handleInputChange("position") }}
+            onChange={(e) => { setPosition(e.target.value); handleInputChange("position", e.target.value) }}
             type="text"
           />
           {errors.position && <span className="text-red text-xs">{errors.position}</span>}
@@ -200,7 +202,7 @@ const ContactForm: React.FC = () => {
           className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
           name="message"
           value={message}
-          onChange={(e) => { setMessage(e.target.value); handleInputChange("message") }}
+          onChange={(e) => handleInputChange("message", e.target.value)}
           rows={5}
           minLength={100}
         ></textarea>
@@ -220,7 +222,6 @@ const ContactForm: React.FC = () => {
           <Link href="/tarms" className="text-second">
             Hizmet Koşullarını
           </Link>{" "} Kabul Ediyorum
-
         </label>
       </div>
       {formStatus === "success" && (
@@ -249,4 +250,4 @@ const ContactForm: React.FC = () => {
   );
 };
 
-export default ContactForm;
+export default ContactForm1;

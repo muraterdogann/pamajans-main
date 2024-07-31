@@ -33,58 +33,35 @@ const footerMenuList = [
     list: [
       {
         id: 1,
-        href: "google-ads",
-        text: "Google ADS",
+        href: "meta-reklam-yonetimi",
+        text: "Sosyal Medya Reklam Yönetimi",
       },
       {
         id: 2,
-        href: "meta-ads",
-        text: "META ADS",
+        href: "google-reklam-yonetimi",
+        text: "Google Reklam Yönetimi",
       },
       {
         id: 3,
-        href: "e-ticaret-web",
-        text: "E-Ticaret Website",
+        href: "e-ticaret-web-site-kurulumu",
+        text: "E-Ticaret Web Sitesi",
       },
       {
         id: 4,
-        href: "kurumsal-web",
-        text: "Kurumsal Website",
+        href: "kurumsal-web-site-kurulumu",
+        text: "Kurumsal Web Sitesi",
       },
       {
         id: 5,
-        href: "e-ihracat-danismanlik",
-        text: "E-İhracat Danışmanlık",
-      },
-      
-    ],
-  },
-  {
-    id: 3,
-    diffClass: "mt-4",
-    list: [
-      {
-        id: 1,
-        href: "pazaryeri-giris",
-        text: "Pazaryeri Giriş",
+        href: "seo-hizmetleri",
+        text: "SEO",
       },
       {
-        id: 2,
-        href: "native-yazilim",
-        text: "Native Yazılım",
-      },
-      {
-        id: 3,
-        href: "e-ticaret-reklam",
-        text: "E-Ticaret ve Reklam",
-      },
-      {
-        id: 4,
-        href: "erp-crm",
-        text: "ERP & CRM",
-      },
-      
-    ],
+        id: 6,
+        href: "pazaryeri-giris-destegi",
+        text: "Pazaryeri ve E-ihracat",
+      }
+    ]
   },
 ];
 

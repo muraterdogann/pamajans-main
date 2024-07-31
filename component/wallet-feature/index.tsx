@@ -19,9 +19,9 @@ const WalletFeature = () => {
         </div>
 
         <p className="mt-4 text-center text-lg ">
-          Hizmetlerimiz ile ilgileniyorsan.{" "}
+          Hizmetlerimiz ile ilgileniyorsanız;{" "}
           <Link href="/iletisim" className="text-accent">
-            Hemen İletişime Geç
+            Hemen İletişime Geçin
           </Link>
         </p>
       </div>

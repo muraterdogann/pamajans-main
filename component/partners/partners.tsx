@@ -4,7 +4,7 @@ import Image from "next/image";
 const Partners = () => {
   const partnerGroup = [
     { id: 1, link: "https://www.google.com/partners/agency?id=7902512873", logo: "google-partner-pamajans" },
-    { id: 2, link: "https://business.meta.com/", logo: "meta-partner-pamajans" },
+    { id: 2, link: "https://www.facebook.com/business/partner-directory/search?id=7451666201570778", logo: "meta-partner-pamajans" },
     { id: 3, link: "https://shopify.pxf.io/752JXy", logo: "shopify-partner-pamajans" },
     { id: 4, link: "https://www.ticimax.com/demotalep.aspx?r=NQWUG85NE276", logo: "ticimax-partner-pamajans" },
     { id: 5, link: "https://www.ideasoft.com.tr/?sc=21063271", logo: "ideasoft-partner-pamajans" },
@@ -15,7 +15,7 @@ const Partners = () => {
   return (
     <div className="dark:bg-jacarta-900 bg-[#] ">
       <div className="container">
-        <h2 className="mt-5 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-white">Partnerlerimiz</h2>
+        <h2 className="mt-5 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-white">İş Ortaklarımız</h2>
         <div className="flex flex-wrap justify-center py-8 ">
           {partnerGroup.map((item) => (
             <a

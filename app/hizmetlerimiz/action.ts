@@ -1,4 +1,4 @@
-"use server"
+"use server";
 import { reqUrl } from "@/config";
 
 export interface OgImage {
@@ -9,12 +9,11 @@ export interface OgImage {
 }
 
 export interface Post {
-  id: number;
+  content: any;
   slug: string;
-  title: { rendered: string };
-  content?: { rendered: string };
-  yoast_head?: string;
-  yoast_head_json?: {
+  yoast_head_json: {
+    twitter_title: string;
+    twitter_description: string;
     title?: string;
     description?: string;
     og_locale?: string;
@@ -25,8 +24,6 @@ export interface Post {
     og_site_name?: string;
     og_image?: OgImage[];
     twitter_card?: string;
-    twitter_title?: string;
-    twitter_description?: string;
     robots?: {
       index?: string;
       follow?: string;
@@ -34,7 +31,6 @@ export interface Post {
       max_image_preview?: string;
       max_video_preview?: string;
     };
-    author?: string;
     schema?: any;
   };
 }
@@ -49,18 +45,25 @@ export async function getSlugs(): Promise<string[]> {
 export async function getPostData(slug: string): Promise<Post | null> {
   console.log("getPostData", slug);
 
-  const url = `${reqUrl}/pages?slug=${slug}&_fields=slug,yoast_head_json`; 
-  console.log(url);
+  const url = `${reqUrl}/pages?slug=${slug}&_fields=slug,yoast_head_json`;
+  console.log("API URL:", url);
 
   const res = await fetch(url, {
-    next: { revalidate: 86400 }
+    next: { revalidate: 86400 },
   });
-  console.log(res.status);
+
+  console.log("Response status:", res.status);
+
+  if (res.status !== 200) {
+    console.error("Failed to fetch data from API");
+    return null;
+  }
 
   const posts: Post[] = await res.json();
-  console.log("it's", posts);
+  console.log("Fetched posts:", posts);
 
   if (!posts || posts.length === 0) {
+    console.error("No posts found for the given slug:", slug);
     return null;
   }
 

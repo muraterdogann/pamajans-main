@@ -10,19 +10,14 @@ type TPageProps = {
 };
 
 const Page = async ({ params }: TPageProps) => {
-  console.log(params);
+  console.log("Slug param:", params.slug);
   const postData = await getPostData(params.slug!);
-  console.log(postData);
+  console.log("Post data:", postData);
 
-  if (!postData) {
+  if (!postData || !postData.yoast_head_json || !postData.yoast_head_json.title) {
+    console.error("Yoast title is missing in postData", postData);
     redirect("/not_found");
-    return null;  // redirect ile birlikte çıkış yapmak için null döndür
-  }
-
-  if (!postData.title || !postData.title.rendered) {
-    console.error("Title or rendered is missing in postData", postData);
-    redirect("/not_found");
-    return null;  // Eksik veri varsa yine not found sayfasına yönlendir
+    return null; 
   }
 
   const adjustSchemaForFrontend = (
@@ -40,15 +35,11 @@ const Page = async ({ params }: TPageProps) => {
   return (
     <>
       <Head>
-        <title>
-          {postData.yoast_head_json?.title || postData.title.rendered}
-        </title>
+        <title>{postData.yoast_head_json.title || "Varsayılan Başlık"}</title>
 
         <meta
           name="description"
-          content={
-            postData.yoast_head_json?.description || "Varsayılan Açıklama"
-          }
+          content={postData.yoast_head_json.description || "Varsayılan Açıklama"}
         />
         <link
           rel="icon"
@@ -69,22 +60,20 @@ const Page = async ({ params }: TPageProps) => {
 
         <meta
           property="og:locale"
-          content={postData.yoast_head_json?.og_locale || "tr_TR"}
+          content={postData.yoast_head_json.og_locale || "tr_TR"}
         />
         <meta
           property="og:type"
-          content={postData.yoast_head_json?.og_type || "article"}
+          content={postData.yoast_head_json.og_type || "article"}
         />
         <meta
           property="og:title"
-          content={
-            postData.yoast_head_json?.og_title || postData.title.rendered
-          }
+          content={postData.yoast_head_json.og_title || "Varsayılan Başlık"}
         />
         <meta
           property="og:description"
           content={
-            postData.yoast_head_json?.og_description || "Varsayılan Açıklama"
+            postData.yoast_head_json.og_description || "Varsayılan Açıklama"
           }
         />
         <meta
@@ -97,7 +86,7 @@ const Page = async ({ params }: TPageProps) => {
           content="https://www.facebook.com/pamajans/"
         />
 
-        {postData.yoast_head_json?.og_image?.map(
+        {postData.yoast_head_json.og_image?.map(
           (image: OgImage, index: number) => (
             <meta
               key={index}
@@ -112,19 +101,19 @@ const Page = async ({ params }: TPageProps) => {
         <meta
           name="twitter:card"
           content={
-            postData.yoast_head_json?.twitter_card || "summary_large_image"
+            postData.yoast_head_json.twitter_card || "summary_large_image"
           }
         />
         <meta
           name="twitter:title"
           content={
-            postData.yoast_head_json?.twitter_title || postData.title.rendered
+            postData.yoast_head_json.twitter_title || postData.yoast_head_json.title
           }
         />
         <meta
           name="twitter:description"
           content={
-            postData.yoast_head_json?.twitter_description ||
+            postData.yoast_head_json.twitter_description ||
             "Varsayılan Açıklama"
           }
         />
@@ -134,7 +123,7 @@ const Page = async ({ params }: TPageProps) => {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(
               adjustSchemaForFrontend(
-                postData.yoast_head_json?.schema,
+                postData.yoast_head_json.schema,
                 "dashboard.pushouse.com",
                 "pamajans.com"
               )
@@ -144,7 +133,7 @@ const Page = async ({ params }: TPageProps) => {
       </Head>
       <section className="relative w-full">
         <div className="font-display drop-shadow-[black_2px_2px_6px] rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
-          <h2 className="capitalize">{postData.title.rendered}</h2>
+          <h2 className="capitalize">{postData.yoast_head_json.og_title}</h2>
         </div>
         <BlogContent content={postData.content?.rendered || ""} />
       </section>

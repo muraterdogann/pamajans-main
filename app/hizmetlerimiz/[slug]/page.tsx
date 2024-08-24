@@ -1,6 +1,6 @@
 import BlogContent from "@/component/slug-page/blogContent";
 import { redirect } from "next/navigation";
-import { getPostData, OgImage } from "../action";
+import { getPostData, getSlugs, OgImage } from "../action";
 import Head from "next/head";
 
 type TPageProps = {
@@ -29,8 +29,11 @@ const Page = async ({ params }: TPageProps) => {
 
   return (
     <>
+      {" "}
       <Head>
-        <title>{postData.yoast_head_json?.title || postData.title.rendered}</title>
+        <title>
+          {postData.yoast_head_json?.title || postData.title.rendered}
+        </title>
 
         <meta
           name="description"
@@ -65,7 +68,9 @@ const Page = async ({ params }: TPageProps) => {
         />
         <meta
           property="og:title"
-          content={postData.yoast_head_json?.og_title || postData.title.rendered}
+          content={
+            postData.yoast_head_json?.og_title || postData.title.rendered
+          }
         />
         <meta
           property="og:description"
@@ -88,7 +93,9 @@ const Page = async ({ params }: TPageProps) => {
             <meta
               key={index}
               property="og:image"
-              content={new URL(image.url, "https://dashboard.pushouse.com").href}
+              content={
+                new URL(image.url, "https://dashboard.pushouse.com").href
+              }
             />
           )
         )}

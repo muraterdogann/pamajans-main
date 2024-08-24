@@ -1,7 +1,34 @@
 import BlogContent from "@/component/slug-page/blogContent";
 import { redirect } from "next/navigation";
-import { getPostData, OgImage } from "../action";
 import Head from "next/head";
+import { OgImage } from "../action";
+
+// Yoast Head JSON tiplerini ekledik
+type YoastHeadJson = {
+  title?: string;
+  description?: string;
+  og_locale?: string;
+  og_type?: string;
+  og_title?: string;
+  og_description?: string;
+  og_image?: OgImage[];
+  twitter_card?: string;
+  twitter_title?: string;
+  twitter_description?: string;
+  schema?: any;
+};
+
+type TPostData = {
+  id: number;
+  slug: string;
+  title: {
+    rendered: string;
+  };
+  content: {
+    rendered: string;
+  };
+  yoast_head_json: YoastHeadJson;
+};
 
 type TPageProps = {
   params: {
@@ -9,11 +36,35 @@ type TPageProps = {
   };
 };
 
+const getPamAjansSlugs = async (): Promise<string[]> => {
+  const response = await fetch(
+    "https://dashboard.pushouse.com/wp-json/custom/v1/pages/pamAjans"
+  );
+  if (!response.ok) {
+    throw new Error("Failed to fetch slugs");
+  }
+  const pages = await response.json();
+  return pages.map((page: { slug: string }) => page.slug);
+};
+
+const getPostData = async (slug: string): Promise<TPostData | null> => {
+  const response = await fetch(
+    `https://dashboard.pushouse.com/wp-json/wp/v2/pages?slug=${slug}`
+  );
+  if (!response.ok) return null;
+  const data = await response.json();
+  return data[0] || null;
+};
+
 const Page = async ({ params }: TPageProps) => {
-  console.log(params);
+  const pamAjansSlugs = await getPamAjansSlugs();
+
+  if (!pamAjansSlugs.includes(params.slug!)) {
+    return redirect("/not_found");
+  }
+
   const postData = await getPostData(params.slug!);
-  console.log(postData);
-  if (!postData) redirect("/not_found");
+  if (!postData) return redirect("/not_found");
 
   const adjustSchemaForFrontend = (
     schema: any,
@@ -30,7 +81,9 @@ const Page = async ({ params }: TPageProps) => {
   return (
     <>
       <Head>
-        <title>{postData.yoast_head_json?.title || postData.title.rendered}</title>
+        <title>
+          {postData.yoast_head_json?.title || postData.title.rendered}
+        </title>
 
         <meta
           name="description"
@@ -65,7 +118,9 @@ const Page = async ({ params }: TPageProps) => {
         />
         <meta
           property="og:title"
-          content={postData.yoast_head_json?.og_title || postData.title.rendered}
+          content={
+            postData.yoast_head_json?.og_title || postData.title.rendered
+          }
         />
         <meta
           property="og:description"
@@ -88,7 +143,9 @@ const Page = async ({ params }: TPageProps) => {
             <meta
               key={index}
               property="og:image"
-              content={new URL(image.url, "https://dashboard.pushouse.com").href}
+              content={
+                new URL(image.url, "https://dashboard.pushouse.com").href
+              }
             />
           )
         )}

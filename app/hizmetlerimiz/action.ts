@@ -62,7 +62,7 @@ async function getPamAjansSlugs(): Promise<string[]> {
 export async function getPostData(slug: string): Promise<Post | null> {
   console.log("getPostData", slug);
 
-  // Öncelikle PamAjans kategorisindeki slug'ları alıyoruz
+  // PamAjans kategorisindeki slug'ları alıyoruz
   const pamAjansSlugs = await getPamAjansSlugs();
 
   // Eğer verilen slug PamAjans slug'ları arasında yoksa null döndürüyoruz
@@ -71,6 +71,7 @@ export async function getPostData(slug: string): Promise<Post | null> {
     return null;
   }
 
+  // Eğer slug PamAjans kategorisindeyse, o slug için veri alıyoruz
   const url = `${reqUrl}/pages?slug=${slug}&_fields=id,slug,title,content,yoast_head,yoast_head_json`;
   console.log(url);
 

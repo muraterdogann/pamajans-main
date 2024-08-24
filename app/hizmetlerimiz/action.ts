@@ -49,7 +49,7 @@ export async function getSlugs(): Promise<string[]> {
 export async function getPostData(slug: string): Promise<Post | null> {
   console.log("getPostData", slug);
 
-  const url = `${reqUrl}/pages?slug=${slug}&_fields=id,slug,title,yoast_head_json`;
+  const url = `${reqUrl}/pages?slug=${slug}&_fields=slug,yoast_head_json`; 
   console.log(url);
 
   const res = await fetch(url, {
@@ -65,4 +65,11 @@ export async function getPostData(slug: string): Promise<Post | null> {
   }
 
   return posts[0];
+}
+
+export async function getYoastDataForAllSlugs() {
+  const slugs = await getSlugs();
+  const yoastDataPromises = slugs.map((slug) => getPostData(slug));
+  const yoastData = await Promise.all(yoastDataPromises);
+  return yoastData.filter((data) => data !== null);
 }

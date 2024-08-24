@@ -10,10 +10,20 @@ type TPageProps = {
 };
 
 const Page = async ({ params }: TPageProps) => {
-  console.log(params)
+  console.log(params);
   const postData = await getPostData(params.slug!);
-console.log(postData)
-  if (!postData) redirect("/not_found");
+  console.log(postData);
+
+  if (!postData) {
+    redirect("/not_found");
+    return null;  // redirect ile birlikte çıkış yapmak için null döndür
+  }
+
+  if (!postData.title || !postData.title.rendered) {
+    console.error("Title or rendered is missing in postData", postData);
+    redirect("/not_found");
+    return null;  // Eksik veri varsa yine not found sayfasına yönlendir
+  }
 
   const adjustSchemaForFrontend = (
     schema: any,
@@ -29,7 +39,6 @@ console.log(postData)
 
   return (
     <>
-      {" "}
       <Head>
         <title>
           {postData.yoast_head_json?.title || postData.title.rendered}
@@ -135,11 +144,12 @@ console.log(postData)
       </Head>
       <section className="relative w-full">
         <div className="font-display drop-shadow-[black_2px_2px_6px] rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
-          <h2 className="capitalize" >{postData.title.rendered}</h2>
+          <h2 className="capitalize">{postData.title.rendered}</h2>
         </div>
         <BlogContent content={postData.content?.rendered || ""} />
       </section>
     </>
   );
 };
+
 export default Page;

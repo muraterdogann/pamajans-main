@@ -411,17 +411,6 @@ export default function Header04() {
                   ))}
                 </ul>
               </li>
-              {/* page */}
-              <li className="group relative">
-                <Link href="/referanslar">
-                  <span className="text-white font-display hover:text-accentPam focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full cursor-pointer dark:hover:text-accentPam dark:focus:text-accentPam">
-                    <span
-                    >
-                      Referanslar
-                    </span>
-                  </span>
-                </Link>
-              </li>
 
               {/* resource */}
               <li className="group relative">
@@ -624,17 +613,6 @@ export default function Header04() {
                 </li>
               ))}
             </ul>
-          </li>
-          {/* page */}
-          <li className="group relative " onClick={() => setToggle(false)}>
-            <Link href="/referanslar" >
-              <span className="text-jacarta-700 font-display hover:text-accentPam focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full cursor-pointer">
-                <span
-                >
-                  Referanslar
-                </span>
-              </span>
-            </Link>
           </li>
 
           {/* resource */}

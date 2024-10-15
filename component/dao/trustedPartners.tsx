@@ -27,11 +27,6 @@ const TrustedPartner = () => {
         <div className="flex animate-marquee space-x-8">
           <Partner3 />
         </div>
-        <div className="flex justify-center mt-20">
-          <Link href="/referanslar" className="inline-block rounded-[10px] bg-second text-white py-3 px-8 text-center font-semibold text-white transition-all hover:bg-main">
-            Tüm Referanslarımız
-          </Link>
-        </div>
         {/* animate-marquee */}
       </section>
       {/* <!-- end partners -->  */}

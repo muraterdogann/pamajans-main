@@ -87,8 +87,8 @@ export default function Header04() {
       },
       {
         id: uuidv4(),
-        name: "Whatsapp Geri Bildirim ",
-        path: "/hizmetlerimiz/whatsapp-geri-bildirim",
+        name: "Google Reklam Yönetimi",
+        path: "/hizmetlerimiz/google-reklam-yonetimi",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"

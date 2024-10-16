@@ -6,7 +6,7 @@ import WhiteLogo from "/public/pam-ajans-logo-beyaz.svg";
 
 
 import { useEffect, useState } from "react";
-const {v4: uuidv4} = require("uuid");
+const { v4: uuidv4 } = require("uuid");
 
 export default function Header04() {
   const [toggle, setToggle] = useState(false);
@@ -33,45 +33,25 @@ export default function Header04() {
     });
   });
 
-  type ServicePage={
-    id:string,
-    name:string,
-    path:string,
+  type ServicePage = {
+    id: string,
+    name: string,
+    path: string,
 
     condition?: boolean;
   }
 
   type Service = {
-    id:number,
-    name:string,
-    pages:ServicePage[],
+    id: number,
+    name: string,
+    pages: ServicePage[],
   }
 
-  
+
   /* -------------------------------------------------------------------------- */
   /*                            daynamic navigations                            */
   /* -------------------------------------------------------------------------- */
-  const hakkimizda:Service = {
-    id: 1,
-    name: "Hakkımızda",
-    pages: [
-      {
-        id: uuidv4(),
-        name: "Hakkımızda",
-        path: "/hakkimizda",
-      },
-      {
-        id: uuidv4(),
-        name: "Ekibimiz",
-        path: "/ekibimiz",
-      },
-      {
-        id: uuidv4(),
-        name: "Bize Katıl",
-        path: "/iletisim",
-      },
-    ],
-  };
+
 
   const hizmetlerimiz = {
     id: 3,
@@ -277,13 +257,13 @@ export default function Header04() {
     ],
   };
 
-  const mobileCollapse = (id:string|number) => {
-    
+  const mobileCollapse = (id: string | number) => {
+
     if (isCollapse === id) {
       return setCollapse(null); // setCollapse fonksiyonuna null geçiliyor
     }
     setCollapse(id);
-    
+
   };
 
   return <>
@@ -318,50 +298,15 @@ export default function Header04() {
           <nav className="navbar w-full mt-24 lg:mt-0">
             <ul className="flex flex-col justify-center lg:flex-row">
               {/* hakkimizda */}
-              <li className="js-nav-dropdown group relative">
-                <button className="dropdown-toggle text-white font-display hover:text-accentPam focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full">
-                  <span
-    
-                   
-                  >
-                    Hakkımızda
-                  </span>
-                  <i className="lg:hidden">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width={24}
-                      height={24}
-                      className="h-4 w-4 dark:fill-white"
+              <li className="group relative">
+                <Link href="/hakkimizda">
+                  <span className="text-white font-display hover:text-accentPam focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full cursor-pointer dark:hover:text-accentPam dark:focus:text-accentPam">
+                    <span
                     >
-                      <path fill="none" d="M0 0h24v24H0z" />
-                      <path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z" />
-                    </svg>
-                  </i>
-                </button>
-                <ul className="dropdown-menu group-hover:visible lg:invisible -left-6 top-[85%] z-10 hidden grid-flow-row grid-cols-1 gap-x-4 whitespace-nowrap rounded-xl bg-white transition-all will-change-transform group-hover:opacity-100 lg:absolute lg:!grid lg:translate-y-4 lg:py-8 lg:px-5 lg:opacity-0 lg:shadow-2xl lg:group-hover:translate-y-2">
-                  {hakkimizda?.pages?.map((page) => (
-                    <li key={page.id}>
-                      <Link
-                        href={page.path}
-                        className="dark:hover:bg-jacarta-100  hover:text-accent focus:text-accent hover:bg-jacarta-100 flex items-center rounded-xl px-5 py-2 transition-colors justify-between "
-                      >
-
-                        <span
-                          className="font-display text-jacarta-700 text-sm dark:text-jacarta-700"
-                        >
-                          {page.name}
-                        </span>
-                        {page.condition ? (
-                          <span className="rounded bg-green py-1 px-2 text-tiny font-bold uppercase leading-none text-white ml-4">
-                            new
-                          </span>
-                        ) : undefined}
-
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                      Hakkımızda
+                    </span>
+                  </span>
+                </Link>
               </li>
 
               {/* hizmetlerimiz */}
@@ -369,12 +314,12 @@ export default function Header04() {
                 <button className="dropdown-toggle text-white font-display hover:text-accentPam focus:text-accentPam dark:hover:text-accentPam dark:focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full">
                   <span
                     className=""
-                        
-                   
+
+
                   >
                     Hizmetlerimiz
                   </span>
-                  
+
                   <i className="lg:hidden">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -477,24 +422,24 @@ export default function Header04() {
     >
       <div className="t-0 dark:bg-jacarta-800 fixed left-0 z-10 flex w-full items-center justify-between bg-white p-6 lg:hidden">
         <Link href="/">
-        <div className="dark:hidden">
-          <Image
-            src={Logo}
-            height={28}
-            width={130}
-            alt="Pam Ajans Logo"
-            className="max-h-7 h-auto "
-          />
-        </div>
+          <div className="dark:hidden">
+            <Image
+              src={Logo}
+              height={28}
+              width={130}
+              alt="Pam Ajans Logo"
+              className="max-h-7 h-auto "
+            />
+          </div>
 
-        <div className="hidden dark:block">
-          <Image
-            src={WhiteLogo}
-            height={28}
-            width={130}
-            alt="Pam Ajans Logo"
-          />
-        </div>
+          <div className="hidden dark:block">
+            <Image
+              src={WhiteLogo}
+              height={28}
+              width={130}
+              alt="Pam Ajans Logo"
+            />
+          </div>
         </Link>
         <button
           className="js-mobile-close border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent ml-2 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
@@ -517,55 +462,15 @@ export default function Header04() {
 
       <nav className="navbar w-full mt-24">
         <ul className="flex flex-col lg:flex-row">
-          <li className="js-nav-dropdown group relative">
-            <button
-              onClick={() => mobileCollapse(hakkimizda.id)}
-              className="dropdown-toggle text-jacarta-700 font-display hover:text-second focus:text-second dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full"
-            >
-              <span
-                className=""
-              >
-                {hakkimizda.name}
-              </span>
-              <i className="lg:hidden">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width={24}
-                  height={24}
-                  className="h-4 w-4 dark:fill-white"
+        <li className="group relative " onClick={() => setToggle(false)}>
+            <Link href="/hakkimizda">
+              <span className="text-jacarta-700 font-display hover:text-accentPam focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full cursor-pointer">
+                <span
                 >
-                  <path fill="none" d="M0 0h24v24H0z" />
-                  <path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z" />
-                </svg>
-              </i>
-            </button>
-            <ul
-              className={`dropdown-menu dark:bg-jacarta-800 left-0 top-[85%] z-10 min-w-[200px] gap-x-4 whitespace-nowrap rounded-xl bg-white transition-all will-change-transform group-hover:visible group-hover:opacity-100 lg:invisible lg:absolute lg:grid lg:translate-y-4 lg:py-4 lg:px-2 lg:opacity-0 lg:shadow-2xl lg:group-hover:translate-y-2 relative ${isCollapse === hakkimizda.id ? "block" : "hidden"
-                }`}
-            >
-              {hakkimizda?.pages?.map((page) => (
-                <li key={page.id} onClick={() => setToggle(false)}>
-                  <Link
-                    href={page.path}
-                    className="dark:hover:bg-jacarta-600 hover:text-accent focus:text-accent hover:bg-jacarta-100 flex items-center rounded-xl px-5 py-2 transition-colors"
-                  >
-
-                    <span
-                      className="font-display dark:text-accent text-sm dark:text-jacarta-700"
-                    >
-                      {page.name}
-                    </span>
-                    {page.condition ? (
-                      <span className="rounded bg-green py-1 px-2 text-tiny font-bold uppercase leading-none text-white ml-4">
-                        new
-                      </span>
-                    ) : undefined}
-
-                  </Link>
-                </li>
-              ))}
-            </ul>
+                  Hakkımızda
+                </span>
+              </span>
+            </Link>
           </li>
           <li className="js-nav-dropdown nav-item dropdown group relative">
             <button
@@ -640,12 +545,12 @@ export default function Header04() {
       </nav>
       {/* End navbar mobile menu  */}
       <div className="mt-10 w-full lg:hidden">
-        
+
         <Link href="/iletisim" className="bg-second p-shadow block w-full rounded-full py-3 px-8 text-center font-semibold text-white transition-all">
-            {" "}
-            Teklif Al
-          </Link>
-        
+          {" "}
+          Teklif Al
+        </Link>
+
         <hr className="dark:bg-jacarta-600 bg-jacarta-100 my-5 h-px border-0" />
         <div className="flex items-center justify-center space-x-5">
           <Link className="group" target="_blank" href="https://www.facebook.com/pamajans/?locale=tr_TR">
@@ -662,7 +567,7 @@ export default function Header04() {
               <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
             </svg>
           </Link>
-      
+
           <Link className="group" target="_blank" href="https://www.instagram.com/pamajans/">
             <svg
               aria-hidden="true"
@@ -702,13 +607,13 @@ export default function Header04() {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 28 28"
             >
-             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
             </svg>
           </Link>
         </div>
       </div>
       {/* mt-10 w-full lg:hidden */}
     </div>
-  
+
   </>;
 }

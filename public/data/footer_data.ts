@@ -15,11 +15,6 @@ const footerMenuList = [
         text: "İletişim",
       },
       {
-        id: 3,
-        href: "ekibimiz",
-        text: "Ekibimiz",
-      },
-      {
         id: 6,
         href: "kvkk",
         text: "KVKK",

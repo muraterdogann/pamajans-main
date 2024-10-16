@@ -135,7 +135,7 @@ console.log(postData)
       </Head>
       <section className="relative w-full">
         <div className="font-display drop-shadow-[black_2px_2px_6px] rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
-          <h2 className="capitalize" >{postData.title.rendered}</h2>
+          <h1 className="capitalize" >{postData.title.rendered}</h1>
         </div>
         <BlogContent content={postData.content?.rendered || ""} />
       </section>

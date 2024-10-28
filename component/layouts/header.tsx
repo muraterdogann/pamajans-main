@@ -319,7 +319,7 @@ export default function Header04() {
                   </i>
                 </button>
                 <ul
-                  className="dropdown-menu -left-6 top-[85%] z-10 hidden grid-flow-col grid-rows-5 gap-x-4 whitespace-nowrap rounded-xl bg-white transition-all will-change-transform group-hover:visible group-hover:opacity-100 lg:invisible lg:absolute lg:!grid lg:translate-y-4 lg:py-8 lg:px-5 lg:opacity-0 lg:shadow-2xl lg:group-hover:translate-y-2 relative"
+                  className="dropdown-menu -left-6 top-[85%] z-10 hidden grid-flow-col grid-rows-4 gap-x-4 whitespace-nowrap rounded-xl bg-white transition-all will-change-transform group-hover:visible group-hover:opacity-100 lg:invisible lg:absolute lg:!grid lg:translate-y-4 lg:py-8 lg:px-5 lg:opacity-0 lg:shadow-2xl lg:group-hover:translate-y-2 relative"
                   aria-labelledby="navDropdown-1"
                 >
                   {hizmetlerimiz?.pages?.map((page) => (

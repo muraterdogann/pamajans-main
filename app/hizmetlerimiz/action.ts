@@ -7,7 +7,7 @@ export interface OgImage {
   height?: number;
   type?: string;
 }
- 
+
 export interface Post {
   id: number;
   slug: string;

@@ -3,7 +3,7 @@ import Header04 from "@/component/layouts/header";
 import { ReactNode } from "react";
 import Script from "next/script";
 import { Poppins } from "next/font/google";
-import "./globals.css"
+import "./globals.css";
 
 interface LayoutProps {
   children: ReactNode;
@@ -12,10 +12,10 @@ interface LayoutProps {
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  display: 'swap'
+  display: 'swap',
 });
 
-export const revalidate = 86400;
+export const revalidate = process.env.VERCEL ? 1 : false;
 
 export default function Layout({ children }: LayoutProps) {
   const header = <Header04 />;
@@ -68,7 +68,6 @@ export default function Layout({ children }: LayoutProps) {
             style={{ display: 'none', visibility: 'hidden' }}
           ></iframe>
         </noscript>
-
       </body>
     </html>
   );

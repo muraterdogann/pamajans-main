@@ -57,11 +57,13 @@ export async function getSlugs(): Promise<string[]> {
 export async function getPostData(slug: string): Promise<Post | null> {
   console.log("getPostData", slug);
 
+  const revalidateValue = process.env.VERCEL ? 1 : false;
+
   const url = `${reqUrl}/pages?slug=${slug}&_fields=id,slug,title,content,yoast_head,yoast_head_json`;
   console.log(url);
 
   const res = await fetch(url, {
-    next: { revalidate: 86400 },
+    next: { revalidate: revalidateValue },
   });
 
   if (!res.ok) {

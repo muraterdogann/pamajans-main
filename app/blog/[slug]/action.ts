@@ -41,25 +41,22 @@ export interface Post {
 }
 
 export async function getPostData(slug: string): Promise<Post | null> {
-  
+  const revalidateValue = process.env.VERCEL ? 1 : false;
 
-  
   const url = `${reqUrl}/posts?slug=${slug}&_fields=id,slug,title,content,yoast_head,yoast_head_json&categories=7`;
-console.log(url)
-  const res = await fetch(url,{
-    next:{revalidate: 86400}
+  console.log(url);
+
+  const res = await fetch(url, {
+    next: { revalidate: revalidateValue },
   });
   console.log(res.status);
 
   const posts: Post[] = await res.json();
-console.log("it's",posts)
+  console.log("it's", posts);
+  
   if (!posts || posts.length === 0) {
     return null;
   }
 
   return posts[0];
 }
-
- 
-
-

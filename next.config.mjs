@@ -22,7 +22,13 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: ['dashboard.pushouse.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'dashboard.pushouse.com',
+        pathname: '**',
+      },
+    ],
   },
 };
 

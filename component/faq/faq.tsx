@@ -54,7 +54,7 @@ const Faq = () => {
                       Aylık
                     </span>
                     <span className="mb-2 block text-2xl text-white">
-                      15 Milyon+
+                      10 Milyon+
                     </span>
                     <span className="block text-base text-white">
                      Bütçe Yönetimi

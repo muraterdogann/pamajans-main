@@ -28,32 +28,32 @@ const footerMenuList = [
     list: [
       {
         id: 1,
-        href: "meta-reklam-yonetimi",
+        href: "/hizmetlerimiz/meta-reklam-yonetimi",
         text: "Sosyal Medya Reklam Yönetimi",
       },
       {
         id: 2,
-        href: "google-reklam-yonetimi",
+        href: "/hizmetlerimiz/google-reklam-yonetimi",
         text: "Google Reklam Yönetimi",
       },
       {
         id: 3,
-        href: "e-ticaret-web-site-kurulumu",
+        href: "/hizmetlerimiz/e-ticaret-web-site-kurulumu",
         text: "E-Ticaret Web Sitesi",
       },
       {
         id: 4,
-        href: "kurumsal-web-site-kurulumu",
+        href: "/hizmetlerimiz/kurumsal-web-site-kurulumu",
         text: "Kurumsal Web Sitesi",
       },
       {
         id: 5,
-        href: "seo-yonetimi",
+        href: "/hizmetlerimiz/seo-yonetimi",
         text: "SEO",
       },
       {
         id: 6,
-        href: "pazaryeri-giris-destegi",
+        href: "/hizmetlerimiz/pazaryeri-giris-destegi",
         text: "Pazaryeri ve E-ihracat",
       }
     ]

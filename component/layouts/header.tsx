@@ -678,7 +678,7 @@ export default function Header04() {
               <span className="text-jacarta-700 font-display hover:text-accentPam focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full cursor-pointer">
                 <span
                 >
-                  İletişimm
+                  İletişim
                 </span>
               </span>
             </Link>

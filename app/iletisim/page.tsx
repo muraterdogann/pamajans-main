@@ -43,8 +43,8 @@ const Contact = () => {
 
               <div className="lg:flex">
 
-                <div className="mb-12 lg:mb-0 lg:w-1/2 lg:pr-12 mt-56 select-none">
-                  <h2 className="font-display text-jacarta-700 mb-4 text-2xl font-bold dark:text-white">
+                <div className="mb-12 lg:mb-0 lg:w-1/2 lg:pr-12 md:mt-56 select-none">
+                  <h2 className="font-display text-jacarta-700 mb-4 text-2xl font-bold dark:text-white relative z-10">
                     Bizimle İletişime Geç. Ücretsiz Analiz İçin Sizi Arayalım.
                   </h2>
 

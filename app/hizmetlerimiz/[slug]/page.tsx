@@ -12,7 +12,7 @@ type TPageProps = {
 const Page = async ({ params }: TPageProps) => {
   console.log(params)
   const postData = await getPostData(params.slug!);
-console.log(postData)
+  console.log(postData)
   if (!postData) redirect("/not_found");
 
   const adjustSchemaForFrontend = (
@@ -139,6 +139,19 @@ console.log(postData)
         </div>
         <BlogContent content={postData.content?.rendered || ""} />
       </section>
+      <div className="bg-gray-50 py-8 sm:py-12">
+        <div className="max-w-3xl mx-auto text-center px-4 sm:px-0">
+          <h2 className="text-md font-medium text-black-700 mb-4 sm:mb-6 leading-snug">
+            Hizmetlerimiz hakkında daha fazla bilgi almak için bizimle iletişime geçin.
+          </h2>
+          <a
+            href="/iletisim"
+            className="inline-block px-6 py-2 sm:px-8 sm:py-3 text-sm sm:text-base text-white bg-black font-medium rounded-full transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-md hover:shadow-lg"
+          >
+            İletişime Geç
+          </a>
+        </div>
+      </div>
     </>
   );
 };

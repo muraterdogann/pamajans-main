@@ -35,7 +35,7 @@ const SingleWalletFeature = () => {
       icon: "w5",
       title: "SEO",
       text: 'Arama motoru optimizasyonu ile web sitenizi üst sıralara taşıyarak organik trafik ve satışlarınızı artırıyoruz.',
-      path: "/hizmetlerimiz/seo-hizmetleri",
+      path: "/hizmetlerimiz/seo-yonetimi",
     },
     {
       id: 6,

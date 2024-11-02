@@ -124,7 +124,7 @@ const ContactForm2: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ 
           </label>
           <input
             name="namesurname"
-            className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
+            className="contact-form-input normal-case dark:bg-jacarta-700 bg-gray-50 border border-jacarta-100 hover:border-accent focus:border-second w-full rounded-lg py-3 px-4 text-sm sm:text-base dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-second transition-shadow duration-300 ease-in-out shadow-sm hover:shadow-md"
             id="namesurname"
             value={namesurname}
             onChange={(e) => handleInputChange("namesurname", e.target.value)}
@@ -138,7 +138,7 @@ const ContactForm2: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ 
           </label>
           <input
             name="email"
-            className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
+            className="contact-form-input normal-case dark:bg-jacarta-700 bg-gray-50 border border-jacarta-100 hover:border-accent focus:border-second w-full rounded-lg py-3 px-4 text-sm sm:text-base dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-second transition-shadow duration-300 ease-in-out shadow-sm hover:shadow-md"
             id="email"
             value={email}
             onChange={(e) => handleInputChange("email", e.target.value)}
@@ -152,7 +152,7 @@ const ContactForm2: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ 
           </label>
           <input
             name="phone"
-            className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
+            className="contact-form-input normal-case dark:bg-jacarta-700 bg-gray-50 border border-jacarta-100 hover:border-accent focus:border-second w-full rounded-lg py-3 px-4 text-sm sm:text-base dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-second transition-shadow duration-300 ease-in-out shadow-sm hover:shadow-md"
             id="phone"
             value={phone}
             onChange={(e) => { setPhone(e.target.value); handleInputChange("phone", e.target.value) }}
@@ -171,7 +171,7 @@ const ContactForm2: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ 
             id="careerposition"
             value={careerposition}
             onChange={(e) => { setCareerposition(e.target.value); handleInputChange("careerposition", e.target.value) }}
-            className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
+            className="contact-form-input normal-case dark:bg-jacarta-700 bg-gray-50 border border-jacarta-100 hover:border-accent focus:border-second w-full rounded-lg py-3 px-4 text-sm sm:text-base dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-second transition-shadow duration-300 ease-in-out shadow-sm hover:shadow-md"
           >
             <option value="">Lütfen bir seçim yapınız.</option>
             <option value="Zorunlu Staj">Zorunlu Staj</option>
@@ -191,7 +191,7 @@ const ContactForm2: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ 
             id="title"
             value={title}
             onChange={(e) => { setTitle(e.target.value); handleInputChange("title", e.target.value) }}
-            className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
+            className="contact-form-input normal-case dark:bg-jacarta-700 bg-gray-50 border border-jacarta-100 hover:border-accent focus:border-second w-full rounded-lg py-3 px-4 text-sm sm:text-base dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-second transition-shadow duration-300 ease-in-out shadow-sm hover:shadow-md"
           >
             <option value="">Lütfen bir seçim yapınız.</option>
             <option value="Reklam Uzmanı">Reklam Uzmanı</option>
@@ -209,7 +209,7 @@ const ContactForm2: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ 
         </label>
         <textarea
           id="message"
-          className="contact-form-input normal-case dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-second dark:border-jacarta-600 w-full rounded-lg py-3 drop-shadow-lg sm:drop-shadow-[0px_1px_1px_#000000] hover:ring-2 dark:text-white"
+          className="contact-form-input normal-case dark:bg-jacarta-700 bg-gray-50 border border-jacarta-100 hover:border-accent focus:border-second w-full rounded-lg py-3 px-4 text-sm sm:text-base dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-second transition-shadow duration-300 ease-in-out shadow-sm hover:shadow-md"
           name="message"
           value={message}
           onChange={(e) => handleInputChange("message", e.target.value)}

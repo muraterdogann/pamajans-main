@@ -1,5 +1,4 @@
 import { NextResponse, NextRequest } from 'next/server';
-import { rateLimit } from '@/app/api/ratelimit/rateLimit';
 import axios from 'axios';
 
 const myEmail = process.env.MY_EMAIL;
@@ -7,11 +6,7 @@ const myEmail = process.env.MY_EMAIL;
 export async function POST(request: NextRequest) {
     const body = await request.json();
     try {
-        // Rate limiting kontrolü
-        const isAllowed = await rateLimit(request);
-        if (!isAllowed) {
-            return NextResponse.json({ message: "Çok fazla istek gönderdiniz. Lütfen bekleyiniz" }, { status: 429 });
-        }
+        // Rate limiting kontrolü tamamen kaldırıldı
 
         const response = await axios({
             method: 'POST',

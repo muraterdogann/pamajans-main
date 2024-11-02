@@ -48,7 +48,7 @@ const footerMenuList = [
       },
       {
         id: 5,
-        href: "seo-hizmetleri",
+        href: "seo-yonetimi",
         text: "SEO",
       },
       {

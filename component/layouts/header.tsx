@@ -301,6 +301,17 @@ export default function Header04() {
         <div className="js-mobile-menu dark:bg-jacarta-800 invisible fixed inset-0 z-10 ml-auto items-center bg-white opacity-0 lg:visible lg:relative lg:inset-auto lg:flex lg:bg-transparent lg:opacity-100 dark:lg:bg-transparent w-full">
           <nav className="navbar w-full mt-24 lg:mt-0">
             <ul className="flex flex-col justify-center lg:flex-row">
+              {/* Anasayfa */}
+              <li className="group relative">
+                <Link href="/">
+                  <span className="text-white font-display hover:text-accentPam focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full cursor-pointer dark:hover:text-accentPam dark:focus:text-accentPam">
+                    <span
+                    >
+                      Ana Sayfa
+                    </span>
+                  </span>
+                </Link>
+              </li>
               {/* hakkimizda */}
               <li className="group relative">
                 <Link href="/hakkimizda">
@@ -362,7 +373,7 @@ export default function Header04() {
               </li>
 
               {/* resource */}
-              <li className="group relative">
+              {/* <li className="group relative">
                 <Link href="/basari-hikayeleri">
                   <span className="text-white font-display hover:text-accentPam focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full cursor-pointer dark:hover:text-accentPam dark:focus:text-accentPam">
                     <span
@@ -371,13 +382,23 @@ export default function Header04() {
                     </span>
                   </span>
                 </Link>
-              </li>
+              </li> */}
               <li className="group relative">
                 <Link href="/blog">
                   <span className="text-white font-display hover:text-accentPam focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full cursor-pointer dark:hover:text-accentPam dark:focus:text-accentPam">
                     <span
                     >
                       Blog
+                    </span>
+                  </span>
+                </Link>
+              </li>
+              <li className="group relative">
+                <Link href="/iletisim">
+                  <span className="text-white font-display hover:text-accentPam focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full cursor-pointer dark:hover:text-accentPam dark:focus:text-accentPam">
+                    <span
+                    >
+                     İletişim
                     </span>
                   </span>
                 </Link>
@@ -466,7 +487,7 @@ export default function Header04() {
 
       <nav className="navbar w-full mt-24">
         <ul className="flex flex-col lg:flex-row">
-        <li className="group relative " onClick={() => setToggle(false)}>
+          <li className="group relative " onClick={() => setToggle(false)}>
             <Link href="/hakkimizda">
               <span className="text-jacarta-700 font-display hover:text-accentPam focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full cursor-pointer">
                 <span
@@ -525,7 +546,7 @@ export default function Header04() {
           </li>
 
           {/* resource */}
-          <li className="group relative " onClick={() => setToggle(false)}>
+          {/* <li className="group relative " onClick={() => setToggle(false)}>
             <Link href="/basari-hikayeleri">
               <span className="text-jacarta-700 font-display hover:text-accentPam focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full cursor-pointer">
                 <span
@@ -534,7 +555,7 @@ export default function Header04() {
                 </span>
               </span>
             </Link>
-          </li>
+          </li> */}
           <li className="group relative " onClick={() => setToggle(false)}>
             <Link href="/blog">
               <span className="text-jacarta-700 font-display hover:text-accentPam focus:text-accentPam flex items-center justify-between py-3.5 text-base dark:text-jacarta-700 lg:px-5 w-full cursor-pointer">

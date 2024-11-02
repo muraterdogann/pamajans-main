@@ -47,26 +47,7 @@ const Contact = () => {
                   <h2 className="font-display text-jacarta-700 mb-4 text-2xl font-bold dark:text-white">
                     Bizimle İletişime Geç. Ücretsiz Analiz İçin Sizi Arayalım.
                   </h2>
-                  <ul className=" mb-16 text-xl leading-normal">
-                    <li className="flex">
-                      <svg className="h-8 w-8 text-green-300" fill="white" viewBox="0 0 24 24" stroke="#37c8ae">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <span>Sosyal medya hesap analizi</span>
-                    </li>
-                    <li className="flex">
-                      <svg className="h-8 w-8 text-green-300" fill="white" viewBox="0 0 24 24" stroke="#37c8ae">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <span>Web site analizi</span>
-                    </li>
-                    <li className="flex">
-                      <svg className="h-8 w-8 text-green-300" fill="white" viewBox="0 0 24 24" stroke="#37c8ae">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <span>Performans analizi</span>
-                    </li>
-                  </ul>
+
                   <Image
                     width={123}
                     height={123}

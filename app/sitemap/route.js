@@ -11,8 +11,9 @@ function getAllRoutes(dir = 'app', basePath = '') {
   const routes = [];
 
   for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
-      routes.push(...getAllRoutes(path.join(dir, entry.name), `${basePath}/${entry.name}`));
+      routes.push(...getAllRoutes(fullPath, `${basePath}/${entry.name}`));
     } else if (entry.isFile() && entry.name === 'page.tsx') {
       routes.push(basePath);
     }
@@ -23,7 +24,7 @@ function getAllRoutes(dir = 'app', basePath = '') {
 
 export async function GET() {
   const routes = getAllRoutes();
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+  const sitemap = `<?xml version="1.0" test="test" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     ${routes
       .map((route) => {

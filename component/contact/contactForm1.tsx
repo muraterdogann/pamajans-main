@@ -237,7 +237,7 @@ const ContactForm1: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ 
         id="contact-form-submit"
         disabled={!isChecked}
       >
-        Submit
+        Gönder
       </button>
       {/* <BidsModal>
       </BidsModal> */}

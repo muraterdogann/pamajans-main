@@ -246,7 +246,7 @@ const ContactForm2: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ 
         id="contact-form-submit"
         disabled={!isChecked}
       >
-        Submit
+        Gönder
       </button>
       <div id="contact-form-notice" className="relative mt-4 hidden rounded-lg border border-transparent p-4"></div>
     </form>

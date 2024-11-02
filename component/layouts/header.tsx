@@ -272,7 +272,7 @@ export default function Header04() {
             href="/iletisim"
             className="pamTopBar-link cursor-pointer font-medium text-center bg-clip-text text-transparent bg-gradient-to-r from-[#00C896] via-[#27A199] to-[#00C896] bg-[length:300%] animate-pulse"
           >
-            ⚡ Reklam bütçeniz boşa gitmesin; satışlarınızı Pam Ajans ile katlayın!
+            ⚡ Yüksek ROAS ile büyümeye başlayın; Türkiye’nin en hızlı büyüten ajansına katılın!
           </a>
           <div className="pamTopBar-icon line-height-0 mx-8">
             <svg
@@ -332,7 +332,7 @@ export default function Header04() {
             href="/iletisim"
             className="pamMobileTopBar-link font-medium text-xs bg-clip-text text-transparent bg-gradient-to-r from-[#00C896] via-[#27A199] to-[#00C896] animate-pulse text-left"
           >
-            ⚡ Reklam bütçeniz boşa gitmesin; satışlarınızı Pam Ajans ile katlayın!
+            ⚡ Yüksek ROAS ile büyümeye başlayın; Türkiye’nin en hızlı büyüten ajansına katılın!
           </Link>
           <a
             href="tel:08503057726"

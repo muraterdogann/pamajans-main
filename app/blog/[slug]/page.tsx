@@ -1,6 +1,6 @@
-
+// app/blog/[slug]/page.tsx
 import parse, { domToReact, DOMNode } from "html-react-parser";
-import { getPostData, OgImage } from "./action"; 
+import { getPostData } from "./action"; 
 import {
   WPBlockHeading,
   WPBlockParagraph,
@@ -30,11 +30,7 @@ const replaceNodeWithComponent = (domNode: DOMNode) => {
       case "p":
         return <WPBlockParagraph>{children}</WPBlockParagraph>;
       case "figure":
-        return (
-          <WPBlockImage>
-          {children}
-          </WPBlockImage>
-        );
+        return <WPBlockImage>{children}</WPBlockImage>;
       case "ul":
         return <WPBlockList>{children}</WPBlockList>;
       case "li":
@@ -47,17 +43,10 @@ const replaceNodeWithComponent = (domNode: DOMNode) => {
   }
   return null;
 };
- 
-const adjustSchemaForFrontend = (schema: any, oldDomain: string, newDomain: string): any => {
-  if (!schema) return schema;
-  const schemaString = JSON.stringify(schema);
-  return JSON.parse(schemaString.replace(new RegExp(oldDomain, "g"), newDomain));
-};
- 
- const PostPage= async ({ params }: TPageProps) => {
-  console.log(params.slug)
-  const postData = await getPostData(params.slug!)
-console.log(postData)
+
+const PostPage = async ({ params }: TPageProps) => {
+  const postData = await getPostData(params.slug!);
+
   if (!postData) redirect("/not_found");
 
   const parsedContent = postData.content?.rendered
@@ -66,34 +55,35 @@ console.log(postData)
 
   return (
     <>
-    <Head>
-      <title>{postData.yoast_head_json?.title || postData.title.rendered}</title>
-      <meta name="description" content={postData.yoast_head_json?.description || 'Varsayılan Açıklama'} />
-      <link rel="icon" href="/images/pam-ajans-logo-siyah.webp" type="image/webp" />
+      <Head>
+        {/* Blog sayfasına özel meta bilgileri */}
+        <title>{postData.title?.rendered || "Pam Ajans Blog"}</title>
+        <meta name="description" content="Pam Ajans blog sayfasında dijital pazarlama, reklam yönetimi, sosyal medya stratejileri ve daha fazlasına dair güncel içeriklere ulaşabilirsiniz." />
+        <link rel="icon" href="/images/pam-ajans-logo-siyah.webp" type="image/webp" />
 
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <meta name="author" content="pamajans" />
-      <meta charSet="utf-8" />
-      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta property="og:locale" content={postData.yoast_head_json?.og_locale || 'tr_TR'} />
-      <meta property="og:type" content={postData.yoast_head_json?.og_type || 'article'} />
-      <meta property="og:title" content={postData.yoast_head_json?.og_title || postData.title.rendered} />
-      <meta property="og:description" content={postData.yoast_head_json?.og_description || 'Varsayılan Açıklama'} />
-      <meta property="og:url" content={new URL(postData.slug, 'https://pamajans.com/blog/').href} />
-      <meta property="og:site_name" content="pamajans" />
-      <meta property="article:publisher" content="https://www.facebook.com/pamajans/" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="author" content="Pam Ajans" />
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-      {postData.yoast_head_json?.og_image?.map((image: OgImage, index: number) => (
-        <meta key={index} property="og:image" content={new URL(image.url.replace(".png", ".webp"), 'https://dashboard.pushouse.com').href} />
-      ))}
+        {/* Open Graph Meta Tags */}
+        <meta property="og:locale" content="tr_TR" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={postData.title?.rendered || "Pam Ajans Blog"} />
+        <meta property="og:description" content="Pam Ajans blog sayfasında dijital pazarlama, reklam yönetimi, sosyal medya stratejileri ve daha fazlasına dair güncel içeriklere ulaşabilirsiniz." />
+        <meta property="og:url" content={`https://pamajans.com/blog/${postData.slug}`} />
+        <meta property="og:site_name" content="Pam Ajans" />
+        <meta property="og:image" content="/images/pam-ajans-blog-default.webp" />
+        <meta property="og:image:alt" content="Pam Ajans" />
 
-      <meta name="twitter:card" content={postData.yoast_head_json?.twitter_card || 'summary_large_image'} />
-      <meta name="twitter:title" content={postData.yoast_head_json?.twitter_title || postData.title.rendered} />
-      <meta name="twitter:description" content={postData.yoast_head_json?.twitter_description || 'Varsayılan Açıklama'} />
-
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(adjustSchemaForFrontend(postData.yoast_head_json?.schema, 'dashboard.pushouse.com', 'pamajans.com')) }} />
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={postData.title?.rendered || "Pam Ajans Blog"} />
+        <meta name="twitter:description" content="Pam Ajans blog sayfasında dijital pazarlama, reklam yönetimi, sosyal medya stratejileri ve daha fazlasına dair güncel içeriklere ulaşabilirsiniz." />
+        <meta name="twitter:image" content="/images/pam-ajans-blog-default.webp" />
       </Head>
+
       <section className="relative w-full mb-16 bg-[f5f8fa] h-auto">
         <div className="font-display drop-shadow-[black_2px_2px_6px] rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
           <h2>{postData.title.rendered}</h2>

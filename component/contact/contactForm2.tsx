@@ -228,7 +228,7 @@ const ContactForm2: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ 
           className="checked:bg-second dark:bg-jacarta-600 text-second border-jacarta-200 focus:ring-second/20 dark:border-jacarta-500 h-5 w-5 self-start rounded focus:ring-offset-0 cursor-pointer"
         />
         <label className="dark:text-jacarta-200 text-sm">
-          <Link href="/tarms" className="text-second">
+          <Link href="/kvkk" target="_blank" className="text-second">
             Hizmet Koşullarını
           </Link>{" "} Kabul Ediyorum
         </label>

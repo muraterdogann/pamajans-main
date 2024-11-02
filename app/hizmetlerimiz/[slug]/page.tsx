@@ -1,7 +1,7 @@
-// app/hizmetlerimiz/[slug]/page.tsx
 import { notFound } from "next/navigation";
 import BlogContent from "@/component/slug-page/blogContent";
 import { getPostData, OgImage } from "../action";
+import Head from "next/head"; // Head bileşeni eklendi
 
 type TPageProps = {
   params: {
@@ -9,7 +9,6 @@ type TPageProps = {
   };
 };
 
-// Generate metadata dynamically based on the fetched post data
 export async function generateMetadata({ params }: TPageProps) {
   const postData = await getPostData(params.slug);
 
@@ -63,37 +62,41 @@ const Page = async ({ params }: TPageProps) => {
   };
 
   return (
-    <section className="relative w-full">
-      <div className="font-display drop-shadow-[black_2px_2px_6px] rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
-        <h1 className="capitalize">{postData.title.rendered}</h1>
-      </div>
-      <BlogContent content={postData.content?.rendered || ""} />
-      <div className="bg-gray-50 py-8 sm:py-12">
-        <div className="max-w-3xl mx-auto text-center px-4 sm:px-0">
-          <h2 className="text-md font-medium text-black-700 mb-4 sm:mb-6 leading-snug">
-            Hizmetlerimiz hakkında daha fazla bilgi almak için bizimle iletişime geçin.
-          </h2>
-          <a
-            href="/iletisim"
-            className="inline-block px-6 py-2 sm:px-8 sm:py-3 text-sm sm:text-base text-white bg-black font-medium rounded-full transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-md hover:shadow-lg"
-          >
-            İletişime Geç
-          </a>
+    <>
+      <Head>
+      <link rel="icon" href="/images/pam-ajans-logo-siyah.svg" />
+      </Head>
+      <section className="relative w-full">
+        <div className="font-display drop-shadow-[black_2px_2px_6px] rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl dark:text-white">
+          <h1 className="capitalize">{postData.title.rendered}</h1>
         </div>
-      </div>
+        <BlogContent content={postData.content?.rendered || ""} />
+        <div className="bg-gray-50 py-8 sm:py-12">
+          <div className="max-w-3xl mx-auto text-center px-4 sm:px-0">
+            <h2 className="text-md font-medium text-black-700 mb-4 sm:mb-6 leading-snug">
+              Hizmetlerimiz hakkında daha fazla bilgi almak için bizimle iletişime geçin.
+            </h2>
+            <a
+              href="/iletisim"
+              className="inline-block px-6 py-2 sm:px-8 sm:py-3 text-sm sm:text-base text-white bg-black font-medium rounded-full transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-md hover:shadow-lg"
+            >
+              İletişime Geç
+            </a>
+          </div>
+        </div>
 
-      {/* Schema.org structured data */}
-      {postData.yoast_head_json?.schema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              adjustSchemaForFrontend(postData.yoast_head_json.schema, "dashboard.pushouse.com", "pamajans.com")
-            ),
-          }}
-        />
-      )}
-    </section>
+        {postData.yoast_head_json?.schema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(
+                adjustSchemaForFrontend(postData.yoast_head_json.schema, "dashboard.pushouse.com", "pamajans.com")
+              ),
+            }}
+          />
+        )}
+      </section>
+    </>
   );
 };
 

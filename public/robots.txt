@@ -1,9 +1,9 @@
-# *
+# Genel bot kuralları
 User-agent: *
 Allow: /
 
 # Host
-Host: https:pamajans.com
+Host: https://pamajans.com
 
-# Sitemaps
-Sitemap: https:pamajans.com/sitemap.xml
+# Sitemap
+Sitemap: https://pamajans.com/sitemap.xml

@@ -52,9 +52,9 @@ const ContactForm: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ s
     event.preventDefault();
 
     if (adPrice === "0 - 40.000₺") {
-      setWarning("40.000₺ ve altı bütçeler ile çalışma yapmıyoruz.");
+      setWarning("Değerli ilginiz için çok teşekkür ederiz! Şu an için 40.000₺ üzerindeki bütçelerle çalışma sağlıyoruz.");
       return;
-    }
+    }    
 
     try {
       const validatedData = contactFormSchema.parse({

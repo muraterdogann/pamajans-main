@@ -45,7 +45,7 @@ const About = () => {
       </section>
 
       <section className="pb-24 bg-[#f5f8fa]">
-        <div className="container relative pb-32 pt-20 lg:pt-40 bg-main text-white text-center bg-cover bg-center overflow-hidden rounded-2.5xl" style={{ backgroundImage: "url('/images/hero/ekip-genelv5.webp')" }}>
+        <div className="container relative pb-32 pt-20 lg:pt-40 bg-main text-white text-center bg-cover bg-center overflow-hidden rounded-2.5xl" style={{ backgroundImage: "url('/images/hero/ekip-genelv4.webp')" }}>
           <div className="group pt-20 pb-10">
             <p className="mb-10 px-10 normal-case font-bold">
               Markaların dijital dünyadaki varlıklarını güçlendirmeyi amaçlıyoruz. E-ticaret dünyasında cesaretlendiriyor ve dijital performansınızı artırmak için çalışıyoruz. Sorularınız varsa bizimle iletişime geçmekten çekinmeyin.

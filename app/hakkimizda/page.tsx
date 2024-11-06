@@ -29,11 +29,11 @@ const About = () => {
         <link rel="icon" href="/images/pam-ajans-logo-siyah.svg" type="image/svg+xml" />
       </Head>
 
-      <div className="absolute w-full font-display drop-shadow-[black_2px_2px_6px] rounded-bl-[60px] rounded-br-[60px] lg:rounded-bl-[120px] lg:rounded-br-[120px] text-white bg-main pt-32 pb-8 text-center text-5xl ">
+      <div className="absolute w-full font-display text-white bg-main pt-16 pb-8 text-center text-xl ">
         <h2>Hakkımızda</h2>
       </div>
 
-      <section className="pt-56 bg-[#f5f8fa]">
+      <section className="pt-28 bg-[#f5f8fa]">
         <div className="container mx-auto max-w-2xl py-16 text-center">
           <h1 className="font-display text-jacarta-700 text-[#37c8ae] mb-8 text-4xl font-medium">
             Pam Dijital Reklam Ajansı
@@ -45,7 +45,7 @@ const About = () => {
       </section>
 
       <section className="pb-24 bg-[#f5f8fa]">
-        <div className="container relative pb-32 pt-20 lg:pt-40 bg-main text-white text-center bg-cover bg-center overflow-hidden rounded-2.5xl" style={{ backgroundImage: "url('/images/hero/ekip-genel.png')" }}>
+        <div className="container relative pb-32 pt-20 lg:pt-40 bg-main text-white text-center bg-cover bg-center overflow-hidden rounded-2.5xl" style={{ backgroundImage: "url('/images/hero/ekip-genelv5.webp')" }}>
           <div className="group pt-20 pb-10">
             <p className="mb-10 px-10 normal-case font-bold">
               Markaların dijital dünyadaki varlıklarını güçlendirmeyi amaçlıyoruz. E-ticaret dünyasında cesaretlendiriyor ve dijital performansınızı artırmak için çalışıyoruz. Sorularınız varsa bizimle iletişime geçmekten çekinmeyin.

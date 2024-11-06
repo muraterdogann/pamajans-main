@@ -11,7 +11,7 @@ const Hero_6 = () => {
   return (
     <>
       {/* <!-- Hero --> */}
-      <section className="relative pb-32 pt-20 lg:pt-40 bg-main bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('/images/hero/ekip-genel.png')" }}>
+      <section className="relative pb-32 pt-20 lg:pt-40 bg-main bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('/images/hero/ekip-genelv5.webp')" }}>
       <div className="hidden md:block bg-black-blur h-1/2 w-1/3 absolute top-5 left-0 opacity-25"></div>
         <div className="hidden md:block bg-black-blur h-full w-2/3 absolute top-[20rem] right-0 opacity-50"></div>
         <picture className="pointer-events-none absolute inset-x-0 top-0 -z-10 dark:hidden">

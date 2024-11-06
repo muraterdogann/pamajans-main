@@ -6,18 +6,22 @@ import { ZodError, z } from "zod";
 const contactFormSchema = z.object({
   namesurname: z.string().min(1, { message: "Ad Soyad gerekli" }),
   email: z.string().email({ message: "Geçerli bir email adresi girin" }),
-  phone: z
-    .string()
-    .regex(/^0\d{10}$/, { message: "Geçerli bir telefon numarası girin" }),
+  phone: z.string().regex(/^0\d{10}$/, { message: "Geçerli bir telefon numarası girin" }),
   adPrice: z.string().min(1, { message: "Bütçe gerekli" }),
   message: z.string().min(100, { message: "Mesajınız en az 100 harf içermeli, lütfen daha fazla detay verin." }),
+  businessName: z.string().min(1, { message: "Şirket Adı gerekli" }),
+  website: z.string().url({ message: "Geçerli bir website adresi girin" }),
+  socialMedia: z.string().min(1, { message: "Sosyal Medya bilgisi gerekli" }),
 });
 
 const ContactForm: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ sharedData, onSharedDataChange }) => {
   const [namesurname, setNamesurname] = useState(sharedData.namesurname || "");
   const [email, setEmail] = useState(sharedData.email || "");
-  const [phone, setPhone] = useState<string>(sharedData.phone || ""); // Initialize phone state with "0"
+  const [phone, setPhone] = useState<string>(sharedData.phone || "");
   const [adPrice, setAdPrice] = useState<string>("");
+  const [businessName, setBusinessName] = useState(sharedData.businessName || "");
+  const [website, setWebsite] = useState(sharedData.website || "");
+  const [socialMedia, setSocialMedia] = useState(sharedData.socialMedia || "");
   const [message, setMessage] = useState(sharedData.message || "");
   const [formStatus, setFormStatus] = useState<"success" | "error" | "">("");
   const [errors, setErrors] = useState<Record<string, string | null>>({
@@ -26,6 +30,9 @@ const ContactForm: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ s
     phone: null,
     adPrice: null,
     message: null,
+    businessName: null,
+    website: null,
+    socialMedia: null
   });
   const [isChecked, setIsChecked] = useState(false);
 
@@ -45,6 +52,9 @@ const ContactForm: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ s
         phone,
         adPrice,
         message,
+        businessName,
+        website,
+        socialMedia
       });
 
       const response = await fetch('/api/contact', {
@@ -59,6 +69,9 @@ const ContactForm: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ s
             PHONE: phone,
             ADPRICE: adPrice,
             MESSAGE: message,
+            BUSINESSNAME: businessName,
+            WEBSITE: website,
+            SOCIALMEDIA: socialMedia,
           },
           listIds: [3],
           updateEnabled: false,
@@ -102,6 +115,9 @@ const ContactForm: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ s
     if (inputName === 'email') setEmail(value);
     if (inputName === 'message') setMessage(value);
     if (inputName === 'phone') setPhone(value);
+    if (inputName === 'businessName') setBusinessName(value);
+    if (inputName === 'website') setWebsite(value);
+    if (inputName === 'socialMedia') setSocialMedia(value);
 
     onSharedDataChange({ [inputName]: value });
   }
@@ -152,6 +168,50 @@ const ContactForm: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ s
             className="contact-form-input normal-case dark:bg-jacarta-700 bg-gray-50 border border-jacarta-100 hover:border-accent focus:border-second w-full rounded-lg py-3 px-4 text-sm sm:text-base dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-second transition-shadow duration-300 ease-in-out shadow-sm hover:shadow-md"
           />
           {errors.phone && <span className="text-red text-xs">{errors.phone}</span>}
+        </div>
+        <div className="mb-6">
+          <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white" htmlFor="businessName">
+            Şirket Adı<span className="text-red">*</span>
+          </label>
+          <input
+            name="businessName"
+            id="businessName"
+            value={businessName}
+            onChange={(e) => handleInputChange("businessName", e.target.value)}
+            type="text"
+            className="contact-form-input normal-case dark:bg-jacarta-700 bg-gray-50 border border-jacarta-100 hover:border-accent focus:border-second w-full rounded-lg py-3 px-4 text-sm sm:text-base dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-second transition-shadow duration-300 ease-in-out shadow-sm hover:shadow-md"
+          />
+          {errors.businessName && <span className="text-red text-xs">{errors.businessName}</span>}
+        </div>
+
+        <div className="mb-6">
+          <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white" htmlFor="website">
+            Website "https://www.website.com" şeklinde giriniz<span className="text-red">*</span>
+          </label>
+          <input
+            name="website"
+            id="website"
+            value={website}
+            onChange={(e) => handleInputChange("website", e.target.value)}
+            type="text"
+            className="contact-form-input normal-case dark:bg-jacarta-700 bg-gray-50 border border-jacarta-100 hover:border-accent focus:border-second w-full rounded-lg py-3 px-4 text-sm sm:text-base dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-second transition-shadow duration-300 ease-in-out shadow-sm hover:shadow-md"
+          />
+          {errors.website && <span className="text-red text-xs">{errors.website}</span>}
+        </div>
+
+        <div className="mb-6">
+          <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white" htmlFor="socialMedia">
+            Sosyal Medya<span className="text-red">*</span>
+          </label>
+          <input
+            name="socialMedia"
+            id="socialMedia"
+            value={socialMedia}
+            onChange={(e) => handleInputChange("socialMedia", e.target.value)}
+            type="text"
+            className="contact-form-input normal-case dark:bg-jacarta-700 bg-gray-50 border border-jacarta-100 hover:border-accent focus:border-second w-full rounded-lg py-3 px-4 text-sm sm:text-base dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-second transition-shadow duration-300 ease-in-out shadow-sm hover:shadow-md"
+          />
+          {errors.socialMedia && <span className="text-red text-xs">{errors.socialMedia}</span>}
         </div>
         <div className="mb-6">
           <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white" htmlFor="adPrice">
@@ -215,9 +275,8 @@ const ContactForm: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ s
       )}
       <button
         type="submit"
-        className={`esra bg-second shadow-second-volume drop-shadow-lg rounded-full py-3 px-8 text-center font-semibold text-white transition-all ${
-          !isChecked && "cursor-not-allowed opacity-50"
-        }`}
+        className={`esra bg-second shadow-second-volume drop-shadow-lg rounded-full py-3 px-8 text-center font-semibold text-white transition-all ${!isChecked && "cursor-not-allowed opacity-50"
+          }`}
         id="contact-form-submit"
         disabled={!isChecked}
       >

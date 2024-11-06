@@ -18,12 +18,13 @@ const ContactForm: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ s
   const [namesurname, setNamesurname] = useState(sharedData.namesurname || "");
   const [email, setEmail] = useState(sharedData.email || "");
   const [phone, setPhone] = useState<string>(sharedData.phone || "");
-  const [adPrice, setAdPrice] = useState<string>("");
+  const [adPrice, setAdPrice] = useState<string>(sharedData.adPrice || "");
   const [businessName, setBusinessName] = useState(sharedData.businessName || "");
   const [website, setWebsite] = useState(sharedData.website || "");
   const [socialMedia, setSocialMedia] = useState(sharedData.socialMedia || "");
   const [message, setMessage] = useState(sharedData.message || "");
   const [formStatus, setFormStatus] = useState<"success" | "error" | "">("");
+  const [warning, setWarning] = useState<string | null>(null);
   const [errors, setErrors] = useState<Record<string, string | null>>({
     namesurname: null,
     email: null,
@@ -39,11 +40,21 @@ const ContactForm: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ s
   useEffect(() => {
     setNamesurname(sharedData.namesurname || "");
     setEmail(sharedData.email || "");
+    setPhone(sharedData.phone || "");
+    setAdPrice(sharedData.adPrice || "");
+    setBusinessName(sharedData.businessName || "");
+    setWebsite(sharedData.website || "");
+    setSocialMedia(sharedData.socialMedia || "");
     setMessage(sharedData.message || "");
   }, [sharedData]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>, type: string) {
     event.preventDefault();
+
+    if (adPrice === "0 - 40.000₺") {
+      setWarning("40.000₺ ve altı bütçeler ile çalışma yapmıyoruz.");
+      return;
+    }
 
     try {
       const validatedData = contactFormSchema.parse({
@@ -54,8 +65,10 @@ const ContactForm: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ s
         message,
         businessName,
         website,
-        socialMedia
+        socialMedia,
       });
+
+      setWarning(null);
 
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -87,11 +100,14 @@ const ContactForm: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ s
       const data = await response.json();
       console.log(data.message);
       setFormStatus("success");
-      setEmail("");
-      setMessage("");
-      setAdPrice("");
       setNamesurname("");
-      setPhone("0"); // Reset phone field to "0"
+      setEmail("");
+      setPhone("0");
+      setAdPrice("");
+      setBusinessName("");
+      setWebsite("");
+      setSocialMedia("");
+      setMessage("");
     } catch (err) {
       console.error(err);
       setFormStatus("error");
@@ -105,6 +121,7 @@ const ContactForm: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ s
     }
   }
 
+
   const type = 'brand';
   function handleInputChange(inputName: string, value: string) {
     const newErrors = { ...errors };
@@ -115,6 +132,7 @@ const ContactForm: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ s
     if (inputName === 'email') setEmail(value);
     if (inputName === 'message') setMessage(value);
     if (inputName === 'phone') setPhone(value);
+    if (inputName === 'adPrice') setAdPrice(value);
     if (inputName === 'businessName') setBusinessName(value);
     if (inputName === 'website') setWebsite(value);
     if (inputName === 'socialMedia') setSocialMedia(value);
@@ -267,11 +285,20 @@ const ContactForm: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ s
           Kabul Ediyorum
         </label>
       </div>
+      {warning && (
+        <div className="text-red font-bold mb-4 normal-case select-none">
+          {warning}
+        </div>
+      )}
       {formStatus === "success" && (
-        <div className="text-green font-bold mb-4 normal-case select-none esra" >Bizimle iletişime geçtiğiniz için teşekkür ederiz</div>
+        <div className="text-green font-bold mb-4 normal-case select-none esra">
+          Bizimle iletişime geçtiğiniz için teşekkür ederiz
+        </div>
       )}
       {formStatus === "error" && (
-        <div className="text-red font-bold mb-4 normal-case select-none" >Lütfen daha sonra tekrar deneyiniz</div>
+        <div className="text-red font-bold mb-4 normal-case select-none">
+          Lütfen daha sonra tekrar deneyiniz
+        </div>
       )}
       <button
         type="submit"

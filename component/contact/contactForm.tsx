@@ -233,7 +233,7 @@ const ContactForm: React.FC<{ sharedData: any, onSharedDataChange: any }> = ({ s
         </div>
         <div className="mb-6">
           <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white" htmlFor="adPrice">
-            Bütçeniz<span className="text-red">*</span>
+            Reklam Bütçeniz (Aylık)<span className="text-red">*</span>
           </label>
           <select
             name="adPrice"

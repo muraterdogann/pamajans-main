@@ -1,0 +1,11 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+	<title>Yeni Proje</title>
+	<defs>
+		<image  width="86" height="7" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFYAAAAHCAMAAAClWkqXAAAAAXNSR0IB2cksfwAAAbBQTFRF////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////oV2yBgAAAJB0Uk5TYEwJACVHLDsEWgwQQDMSICYeLxUoCjkw//3v9J67+XTuAXuVJ4AT2Ma8zRmgN7q/4+vZW/7x5mz6PfyxkF/w1msY8o+qyQ7nalyR9cLHhDLAddX7TiLzVEHT5C7b0TTPwY3QZMRFWd9vYbeJG8jpw0pYfLOceGMjaGb31PYNr2WOU1A2FEMkHz48YgZtVxZ/hW/SWAAAAdtJREFUeJxjZAADRkZGIPGH9R8DA/Mv9j8MDKyM37l+MqADDkbGbzA29z/mLwwMvH9YPzEw8P9i/8DAIPiD8ysPWJ6bUQJs4F+W5wwMUr/Zvr1nkPnJ8f2NHFD79y8Yxip8Zea8D2UzCfPeY1Bm/Cjw4DeD2nshxhsMmm9EGV+B5cQZJSTu/WX4qct4kcGAkfGJ6K3fMj8ZZW9qMD78j2msGSPDPeVnj5CMtbyjdE/1GNBYNcaj/zXfaNwQfAaSM2KU0PrFzsD4jXufM+Ml/fufDHbJ/DRifPpOj/E00FgDabiRjFsYWD2eyAJDaz3C2KB/zIwH9Y/8UHvvAJS4+OZLwB6QlCsjowSbI0jT2m9x20EiXk9u/vT+eMrkpuUWoLFJ/+DGrv3MkLBNmu/OL9cdgYyMsxkY0tbzPk5ap/RA6knwNo73PB5Ac1f+MdICBemyaEYJ/zlgbYpGL2S3MKQuiV31M643WbAncQt6IAhEnxFXZ/i0Lop9PpMvA4PwPNUzho5/GRi+8U2Uec9zv4pxFkP6C5DCBxczGBkamyCerGNsYGBoBPrqD2sNkN/6a/I7VGPbNrMcBlov8eyLGpjvx8i44dZbBoau9UfdvwSVMrC3rvXZApbREQUAioOoXbt72C8AAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+		.s0 { fill: #000000 } 
+	</style>
+	<path id="Şekil 1" class="s0" d="m50 100c-27.6 0-50-22.3-50-50 0-27.6 22.4-50 50-50 27.7 0 50 22.4 50 50 0 27.7-22.3 50-50 50z"/>
+	<use  href="#img1" x="7" y="46"/>
+</svg>

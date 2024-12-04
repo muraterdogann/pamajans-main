@@ -24,7 +24,12 @@ export default function Layout({ children }: LayoutProps) {
     <html lang="tr" className={poppins.className}>
       <head>
         <title>Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı</title>
-        <link rel="icon" href="/images/pam-ajans-logo-siyah.svg" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        
         <meta name="description" content="Pam Ajans olarak, dijital reklam ajansı hizmetlerimizle markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ajansı olarak, dijital dünyada başarıya ulaşmanız için yanınızdayız. Dijital danışmanlık ajansı hizmetlerimizle sektörde en iyi sonuçları elde etmek için hemen bizimle iletişime geçin." />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,6 +46,7 @@ export default function Layout({ children }: LayoutProps) {
         <meta name="twitter:title" content="Pam Ajans | Dijital Reklam, Performans ve Danışmanlık Ajansı" />
         <meta name="twitter:description" content="Pam Ajans olarak, dijital reklam ajansı hizmetlerimizle markanızın çevrimiçi görünürlüğünü artırıyoruz. Dijital performans ajansı olarak, dijital dünyada başarıya ulaşmanız için yanınızdayız. Dijital danışmanlık ajansı hizmetlerimizle sektörde en iyi sonuçları elde etmek için hemen bizimle iletişime geçin." />
         <meta name="twitter:image" content="/images/pam-ajans-logo-siyah.svg" />
+        
 
         {/* Google analytics */}
         <Script id="google-analytics" strategy="afterInteractive" async dangerouslySetInnerHTML={{
